@@ -207,18 +207,18 @@ In the previous section, a relatively simple gimbal control algorithm is present
 \subsection{Image Jacobian}
 A full derivation of getting Image Jacobian matrix (often called interaction matrix) can be found in \cite{spong2006robot}. Here, we only show the final form of Image Jacobian in the process of developing the gimbal control algorithm. Let the camera translational and rotational velocities both expressed in the camera frame be defined as
 \begin{equation}
-\mathbf{v_C}=[v_{Cx}, v_{Cy}, v_{Cz}]^\top
+\mathbf{v}_C=[v_{Cx}, v_{Cy}, v_{Cz}]^\top
 \end{equation}
 \begin{equation}
-\mathbf{\omega_C}=[\omega_{Cx}, \omega_{Cy}, \omega_{Cz}]^\top
+\mathbf{\omega}_C=[\omega_{Cx}, \omega_{Cy}, \omega_{Cz}]^\top
 \end{equation}
 \begin{equation}
-\mathbf{\xi}=[\mathbf{v_C}^\top, \mathbf{\omega_C}^\top]^\top.
+\mathbf{\xi}=[\mathbf{v}_C^\top, \mathbf{\omega}_C^\top]^\top.
 \label{camera_velocity}
 \end{equation}
-In this section, $[A]$ stands for azimuth frame, $[E]$ stands for elevation frame, and $[C]$ stands for camera frame (see Figure \ref{cross_elevation}). Also, following the convention in Figure \ref{camera_frame}, 
+In this section, $[A]$ stands for azimuth frame, $[E]$ stands for elevation frame, and $[C]$ stands for camera frame (see Figure \ref{cross_elevation}). $\theta$ indicates the elevation angle and $\psi$ indicates the azimuth angle. Also, following the convention in Figure \ref{camera_frame}, 
 \begin{equation}
-R^{C}_E =
+R^{E}_C =
 \begin{bmatrix}
 0 & 0 & 1 \\
 1 & 0 & 0 \\
@@ -258,12 +258,12 @@ where $z$ is the depth along the optical axis to where the target lies and $\lam
 \mathbf{\dot{s}}&=\begin{bmatrix}
 -\frac{\lambda}{z} & 0 & \frac{u}{z} \\
 0 & -\frac{\lambda}{z} & \frac{w}{z}
-\end{bmatrix}\mathbf{v_C}+
+\end{bmatrix}\mathbf{v}_C+
 \begin{bmatrix}
 \frac{uw}{\lambda} & -\frac{\lambda^2+u^2}{\lambda} & w \\
 \frac{\lambda^2+w^2}{\lambda} & -\frac{uw}{\lambda} & -u
-\end{bmatrix}\mathbf{\omega_c}
-\\&=L_v(u,w,z)\mathbf{v_C}+L_{\omega}(u,w)\mathbf{\omega_C}
+\end{bmatrix}\mathbf{\omega}_C
+\\&=L_v(u,w,z)\mathbf{v}_C+L_{\omega}(u,w)\mathbf{\omega}_C
 \label{image_jacobian1}
 \end{align}
 It is worth to note that only the translational part depends on the target depth $z$. 
@@ -276,11 +276,103 @@ e(t)=s(t)-s^{ref}
 \end{equation}
 where $s^{ref}=[0, 0]^\top$ to push the image feature to the image center. We would like to derive (\ref{image_feature_error}) to zeros by controlling $\omega_{EL}=\omega_{Ey}$ and $\omega_{AZ}=\frac{\omega_{Ez}}{\cos \theta}$. Manipulating the equation (\ref{image_jacobian1}) gives
 \begin{equation}
-L_{\omega}(u,w)\mathbf{\omega_C}=\dot{s}+L_v(u,w,z)\mathbf{v_C}.
+L_{\omega}(u,w)\mathbf{\omega}_C=\dot{s}-L_v(u,w,z)\mathbf{v}_C.
+\label{image_jacobian2}
 \end{equation}
-Note that our interest here is to find camera angular rate command only and camera translational rate can be measured when UAV is flying independent from the gimbal controller. The null space of the matrix $L_{\omega}$ can be parameterized as
+Note that our interest is to find camera angular rate command only and camera translational rate can be measured when UAV is flying independent from the gimbal controller. The null space of the matrix $L_{\omega}$ can be parameterized as
 \begin{equation}
 N(L_{\omega})=\{\omega_C=k\begin{bmatrix}
 u & w & \lambda
-\end{bmatrix}^\top\}.
+\end{bmatrix}^\top\}
+\label{nullspace}
 \end{equation}
+and adding (\ref{nullspace}) to (\ref{image_jacobian2}) makes
+\begin{equation}
+L_{\omega}(u,w)\mathbf{\omega}_C=\dot{s}-L_v(u,w,z)\mathbf{v}_C+L_{\omega}(u,w)k\begin{bmatrix}
+u \\ w \\ \lambda
+\end{bmatrix}.
+\label{image_jacobian3}
+\end{equation}
+This null space means that rotation about the axis connecting the image feature and the origin of optical axis do not change the coordinates of the image feature. The left pseudoinverse of $L_{\omega}$ is given by 
+\begin{equation}
+L_{\omega}^\sharp=\begin{bmatrix}
+0 & \frac{\lambda}{\lambda^2+u^2+w^2} \\
+-\frac{\lambda}{\lambda^2+u^2+w^2} & 0 \\
+\frac{w}{\lambda^2+u^2+w^2} & -\frac{u}{\lambda^2+u^2+w^2}
+\end{bmatrix}
+\label{pseudoinverse}
+\end{equation}
+and multiplying both side of (\ref{image_jacobian3}) by (\ref{pseudoinverse}) yields
+\begin{equation}
+\mathbf{\omega}_C=\frac{1}{z(\lambda^2+u^2+w^2)}\begin{bmatrix}
+\lambda^2 v_y-\lambda v_z w+\lambda \dot{w}z+ku \\
+-\lambda^2 v_x+\lambda v_zu-\lambda \dot{u}z+kw \\
+-\lambda u v_y+\lambda w v_x-u\dot{w}z+\dot{u}wz+k\lambda
+\end{bmatrix}.
+\label{angular_rate}
+\end{equation}
+If we require $\dot{s}^{ref}(t)=-\alpha Is(t)$ where $\alpha$ is a positive value, the actual value of $s(t)$ is expected to be exponentially stable which means it converges to zero. Thus, 
+\begin{equation}
+\mathbf{\dot{s}}^{ref}=\begin{bmatrix}
+\dot{u}^{ref} \\ \dot{w}^{ref}
+\end{bmatrix}
+=-\alpha \begin{bmatrix}
+1 & 0 \\ 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+u \\ w
+\end{bmatrix}
+=\begin{bmatrix}
+-\alpha u \\ -\alpha w
+\end{bmatrix}.
+\label{sdot_reference}
+\end{equation}
+By plugging the equation (\ref{sdot_reference}) into (\ref{angular_rate}), we can compute the desired camera angular rate that guarantees the asymptotic stability for the image error as
+\begin{equation}
+\mathbf{\omega}_C^{ref}=\frac{1}{z(\lambda^2+u^2+w^2)}\begin{bmatrix}
+\lambda^2 v_y-\lambda v_z w -\lambda \alpha wz+ku \\
+-\lambda^2 v_x+\lambda v_zu +\lambda \alpha uz+kw \\
+-\lambda u v_y+\lambda w v_x +k\lambda
+\end{bmatrix}.
+\label{angular_rate_reference}
+\end{equation}
+This angular rate reference commands expressed in the camera frame must be transformed into the elevation frame in order to make them direct command for each gimbal axis as
+\begin{align}
+\mathbf{\omega}_E^{ref}&=R_C^E\mathbf{\omega}_C^{ref}
+=\begin{bmatrix}
+\omega_{Ex}^{ref} \\ \omega_{Ey}^{ref} \\ \omega_{Ez}^{ref}
+\end{bmatrix}
+\\&=\frac{1}{z(\lambda^2+u^2+w^2)}\begin{bmatrix}
+-\lambda u v_y+\lambda w v_x +k\lambda \\
+\lambda^2 v_y-\lambda v_z w -\lambda \alpha wz+ku \\
+-\lambda^2 v_x+\lambda v_zu +\lambda \alpha uz+kw \\
+\end{bmatrix}.
+\label{angular_rate_ref_elevation}
+\end{align}
+It is questionable that $\mathbf{\omega}_C^{ref}$ has commands for three axis, but there are only two controllable axis, namely $\omega_{Ey}$ and $\omega_{Ez}$. This problem can be solved by using the free parameter $k$ to come up with two proper motor commands. The key strategy of picking $k$ is to select the $k$ value that does not require any change from the current $\omega_{Ex}$ value as 
+\begin{equation}
+k=uv_y-wv_x+\frac{z(\lambda^2+u^2+w^2)}{\lambda}\omega_{Ex}
+\label{k}
+\end{equation}
+which indicates that $\omega_x$ must be measured from a sensor such as MEMS gyro attached to the camera. Substituting for $k$ in $\omega_{Ey}^{ref}$ and $\omega_{Ez}^{ref}$ from the equation (\ref{angular_rate_ref_elevation}) with (\ref{k}) gives
+\begin{equation}
+\omega_{EL}^{ref}=\omega_{Ey}^{ref}=\frac{\lambda^2 v_y-\lambda v_z w -\lambda \alpha wz+u^2 v_y-uwv_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_{Ex}u}{\lambda}
+\end{equation}
+\begin{equation}
+\omega_{CEL}^{ref}=\omega_{Ez}^{ref}=\frac{-\lambda^2 v_x+\lambda v_z u+\lambda \alpha uz +uwv_y -w^2 v_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_{Ex}w}{\lambda}.
+\end{equation}
+Using the relationship 
+\begin{equation}
+\omega_{AZ}=\frac{1}{\cos\theta}\omega_{CEL},
+\end{equation}
+we can compute the desired angular rate on azimuth axis instead of cross-elevation axis as
+\begin{equation}
+\omega_{AZ}^{ref}=\frac{1}{\cos \theta}\bigg(\frac{-\lambda^2 v_x+\lambda v_z u+\lambda \alpha uz +uwv_y -w^2 v_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_{Ex}w}{\lambda}\bigg).
+\end{equation}
+\begin{figure}[t]
+	\centering
+	\includegraphics[width = 5in]{images/chapter2/gp_blockdiagram.pdf}
+	\caption{Angular velocity commanding gimbal controller block diagram}
+	\label{avcg_blockdiagram}
+\end{figure}
+The system block diagram of this controller can be found in Figure \ref{avcg_blockdiagram}. The controller presents the ideal control scheme for two axis inertially stabilized gimbal system, but it also presents some technical challenges such as estimating the depth to the target and the camera translational velocity. 

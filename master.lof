@@ -5,16 +5,17 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Frames of interest: body frame, gimbal-1 frame, and gimbal frame\relax }}{5}{figure.caption.9}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Camera frame and visual aid for projective camera model\relax }}{6}{figure.caption.10}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Prototype hardware to test gimbal control algorithm\relax }}{9}{figure.caption.11}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Hardware demonstration. The gimbal control algorithm is keeping the target object at the center of the camera field of view.\relax }}{13}{figure.caption.12}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Elevation and cross-elevation axis\relax }}{14}{figure.caption.13}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Hardware demonstration. The gimbal control algorithm is keeping the target object at the center of the camera field of view.\relax }}{15}{figure.caption.12}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Elevation and cross-elevation axis\relax }}{16}{figure.caption.13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Angular velocity commanding gimbal controller block diagram\relax }}{16}{figure.caption.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Side view of the multirotor.\relax }}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Side view of the multirotor.\relax }}{18}{figure.caption.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-flat-earth model example. The unit optical axis vector $\mathaccentV {hat}05E{m}$ and the unit line of sight vector $\mathaccentV {hat}05E{l}$ are key components of the controller presented in this chapter.\relax }}{19}{figure.caption.15}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Graphical overview of the problem\relax }}{20}{figure.caption.16}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Projection onto the null space of the optical axis unit vector\relax }}{21}{figure.caption.17}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Simple UAV dynamics visual servoing Simulink simulation. The blue square is flying UAV at constant altitude and the red square is a target on the ground moving at $5m/s$\relax }}{26}{figure.caption.18}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces The horizontal error between the unit LOS vector and the unit optical axis vector converges to zero.\relax }}{26}{figure.caption.19}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-flat-earth model example. The unit optical axis vector $\mathaccentV {hat}05E{m}$ and the unit line of sight vector $\mathaccentV {hat}05E{l}$ are key components of the controller presented in this chapter.\relax }}{21}{figure.caption.16}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Graphical overview of the problem\relax }}{22}{figure.caption.17}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Projection onto the null space of the optical axis unit vector\relax }}{23}{figure.caption.18}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Simple UAV dynamics visual servoing Simulink simulation. The blue square is flying UAV at constant altitude and the red square is a target on the ground moving at $5m/s$\relax }}{28}{figure.caption.19}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces The horizontal error between the unit LOS vector and the unit optical axis vector converges to zero.\relax }}{28}{figure.caption.20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Example figure whose width depends on page size}}{28}{figure.caption.22}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Example figure whose width depends on page size}}{30}{figure.caption.23}
 \addvspace {10\p@ }
