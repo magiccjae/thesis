@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.2)  6 DEC 2017 17:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.2)  12 DEC 2017 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -592,12 +592,12 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 
-Overfull \hbox (5.3387pt too wide) detected at line 26
+Overfull \hbox (5.3387pt too wide) detected at line 30
 \OT1/ptm/b/n/12 Appendix A   
  []
 
 
-Overfull \hbox (4.67865pt too wide) detected at line 28
+Overfull \hbox (4.67865pt too wide) detected at line 32
 \OT1/ptm/b/n/12 Appendix B   
  []
 
@@ -635,7 +635,7 @@ LaTeX Warning: Citation `guy06best' on page 1 undefined on input line 20.
 
 LaTeX Warning: Citation `guy06second' on page 1 undefined on input line 20.
 
-<images/stuff.pdf, id=268, 477.785pt x 377.41pt>
+<images/stuff.pdf, id=288, 477.785pt x 377.41pt>
 File: images/stuff.pdf Graphic file (type pdf)
  <use images/stuff.pdf>
 Package pdftex.def Info: images/stuff.pdf used on input line 27.
@@ -655,7 +655,7 @@ Package pdftex.def Info: images/stuff.pdf used on input line 36.
 
 (./chapters/chapter2.tex
 Chapter 2.
-<images/chapter2/gimbal1_frame.pdf, id=324, 115.43124pt x 116.435pt>
+<images/chapter2/gimbal1_frame.pdf, id=344, 115.43124pt x 116.435pt>
 File: images/chapter2/gimbal1_frame.pdf Graphic file (type pdf)
 
 <use images/chapter2/gimbal1_frame.pdf>
@@ -663,7 +663,7 @@ Package pdftex.def Info: images/chapter2/gimbal1_frame.pdf used on input line 1
 0.
 (pdftex.def)             Requested size: 144.54pt x 145.8081pt.
 
-<images/chapter2/gimbal_frame.pdf, id=325, 118.4425pt x 94.3525pt>
+<images/chapter2/gimbal_frame.pdf, id=345, 118.4425pt x 94.3525pt>
 File: images/chapter2/gimbal_frame.pdf Graphic file (type pdf)
 
 <use images/chapter2/gimbal_frame.pdf>
@@ -685,7 +685,7 @@ Overfull \hbox (4.56004pt too wide) in paragraph at lines 8--19
 
 
 ] [5 <./images/chapter2/gimbal1_frame.pdf> <./images/chapter2/gimbal_frame.pdf>
-] <images/chapter2/camera_frame.pdf, id=353, 188.705pt x 145.54375pt>
+] <images/chapter2/camera_frame.pdf, id=373, 188.705pt x 145.54375pt>
 File: images/chapter2/camera_frame.pdf Graphic file (type pdf)
 
 <use images/chapter2/camera_frame.pdf>
@@ -693,20 +693,20 @@ Package pdftex.def Info: images/chapter2/camera_frame.pdf used on input line 63
 .
 (pdftex.def)             Requested size: 252.94499pt x 195.08977pt.
  [6 <./images/chapter2/camera_frame.pdf>] [7] <images/chapter2/gimbal_webcam.jp
-g, id=381, 3131.7pt x 4175.6pt>
+g, id=397, 3131.7pt x 4175.6pt>
 File: images/chapter2/gimbal_webcam.jpg Graphic file (type jpg)
 
 <use images/chapter2/gimbal_webcam.jpg>
 Package pdftex.def Info: images/chapter2/gimbal_webcam.jpg used on input line 1
-61.
+60.
 (pdftex.def)             Requested size: 216.81pt x 289.07243pt.
 
-Overfull \hbox (6.18533pt too wide) in paragraph at lines 158--165
+Overfull \hbox (6.18533pt too wide) in paragraph at lines 164--165
 \OT1/ptm/m/n/12 ure [][]2.4[][]. Also, the re-sult video can be found at [][]ht
-tps://www.youtube.com/watch?v=OZ0Mg8AoAzk[][]).
+tps://www.youtube.com/watch?v=OZ0Mg8AoAzk[][]). 
  []
 
-<images/chapter2/gimbal_0s.png, id=382, 483.8075pt x 558.085pt>
+<images/chapter2/gimbal_0s.png, id=402, 483.8075pt x 558.085pt>
 File: images/chapter2/gimbal_0s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_0s.png>
@@ -719,7 +719,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 171.
 
-<images/chapter2/gimbal_10s.png, id=383, 483.8075pt x 558.085pt>
+<images/chapter2/gimbal_10s.png, id=403, 483.8075pt x 558.085pt>
 File: images/chapter2/gimbal_10s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_10s.png>
@@ -727,7 +727,7 @@ Package pdftex.def Info: images/chapter2/gimbal_10s.png used on input line 175.
 
 (pdftex.def)             Requested size: 164.41351pt x 189.65271pt.
 
-<images/chapter2/gimbal_20s.png, id=384, 483.8075pt x 558.085pt>
+<images/chapter2/gimbal_20s.png, id=404, 483.8075pt x 558.085pt>
 File: images/chapter2/gimbal_20s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_20s.png>
@@ -735,7 +735,7 @@ Package pdftex.def Info: images/chapter2/gimbal_20s.png used on input line 180.
 
 (pdftex.def)             Requested size: 164.41351pt x 189.65271pt.
 
-<images/chapter2/gimbal_30s.png, id=385, 483.8075pt x 558.085pt>
+<images/chapter2/gimbal_30s.png, id=405, 483.8075pt x 558.085pt>
 File: images/chapter2/gimbal_30s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_30s.png>
@@ -743,7 +743,7 @@ Package pdftex.def Info: images/chapter2/gimbal_30s.png used on input line 185.
 
 (pdftex.def)             Requested size: 164.41351pt x 189.65271pt.
 
-<images/chapter2/gimbal_40s.png, id=386, 483.8075pt x 558.085pt>
+<images/chapter2/gimbal_40s.png, id=406, 483.8075pt x 558.085pt>
 File: images/chapter2/gimbal_40s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_40s.png>
@@ -754,7 +754,7 @@ Package pdftex.def Info: images/chapter2/gimbal_40s.png used on input line 190.
 
 LaTeX Warning: Float too large for page by 18.3281pt on input line 195.
 
-[8] <images/chapter2/cross_elevation.pdf, id=398, 150.5625pt x 96.36pt>
+[8] <images/chapter2/cross_elevation.pdf, id=418, 150.5625pt x 96.36pt>
 File: images/chapter2/cross_elevation.pdf Graphic file (type pdf)
 
 <use images/chapter2/cross_elevation.pdf>
@@ -762,39 +762,39 @@ Package pdftex.def Info: images/chapter2/cross_elevation.pdf used on input line
  203.
 (pdftex.def)             Requested size: 216.81pt x 138.77148pt.
  [9 <./images/chapter2/gimbal_webcam.jpg>] [10] [11] [12] [13]
-<images/chapter2/gp_blockdiagram.pdf, id=460, 320.19624pt x 186.6975pt>
+<images/chapter2/gp_blockdiagram.pdf, id=480, 320.19624pt x 186.6975pt>
 File: images/chapter2/gp_blockdiagram.pdf Graphic file (type pdf)
 
 <use images/chapter2/gp_blockdiagram.pdf>
 Package pdftex.def Info: images/chapter2/gp_blockdiagram.pdf used on input line
  374.
 (pdftex.def)             Requested size: 361.34999pt x 210.69792pt.
-) [14] [15 <./images/chapter2/gimbal_0s.png> <./images/chapter2/gimbal_10s.png>
- <./images/chapter2/gimbal_20s.png> <./images/chapter2/gimbal_30s.png> <./image
-s/chapter2/gimbal_40s.png>] [16 <./images/chapter2/cross_elevation.pdf> <./imag
-es/chapter2/gp_blockdiagram.pdf>]
+ [14]) [15] [16 <./images/chapter2/gimbal_0s.png> <./images/chapter2/gimbal_10s
+.png> <./images/chapter2/gimbal_20s.png> <./images/chapter2/gimbal_30s.png> <./
+images/chapter2/gimbal_40s.png>]
+[17 <./images/chapter2/cross_elevation.pdf> <./images/chapter2/gp_blockdiagram.
+pdf>]
 \openout2 = `chapters/chapter3.aux'.
 
-
-(./chapters/chapter3.tex
+ (./chapters/chapter3.tex
 Chapter 3.
-[17
+[18
 
 
 
-] <images/side_view_45deg_2.pdf, id=493, 305.14pt x 308.15125pt>
+] <images/side_view_45deg_2.pdf, id=523, 305.14pt x 308.15125pt>
 File: images/side_view_45deg_2.pdf Graphic file (type pdf)
 
 <use images/side_view_45deg_2.pdf>
 Package pdftex.def Info: images/side_view_45deg_2.pdf used on input line 20.
 (pdftex.def)             Requested size: 289.07999pt x 291.94267pt.
- [18 <./images/side_view_45deg_2.pdf>])
-[19] [20]
+ [19 <./images/side_view_45deg_2.pdf>])
+[20] [21]
 \openout2 = `chapters/chapter4.aux'.
 
  (./chapters/chapter4.tex
 Chapter 4.
-<images/advanced_control_motivation.pdf, id=522, 204.765pt x 124.465pt>
+<images/advanced_control_motivation.pdf, id=552, 204.765pt x 124.465pt>
 File: images/advanced_control_motivation.pdf Graphic file (type pdf)
 
 <use images/advanced_control_motivation.pdf>
@@ -802,26 +802,26 @@ Package pdftex.def Info: images/advanced_control_motivation.pdf used on input l
 ine 5.
 (pdftex.def)             Requested size: 281.85585pt x 171.33456pt.
 
-<images/advanced_control_overview.pdf, id=524, 316.18124pt x 227.85126pt>
+<images/advanced_control_overview.pdf, id=554, 316.18124pt x 227.85126pt>
 File: images/advanced_control_overview.pdf Graphic file (type pdf)
 
 <use images/advanced_control_overview.pdf>
 Package pdftex.def Info: images/advanced_control_overview.pdf used on input lin
 e 14.
 (pdftex.def)             Requested size: 281.85585pt x 203.12769pt.
- [21
+ [22
 
 
 
- <./images/advanced_control_motivation.pdf>] [22 <./images/advanced_control_ove
+ <./images/advanced_control_motivation.pdf>] [23 <./images/advanced_control_ove
 rview.pdf>]
-<images/projection.pdf, id=546, 65.24374pt x 86.3225pt>
+<images/projection.pdf, id=575, 65.24374pt x 86.3225pt>
 File: images/projection.pdf Graphic file (type pdf)
 
 <use images/projection.pdf>
-Package pdftex.def Info: images/projection.pdf used on input line 37.
+Package pdftex.def Info: images/projection.pdf used on input line 38.
 (pdftex.def)             Requested size: 93.94955pt x 124.30426pt.
- [23 <./images/projection.pdf>] [24] [25] [26]
+ [24 <./images/projection.pdf>] [25] [26] [27]
 Package epstopdf Info: Source file: <images/simple_zero.eps>
 (epstopdf)                    date: 2017-11-28 11:34:10
 (epstopdf)                    size: 16790 bytes
@@ -830,15 +830,15 @@ Package epstopdf Info: Source file: <images/simple_zero.eps>
 (epstopdf)                    size: 7088 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/simple_zero-eps-con
 verted-to.pdf images/simple_zero.eps>
-(epstopdf)             \includegraphics on input line 198.
+(epstopdf)             \includegraphics on input line 199.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/simple_zero-eps-converted-to.pdf, id=622, 1277.77374pt x 738.76pt>
+<images/simple_zero-eps-converted-to.pdf, id=651, 1277.77374pt x 738.76pt>
 File: images/simple_zero-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/simple_zero-eps-converted-to.pdf>
 Package pdftex.def Info: images/simple_zero-eps-converted-to.pdf used on input 
-line 198.
+line 199.
 (pdftex.def)             Requested size: 211.3883pt x 122.21704pt.
 Package epstopdf Info: Source file: <images/simple_ten.eps>
 (epstopdf)                    date: 2017-11-28 11:38:04
@@ -848,15 +848,15 @@ Package epstopdf Info: Source file: <images/simple_ten.eps>
 (epstopdf)                    size: 7086 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/simple_ten-eps-conv
 erted-to.pdf images/simple_ten.eps>
-(epstopdf)             \includegraphics on input line 204.
+(epstopdf)             \includegraphics on input line 205.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/simple_ten-eps-converted-to.pdf, id=623, 1277.77374pt x 738.76pt>
+<images/simple_ten-eps-converted-to.pdf, id=652, 1277.77374pt x 738.76pt>
 File: images/simple_ten-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/simple_ten-eps-converted-to.pdf>
 Package pdftex.def Info: images/simple_ten-eps-converted-to.pdf used on input l
-ine 204.
+ine 205.
 (pdftex.def)             Requested size: 211.3883pt x 122.21704pt.
 Package epstopdf Info: Source file: <images/simple_ex.eps>
 (epstopdf)                    date: 2017-11-28 11:42:19
@@ -866,42 +866,42 @@ Package epstopdf Info: Source file: <images/simple_ex.eps>
 (epstopdf)                    size: 57603 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/simple_ex-eps-conve
 rted-to.pdf images/simple_ex.eps>
-(epstopdf)             \includegraphics on input line 212.
+(epstopdf)             \includegraphics on input line 213.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/simple_ex-eps-converted-to.pdf, id=624, 440.64626pt x 346.29375pt>
+<images/simple_ex-eps-converted-to.pdf, id=653, 440.64626pt x 346.29375pt>
 File: images/simple_ex-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/simple_ex-eps-converted-to.pdf>
 Package pdftex.def Info: images/simple_ex-eps-converted-to.pdf used on input li
-ne 212.
+ne 213.
 (pdftex.def)             Requested size: 234.87749pt x 184.58632pt.
-) [27] [28 <./images/simple_zero-eps-converted-to.pdf> <./images/simple_ten-eps
--converted-to.pdf> <./images/simple_ex-eps-converted-to.pdf>] (./master.bbl (./
-master.brf)
+ [28] [29 <./images/simple_zero-eps-converted-to.pdf> <./images/simple_ten-eps-
+converted-to.pdf> <./images/simple_ex-eps-converted-to.pdf>] [30] [31] [32]) [3
+3] (./master.bbl (./master.brf)
 \tf@brf=\write7
 \openout7 = `master.brf'.
 
-) [29
+)
+[34
 
 
 
 ]
 \openout2 = `appendix/appendixa.aux'.
 
-
-(./appendix/appendixa.tex
+ (./appendix/appendixa.tex
 Appendix A.
 
-LaTeX Warning: Citation `aeyels86local' on page 30 undefined on input line 6.
+LaTeX Warning: Citation `aeyels86local' on page 35 undefined on input line 6.
 
-<images/some_pic.pdf, id=678, 706.64pt x 288.07625pt>
+<images/some_pic.pdf, id=767, 706.64pt x 288.07625pt>
 File: images/some_pic.pdf Graphic file (type pdf)
 
 <use images/some_pic.pdf>
 Package pdftex.def Info: images/some_pic.pdf used on input line 10.
 (pdftex.def)             Requested size: 211.3883pt x 86.17737pt.
-) [30
+) [35
 
 
  <./images/some_pic.pdf>]
@@ -910,7 +910,7 @@ Package pdftex.def Info: images/some_pic.pdf used on input line 10.
 
 (./appendix/appendixb.tex
 Appendix B.
-[31
+[36
 
 
 
@@ -918,7 +918,7 @@ Appendix B.
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
- [32]) [33]
+ [37]) [38]
 
 Package caption Warning: Unused \captionsetup[table] on input line 162.
 See the caption package documentation for explanation.
@@ -931,9 +931,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 8453E35B95F710FBA1C0E5FC091DF12B;2832.
+(rerunfilecheck)             Checksum: B359B6C6992BCB54A7E7EA37CB731491;3163.
 Package rerunfilecheck Info: File `master.brf' has not changed.
-(rerunfilecheck)             Checksum: A7E47DDB5CF662F0003CAC37135AB05F;325.
+(rerunfilecheck)             Checksum: 1D3F7AE5A5DC1606106A6C9EED75BE36;326.
 
 
 LaTeX Warning: There were undefined references.
@@ -946,10 +946,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 208.
 (\end occurred when \iffalse on line 190 was incomplete)
 (\end occurred when \iffalse on line 190 was incomplete) 
 Here is how much of TeX's memory you used:
- 8886 strings out of 494953
- 134882 string characters out of 6180977
- 225410 words of memory out of 5000000
- 11697 multiletter control sequences out of 15000+600000
+ 8942 strings out of 494953
+ 135608 string characters out of 6180977
+ 226272 words of memory out of 5000000
+ 11711 multiletter control sequences out of 15000+600000
  41353 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  53i,15n,92p,1665b,610s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -964,10 +964,10 @@ are/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on master.pdf (40 pages, 4728590 bytes).
+Output written on master.pdf (45 pages, 4742171 bytes).
 PDF statistics:
- 799 PDF objects out of 1000 (max. 8388607)
- 690 compressed objects within 7 object streams
- 200 named destinations out of 1000 (max. 500000)
- 405 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 898 PDF objects out of 1000 (max. 8388607)
+ 783 compressed objects within 8 object streams
+ 242 named destinations out of 1000 (max. 500000)
+ 437 words of extra memory for PDF output out of 10000 (max. 10000000)
 

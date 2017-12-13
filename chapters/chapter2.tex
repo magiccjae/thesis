@@ -155,15 +155,15 @@ If we solve for $\alpha_{az}^d$ and $\alpha_{el}^d$ as
 they become the gimbal commands to place the object of interest at the center of image.
 
 \subsection{Hardware Testing Result}
-The angle commanding control algorithm has been implemented and tested with simple hardware (see Figure \ref{gimbal_webcam}). The major hardware component includes BaseCam SimpleBGC 32-bit gimbal controller, a webcam, DYS 3-axis GoPro gimbal, and AS5048B magnetic rotary encoder attached to each rotating axis to get the exact gimbal angles. Note that in this hardware experiment, the roll axis of gimbal is always commanded to be zero to pan-tilt camera gimbal. The focal length of camera is known through the camera calibration process and the target pixel location is given by the color detection algorithm implemented using OpenCV \cite{itseez2015opencv}. The gimbal control algorithm is keeping the target, a line following ground robot, at the center of the camera field of view (see Figure \ref{gimbal_result}. Also, the result video can be found at \href{https://www.youtube.com/watch?v=OZ0Mg8AoAzk}{https://www.youtube.com/watch?v=OZ0Mg8AoAzk}). 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width = 3in]{images/chapter2/gimbal_webcam.jpg}
 	\caption{Prototype hardware to test gimbal control algorithm}
 	\label{gimbal_webcam}
 \end{figure}
+The angle commanding control algorithm has been implemented and tested with simple hardware (see Figure \ref{gimbal_webcam}). The major hardware component includes BaseCam SimpleBGC 32-bit gimbal controller, a webcam, DYS 3-axis GoPro gimbal, and AS5048B magnetic rotary encoder attached to each rotating axis to get the exact gimbal angles. Note that in this hardware experiment, the roll axis of gimbal is always commanded to be zero to pan-tilt camera gimbal. The focal length of camera is known through the camera calibration process and the target pixel location is given by the color detection algorithm implemented using OpenCV \cite{itseez2015opencv}. The gimbal control algorithm is keeping the target, a line following ground robot, at the center of the camera field of view (see Figure \ref{gimbal_result}. Also, the result video can be found at \href{https://www.youtube.com/watch?v=OZ0Mg8AoAzk}{https://www.youtube.com/watch?v=OZ0Mg8AoAzk}). 
 
-\begin{figure*}[t!]
+\begin{figure*}[t]
 	\centering
 	\begin{subfigure}{0.5\textwidth}
 		\centering
@@ -375,4 +375,34 @@ we can compute the desired angular rate on azimuth axis instead of cross-elevati
 	\caption{Angular velocity commanding gimbal controller block diagram}
 	\label{avcg_blockdiagram}
 \end{figure}
-The system block diagram of this controller can be found in Figure \ref{avcg_blockdiagram}. The controller presents the ideal control scheme for two axis inertially stabilized gimbal system, but it also presents some technical challenges such as estimating the depth to the target and the camera translational velocity. 
+The system block diagram of this controller can be found in Figure \ref{avcg_blockdiagram}. The controller presents the ideal control scheme for two axis inertially stabilized gimbal system, but it also presents some technical challenges such as estimating the depth to the target or estimating the camera translational velocity. The camera translational velocity can be either estimated by using the UAV velocity if available or be treated as disturbance. Estimating the depth can be handled using a laser range finder if available or geolocation technique or adaptive depth gimbal control algorithm which is elaborated in the next section.
+
+\section{Adaptive Depth Gimbal Control}
+The gimbal control algorithm in the previous section provides with a great way to keep a target of interest in the camera's field of view with gimbal azimuth and elevation incorporating control effort rather than decoupled controls for azimuth and elevation separately. On top of the framework established in the previous section, this section examines a way to remove the necessity of externally feeding the depth, $z$ term in the Image Jacobian equation (\ref{image_jacobian}). Instead, the controller estimates the depth online as a part of the controller while the control objective of pointing to the target is still being accomplished. This controller is inspired by a non-linear adaptive control technique called Model Reference Adaptive Control (MRAC).
+\subsection{Introduction}
+!!!!!!!!!!!!!!!!! HERE EXPLAIN MRAC BRIEFLY !!!!!!!!!
+\subsection{Derivation}
+Let's revisit the Image Jacobian matrix
+\begin{equation}
+\begin{bmatrix}
+\dot{u} \\ \dot{w}
+\end{bmatrix}
+=\begin{bmatrix}
+-\frac{\lambda}{z} & 0 & \frac{u}{z} & \frac{uw}{\lambda} & -\frac{\lambda^2+u^2}{\lambda} & w \\
+0 & -\frac{\lambda}{z} & \frac{w}{z} & \frac{\lambda^2+w^2}{\lambda} & -\frac{uw}{\lambda} & -u
+\end{bmatrix}
+\begin{bmatrix}
+v_{Cx} \\ v_{Cy} \\ v_{Cz} \\
+\omega_{Cx} \\ \omega_{Cy} \\ \omega_{Cz}
+\end{bmatrix}
+\end{equation}
+or for simplicity
+\begin{equation}
+\mathbf{\dot{s}}=L_v(u,w,z)\mathbf{v}_C+L_{\omega}(u,w)\mathbf{\omega}_C.
+\end{equation}
+Since we desire that the target is pushed to the center of image plane, the reference model can be set as 
+\begin{equation}
+\mathbf{\dot{s}}^{ref}=A_{ref}\mathbf{s}^{ref}
+\label{reference_model}
+\end{equation}
+where $\mathbf{s}=[u, w]^\top$ and $A^{ref}$ is Hurwitz or every eigenvalue of $A^{ref}$ has strictly negative real part. It is clear that the reference model in (\ref{reference_model}) is globally asymptotically stable. Manipulating the Image Jacobian matrix to be in more convenient form to develop the adaptive controller yields 

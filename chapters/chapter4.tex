@@ -8,7 +8,7 @@
 \end{figure}
 The UAV control algorithm introduced in the previous chapter is relatively simple and easy to implement. Anyone with sound understanding of projective camera geometry and frame transformation would not have difficult time to implement the algorithm. However, the controller makes strong assumption that can be unrealistic for some cases. It assumes that the line of sight (LOS) vector to the target and the optical axis lie on the same flat surface which is often called 'flat-earth assumption'. Then, the altitude of multirotor acts as scale factor that had been lost due to the projective camera model to compute how much the UAV has to move forward. An advanced UAV controller presented in this chapter overcomes the flat-earth assumption by working out with the unit LOS vector and unit optical axis vector (see Figure \ref{nonflatearth}). Also, the controller does not require the altitude of multirotor to be known because the scale factor does not have to be recovered.
 
-\section{Controller Derivation for Simple UAV dynamics}
+\section{Controller Derivation for Simple UAV Dynamics}
 \begin{figure}[thpb]
 	\centering
 	\framebox{\includegraphics[width=0.6\textwidth]{images/advanced_control_overview.pdf}}
@@ -18,7 +18,7 @@ The UAV control algorithm introduced in the previous chapter is relatively simpl
 
 As a process of developing an advanced control algorithm, we start with a simple vehicle dynamics as 
 \begin{equation}
-\ddot{z_v}=u_1
+\ddot{z}_v=u_1
 \end{equation}
 \begin{equation}
 \ddot{h}=u_2
@@ -28,10 +28,11 @@ Let the projection matrix onto the null space of $\hat{m}$ be
 \begin{align}
 P_{\hat{m}}&=(I-\hat{m}\hat{m}^\top)
 \\&=\begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}
--\begin{pmatrix} m_1 \\ m_2 \\ 0 \end{pmatrix}\begin{pmatrix} m_1 & m_2 & 0 \end{pmatrix}
-\\&=\begin{pmatrix}1-m_1^2 & -m_1m_2 & 0 \\ -m_1m_2 & 1-m_2^2 & 0 \\ 0 & 0 & 1 \end{pmatrix}
+-\begin{pmatrix} m_1 \\ 0 \\ -m_2 \end{pmatrix}\begin{pmatrix} m_1 & 0 & -m_2 \end{pmatrix}
+\\&=\begin{pmatrix}1-m_1^2 & 0 & m_1m_2 \\ 0 & 1 & 0 \\ m_1m_2 & 0 & 1-m_2^2 \end{pmatrix}.
 \label{p_mhat}
 \end{align}
+Note that the controller is developed as if the multirotor is in 3D plane even if we only show 2D dynamics.
 \begin{figure}[thpb]
 	\centering
 	\framebox{\includegraphics[width=0.2\textwidth]{images/projection.pdf}}
@@ -40,43 +41,43 @@ P_{\hat{m}}&=(I-\hat{m}\hat{m}^\top)
 \end{figure}
 The objective is to drive the horizontal component of $P_{\hat{m}}\hat{l}$ to zero. If we let
 \begin{equation}
-\hat{e_1}=[1 \quad 0 \quad 0]^\top,
+\hat{e}_1=[1 \quad 0 \quad 0]^\top,
 \label{e_1}
 \end{equation}
 the horizontal component of $P_{\hat{m}}\hat{l}$ which is denoted by $e_x$ can be expressed as
 \begin{equation}
-e_x=\hat{e_1}^{\top}P_{\hat{m}}\hat{l}.
+e_x=\hat{e}_1^{\top}P_{\hat{m}}\hat{l}.
 \end{equation}
 Note that since $\hat{m}$ is fixed and known and $\hat{l}$ is measured, $e_x$ can also be measured. Also, since $\dot{\hat{l}}$ can be approximated by differentiating numerically,
 \begin{equation}
-\dot{e_x}=\hat{e_1}^{\top}P_{\hat{m}}\dot{\hat{l}}
+\dot{e}_x=\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}}
 \label{exdot}
 \end{equation} is measurable.
 Meanwhile, the line of sight vector is
 \begin{equation}
 l=\begin{pmatrix} z_t \\ 0 \\ 0 \end{pmatrix}
--\begin{pmatrix} z_v \\ h \\ 0 \end{pmatrix}.
+-\begin{pmatrix} z_v \\ 0 \\ h \end{pmatrix}.
 \label{los}
 \end{equation}
 Differentiating the equation (\ref{los}) once and twice gives 
 \begin{equation}
-\dot{l}=\begin{pmatrix} \dot{z_t} \\ 0 \\ 0 \end{pmatrix}
--\begin{pmatrix} \dot{z_v} \\ \dot{h} \\ 0 \end{pmatrix}
+\dot{l}=\begin{pmatrix} \dot{z}_t \\ 0 \\ 0 \end{pmatrix}
+-\begin{pmatrix} \dot{z}_t \\ 0 \\ \dot{h} \end{pmatrix},
 \end{equation}
 \begin{equation}
-\ddot{l}=\begin{pmatrix} \ddot{z_t} \\ 0 \\ 0 \end{pmatrix}
--\begin{pmatrix} \ddot{z_v} \\ \ddot{h} \\ 0 \end{pmatrix}.
+\ddot{l}=\begin{pmatrix} \ddot{z}_t \\ 0 \\ 0 \end{pmatrix}
+-\begin{pmatrix} \ddot{z}_v \\ 0 \\ \ddot{h} \end{pmatrix}.
 \end{equation}
-Assuming that the acceleration of target is constant and the UAV altitude (ie $u_2=0$) is not changing yields
+Assuming that the velocity of target is constant and the UAV altitude (ie $u_2=0$) is not changing yields
 \begin{equation}
-\ddot{l}=\begin{pmatrix} -\ddot{z_v} \\ 0 \\ 0 \end{pmatrix}
+\ddot{l}=\begin{pmatrix} -\ddot{z}_v \\ 0 \\ 0 \end{pmatrix}
 =\begin{pmatrix} -u_1 \\ 0 \\ 0 \end{pmatrix}.
 \label{lddot}
 \end{equation}
 Thus, combining the equations (\ref{p_mhat}), (\ref{e_1}) and (\ref{lddot})
 results in 
 \begin{equation}
-\hat{e_1}^{\top}P_{\hat{m}}\ddot{l}=-(1-m_1^2)u_1.
+\hat{e}_1^{\top}P_{\hat{m}}\ddot{l}=-(1-m_1^2)u_1.
 \label{eplddot}
 \end{equation}
 Let
@@ -105,42 +106,42 @@ Plugging in for $\frac{\dot{l}}{L}=\dot{\hat{l}}+\hat{l}\bigg(\frac{\dot{L}}{L}\
 \end{equation}
 Differentiating the equation (\ref{exdot}) and plugging the equation (\ref{lhatddot}) for $\ddot{\hat{l}}$ yields
 \begin{align}
-\ddot{e_x}&=\hat{e_1}^{\top}P_{\hat{m}}\ddot{\hat{l}}
-\\&=\hat{e_1}^{\top}P_{\hat{m}}\bigg(\frac{\ddot{l}}{L}-2\dot{\hat{l}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{l}\bigg(\frac{\ddot{L}}{L}\bigg)\bigg)
-\\&=\frac{1}{L}(\hat{e_1}^{\top}P_{\hat{m}}\ddot{l})+\frac{\dot{L}}{L}(-2\hat{e_1}^{\top}P_{\hat{m}}\dot{\hat{l}})+\frac{\ddot{L}}{L}(-\hat{e_1}^{\top}P_{\hat{m}}\hat{l}).
+\ddot{e}_x&=\hat{e}_1^{\top}P_{\hat{m}}\ddot{\hat{l}}
+\\&=\hat{e}_1^{\top}P_{\hat{m}}\bigg(\frac{\ddot{l}}{L}-2\dot{\hat{l}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{l}\bigg(\frac{\ddot{L}}{L}\bigg)\bigg)
+\\&=\frac{1}{L}(\hat{e}_1^{\top}P_{\hat{m}}\ddot{l})+\frac{\dot{L}}{L}(-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}})+\frac{\ddot{L}}{L}(-\hat{e}_1^{\top}P_{\hat{m}}\hat{l}).
 \end{align}
 Substituting (\ref{eplddot}) for $\hat{e_1}^{\top}P_{\hat{m}}\ddot{l}$ results in  
 \begin{align}
-\ddot{e_x}&=-\frac{1}{L}(1-m_1^2)u_1+\frac{\dot{L}}{L}(-2\hat{e_1}^{\top}P_{\hat{m}}\dot{\hat{l}})+\frac{\ddot{L}}{L}(-\hat{e_1}^{\top}P_{\hat{m}}\hat{l})
+\ddot{e}_x&=-\frac{1}{L}(1-m_1^2)u_1+\frac{\dot{L}}{L}(-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}})+\frac{\ddot{L}}{L}(-\hat{e}_1^{\top}P_{\hat{m}}\hat{l})
 \\&=-\beta_1\phi_1u_1+\beta_2\phi_2+\beta_3\phi_3
 \label{exddot}
 \end{align} 
 where
 \begin{equation}
-\beta_1=\frac{1}{L},\; \beta_2=\frac{\dot{L}}{L}, \; \beta_3=\frac{\ddot{L}}{L}
+\beta_1=\frac{1}{L},\quad \beta_2=\frac{\dot{L}}{L}, \quad \beta_3=\frac{\ddot{L}}{L}
 \end{equation}
 and
 \begin{equation}
-\phi_1=1-m_1^2,\; \phi_2=-2\hat{e_1}^{\top}P_{\hat{m}}\dot{\hat{l}}, \; \phi_3=-\hat{e_1}^{\top}P_{\hat{m}}\hat{l}.
+\phi_1=1-m_1^2,\quad \phi_2=-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}}, \quad \phi_3=-\hat{e}_1^{\top}P_{\hat{m}}\hat{l}.
 \end{equation}
 Note that $\frac{1}{L}$, $\frac{\dot{L}}{L}$, and $\frac{\ddot{L}}{L}$ are unknown and not measurable whereas the rest of above equation is either known or measurable.
 
 In order to drive $e_x$ to zero, let's define
 \begin{equation}
-s=\dot{e_x}+ke_x
+s=\dot{e}_x+ke_x
 \label{s}
 \end{equation} where $k>0$. The reason why the equation (\ref{s}) is selected is because when $s\rightarrow0$, 
 \begin{equation}
-\dot{e_x}=-ke_x
-\end{equation} which makes $e_x$ asymptotically stable. Thus, if we can find the control input $u_1$ that makes $s\rightarrow0$, $e_x$ would converge to zero. Differentiating the equation (\ref{s}) and substituting (\ref{exddot}) for $\ddot{e_x}$ yields
+\dot{e}_x=-ke_x
+\end{equation} which makes $e_x$ asymptotically stable. Thus, if we can find the control input $u_1$ that makes $s\rightarrow0$, $e_x$ would converge to zero. Differentiating the equation (\ref{s}) and substituting (\ref{exddot}) for $\ddot{e}_x$ yields
 \begin{align}
-\dot{s}&=\ddot{e_x}+k\dot{e_x}
-\\&=-\beta_1\phi_1u_1+\beta_2\phi_2+\beta_3\phi_3+k\dot{e_x}.
+\dot{s}&=\ddot{e}_x+k\dot{e}_x
+\\&=-\beta_1\phi_1u_1+\beta_2\phi_2+\beta_3\phi_3+k\dot{e}_x.
 \label{sdot}
 \end{align}
 If we know $\beta_1$, $\beta_2$, and $\beta_3$, the ideal control input would be 
 \begin{equation}
-u_1=\frac{1}{\beta_1\phi_1}(\beta_2\phi_2+\beta_3\phi_3+k\dot{e_x}+\alpha s)
+u_1=\frac{1}{\beta_1\phi_1}(\beta_2\phi_2+\beta_3\phi_3+k\dot{e}_x+\alpha s)
 \end{equation}
 where $\alpha>0$.
 Then, 
@@ -150,15 +151,15 @@ Then,
 which makes $s$ asymptotically stable. 
 However, since we don't know $\beta_1$, $\beta_2$, and $\beta_3$, the actual control input would be 
 \begin{equation}
-u_1=\frac{1}{\hat{\beta_1}\phi_1}(\hat{\beta_2}\phi_2+\hat{\beta_3}\phi_3+k\dot{e_x}+\alpha s)
+u_1=\frac{1}{\hat{\beta}_1\phi_1}(\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3+k\dot{e}_x+\alpha s)
 \label{actualcontrol}
 \end{equation}
-where $\hat{\beta_1}$, $\hat{\beta_2}$, and $\hat{\beta_3}$ are the estimates of $\beta_1$, $\beta_2$, and $\beta_3$ respectively. Manipulating (\ref{sdot}) and plugging the actual control (\ref{actualcontrol}) in (\ref{sdot1}) results in
+where $\hat{\beta}_1$, $\hat{\beta}_2$, and $\hat{\beta}_3$ are the estimates of $\beta_1$, $\beta_2$, and $\beta_3$ respectively. Manipulating (\ref{sdot}) and plugging the actual control (\ref{actualcontrol}) in (\ref{sdot1}) results in
 \begin{align}
-\dot{s}&=-\beta_1\phi_1u_1+\hat{\beta_1}\phi_1u_1-\hat{\beta_1}\phi_1u_1+\beta_2\phi_2+\beta_3\phi_3+k\dot{e_x}
+\dot{s}&=-\beta_1\phi_1u_1+\hat{\beta}_1\phi_1u_1-\hat{\beta}_1\phi_1u_1+\beta_2\phi_2+\beta_3\phi_3+k\dot{e}_x
 \label{sdot1}
-\\&=-(\beta_1-\hat{\beta_1})\phi_1u_1+(\beta_2-\hat{\beta_2})\phi_2+(\beta_3-\hat{\beta_3})\phi_3-\alpha s
-\\&=-\tilde{\beta_1}\phi_1u_1+\tilde{\beta_2}\phi_2+\tilde{\beta_3}\phi_3-\alpha s
+\\&=-(\beta_1-\hat{\beta}_1)\phi_1u_1+(\beta_2-\hat{\beta}_2)\phi_2+(\beta_3-\hat{\beta}_3)\phi_3-\alpha s
+\\&=-\tilde{\beta}_1\phi_1u_1+\tilde{\beta}_2\phi_2+\tilde{\beta}_3\phi_3-\alpha s
 \\&=\tilde{B}^\top\Phi-\alpha s
 \label{sdot2}
 \end{align}
@@ -166,12 +167,12 @@ where
 \begin{equation}
 B=\begin{pmatrix}
 \beta_1 \\ \beta_2 \\ \beta_3
-\end{pmatrix}, \;
-\hat{B}=\begin{pmatrix} \hat{\beta_1} \\ \hat{\beta_2} \\ \hat{\beta_3} \end{pmatrix}, \;
-\tilde{B}=B-\hat{B}, \; 
+\end{pmatrix}, \quad
+\hat{B}=\begin{pmatrix} \hat{\beta}_1 \\ \hat{\beta}_2 \\ \hat{\beta}_3 \end{pmatrix}, \quad
+\tilde{B}=B-\hat{B}, \quad 
 \Phi=\begin{pmatrix} -\phi_1u_1 \\ \phi_2 \\ \phi_3 \end{pmatrix}.
 \end{equation}
-In order to show that $s$ in (\ref{s}) is asymptotically stable and the estimates $\hat{\beta_1}$, $\hat{\beta_2}$, and $\hat{\beta_3}$ are converging to their true values $\beta_1$, $\beta_2$, and $\beta_3$, a Lyapunov equation can be set as
+In order to show that $s$ in (\ref{s}) is asymptotically stable and the estimates $\hat{\beta}_1$, $\hat{\beta}_2$, and $\hat{\beta}_3$ are converging to their true values $\beta_1$, $\beta_2$, and $\beta_3$, a Lyapunov equation can be set as
 \begin{equation}
 V=\frac{1}{2}s^2+\frac{1}{2}\tilde{B}^\top \Gamma^{-1}\tilde{B}.
 \label{v}
@@ -213,3 +214,126 @@ which proves that $s$ is asymptotically stable. Thus, the original objective of 
 	\caption{The horizontal error between the unit LOS vector and the unit optical axis vector converges to zero.}
 	\label{simple_ex}
 \end{figure}
+
+\section{Backstepping Controller Derivation for Multirotor Dynamics}
+The multirotor dynamics expressed in vehicle-1 frame is given by 
+\begin{equation}
+\ddot{p}_x=-\cos\phi\sin\theta\frac{F}{m}
+\label{pxddot}
+\end{equation}
+\begin{equation}
+\ddot{p}_y=\sin\phi{F}{m}
+\end{equation}
+\begin{equation}
+\ddot{p}_z=g-\cos\phi\cos\theta\frac{F}{m}
+\end{equation}
+\begin{equation}
+\ddot{\phi}=\frac{1}{J_x}\tau_{\phi}
+\end{equation}
+\begin{equation}
+\ddot{\theta}=\frac{1}{J_y}\tau_{\theta}
+\label{thetaddot}
+\end{equation}
+\begin{equation}
+\ddot{\psi}=\frac{1}{J_z}\tau_{\psi}
+\end{equation}
+where $m$ is the mass of multirotor and $J_x$, $J_y$, and, $J_z$ are the moments of inertia. Also, $F$ and $\tau$ are force and torque produced by propellers. For our specific control interest, we are only concerned with forward and backward motion of the multirotor involving only the equation (\ref{pxddot}) and (\ref{thetaddot}). We also assume that the altitude of multirotor is under control with separate altitude controller and the roll of multirotor ($\phi$) is controlled to be zero which means that the multirotor is restricted to move sideways. When the target moves left or right, the multirotor yaws to keep the target in the camera's view and it is assumed that there is a controller for this. Applying the above conditions and using small angle approximation to linearize, the equation (\ref{pxddot}) becomes 
+\begin{equation}
+\ddot{p}_x=-\frac{F_e}{m}\theta
+\end{equation}
+where $F_e$ is the force to keep the multirotor hover when unrolled and unpitched. The line of sight vector is given by 
+\begin{equation}
+l=\begin{pmatrix}
+p_x^{tar} \\ 0 \\ 0
+\end{pmatrix}
+-\begin{pmatrix}
+p_x^{uav} \\ 0 \\ p_z^{uav}
+\end{pmatrix}.
+\label{l}
+\end{equation}
+Differentiating (\ref{l}) twice we get
+\begin{equation}
+\dot{l}=\begin{pmatrix}
+\dot{p}_x^{tar} \\ 0 \\ 0
+\end{pmatrix}
+-\begin{pmatrix}
+\dot{p}_x^{uav} \\ 0 \\ \dot{p}_z^{uav}
+\end{pmatrix},
+\label{ldot}
+\end{equation}
+\begin{equation}
+\ddot{l}=\begin{pmatrix}
+\ddot{p}_x^{tar} \\ 0 \\ 0
+\end{pmatrix}
+-\begin{pmatrix}
+\ddot{p}_x^{uav} \\ 0 \\ \ddot{p}_z^{uav}
+\end{pmatrix}.
+\label{lddot1}
+\end{equation}
+Referring back to (\ref{p_mhat}), (\ref{e_1}) and (\ref{lddot1}) we get 
+\begin{align}
+\hat{e_1}^{\top}P_{\hat{m}}\ddot{l}&=(1-m_1^2)(\ddot{p}_x^{tar}-\ddot{p}_x^{uav})+m_1m_2\ddot{p}_z^{uav}
+\\&=(1-m_1^2)\frac{F_e}{m}\theta
+\end{align}
+assuming that the multirotor keeps its altitude constant and the target does not accelerate. Notice that 
+\begin{equation}
+P_{\hat{m}}=\begin{pmatrix}1-m_1^2 & 0 & -m_1m_2 \\ 0 & 1 & 0 \\ -m_1m_2 & 0 & 1-m_2^2 \end{pmatrix}
+\end{equation}
+which is different from (\ref{p_mhat}) because now the $z$ component of the optical axis unit vector in vehicle-1 frame aligns with $z$ axis of the vehicle-1 frame. However, this turns out to not affect the controller derivation.  Again, the control objective is to drive $e_x$ to zero and this can be achieved by driving $s=\dot{e_x}+ke_x$ to zero.
+Recalling (\ref{exddot}) we get
+\begin{align}
+\ddot{e_x}&=\frac{1}{L}(1-m_1^2)\frac{F_e}{m}\theta+\frac{\dot{L}}{L}(-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}})+\frac{\ddot{L}}{L}(-\hat{e}_1^{\top}P_{\hat{m}}\hat{l})
+\\&=\beta_1\phi_1\frac{F_e}{m}\theta+\beta_2\phi_2+\beta_3\phi_3
+\label{exddot1}
+\end{align} 
+where
+\begin{equation}
+\beta_1=\frac{1}{L},\quad \beta_2=\frac{\dot{L}}{L}, \quad \beta_3=\frac{\ddot{L}}{L}
+\end{equation}
+and
+\begin{equation}
+\phi_1=1-m_1^2,\quad \phi_2=-2\hat{e_1}^{\top}P_{\hat{m}}\dot{\hat{l}}, \quad \phi_3=-\hat{e_1}^{\top}P_{\hat{m}}\hat{l}.
+\end{equation}
+Since we have all necessary components, we can get 
+\begin{align}
+\dot{s}&=\ddot{e_x}+k\dot{e_x}
+\\&=\beta_1\phi_1\frac{F_e}{m}\theta+\beta_2\phi_2+\beta_3\phi_3+k\dot{e_x}.
+\label{sdot3}
+\end{align}
+Manipulating (\ref{sdot3}) yields
+\begin{align}
+\dot{s}&=\beta_1\phi_1\frac{F_e}{m}\theta+\beta_2\phi_2+\beta_3\phi_3+k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3-\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\hat{\beta}_2\phi_2-\hat{\beta}_3\phi_3
+\\&=(\beta_1-\hat{\beta}_1)\phi_1\frac{F_e}{m}\theta+(\beta_2-\hat{\beta}_2)\phi_2+(\beta_3-\hat{\beta}_3)\phi_3+k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3
+\\&=\tilde{\beta}_1\phi_1\frac{F_e}{m}\theta+\tilde{\beta}_2\phi_2+\tilde{\beta}_3\phi_3+k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3
+\\&=\tilde{B}^\top\Phi+k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3
+\end{align}
+where 
+\begin{equation}
+B=\begin{pmatrix}
+\beta_1 \\ \beta_2 \\ \beta_3
+\end{pmatrix}, \quad
+\hat{B}=\begin{pmatrix} \hat{\beta}_1 \\ \hat{\beta}_2 \\ \hat{\beta}_3 \end{pmatrix}, \quad
+\tilde{B}=B-\hat{B}, \quad 
+\Phi=\begin{pmatrix} \phi_1\frac{F_e}{m}\theta \\ \phi_2 \\ \phi_3 \end{pmatrix}.
+\end{equation}
+A Lyapunov function candidate can be set as
+\begin{equation}
+V=\frac{1}{2}s^2+\frac{1}{2}\tilde{B}^\top \Gamma^{-1}\tilde{B}
+\label{v1}
+\end{equation}
+to prove that $s$ is asymptotically stable and $\tilde{B}$ is converging. Taking derivative of (\ref{v1}) gives
+\begin{align}
+\dot{V}_1&=s\dot{s}+\tilde{B}^\top \Gamma^{-1}\dot{\tilde{B}}
+\\&=s(\tilde{B}^\top\Phi+k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3)+\tilde{B}^\top \Gamma^{-1}\dot{\tilde{B}}
+\\&=s(k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3)+s\tilde{B}^\top\Phi+\tilde{B}^\top \Gamma^{-1}\dot{\tilde{B}}.
+\label{sdot4}
+\end{align}
+Assuming that $B$ is constant or slowly changing meaning $\dot{\tilde{B}}=-\dot{\hat{B}}$, the equation (\ref{sdot4}) becomes 
+\begin{equation}
+\dot{V}_1=s(k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3)+s\tilde{B}^\top\Phi-\tilde{B}^\top \Gamma^{-1}\dot{\hat{B}}.
+\end{equation}
+By selecting $\dot{\hat{B}}=s\Gamma\Phi$, the above equation further becomes 
+\begin{equation}
+\dot{V}_1=s(k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3).
+\end{equation}
+For some cases, $\theta$ is the direct control input that can be commanded making the problem less complicated. However, for the multirotor dynamics, $\theta$ is indirectly controlled by torque $\tau_\theta$ which leads to consider adopting Backstepping control technique. 

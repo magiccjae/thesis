@@ -15,21 +15,25 @@
 \contentsline {section}{\numberline {2.2}Angular Velocity Commanding Gimbal Control}{9}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Image Jacobian}{9}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Feedback Linearization-based Visual Pointing and Tracking}{11}{subsection.2.2.2}
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }UAV Control}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}UAV visual-servoing controller using projective camera geometry}{17}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Coordinate Frame Convention}{17}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Forward and heading motion control}{18}{subsection.3.1.2}
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Advanced UAV Control}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivation}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Controller Derivation for Simple UAV dynamics}{22}{section.4.2}
-\contentsline {chapter}{References}{29}{section*.21}
-\contentsline {chapter}{\numberline {Appendix\nobreakspace {}A\hspace {1em} }Making a Figure with Width Based on Page Size}{30}{appendix.A}
-\contentsline {section}{\numberline {A.1}Width Based on Page Size Figure Example}{30}{section.A.1}
-\contentsline {chapter}{\numberline {Appendix\nobreakspace {}B\hspace {1em} }Formatting Guidelines for Thesis}{31}{appendix.B}
-\contentsline {section}{\numberline {B.1}Font}{31}{section.B.1}
-\contentsline {section}{\numberline {B.2}Margins}{31}{section.B.2}
-\contentsline {section}{\numberline {B.3}Printing}{31}{section.B.3}
-\contentsline {section}{\numberline {B.4}Page Numbering}{31}{section.B.4}
-\contentsline {section}{\numberline {B.5}Spacing}{32}{section.B.5}
-\contentsline {section}{\numberline {B.6}Figures}{33}{section.B.6}
-\contentsline {section}{\numberline {B.7}Tables}{33}{section.B.7}
+\contentsline {section}{\numberline {2.3}Adaptive Depth Gimbal Control}{14}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Introduction}{15}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Derivation}{15}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }UAV Control}{18}{chapter.3}
+\contentsline {section}{\numberline {3.1}UAV visual-servoing controller using projective camera geometry}{18}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Coordinate Frame Convention}{18}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Forward and heading motion control}{19}{subsection.3.1.2}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Advanced UAV Control}{22}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{22}{section.4.1}
+\contentsline {section}{\numberline {4.2}Controller Derivation for Simple UAV Dynamics}{23}{section.4.2}
+\contentsline {section}{\numberline {4.3}Backstepping Controller Derivation for Multirotor Dynamics}{30}{section.4.3}
+\contentsline {chapter}{References}{34}{section*.21}
+\contentsline {chapter}{\numberline {Appendix\nobreakspace {}A\hspace {1em} }Making a Figure with Width Based on Page Size}{35}{appendix.A}
+\contentsline {section}{\numberline {A.1}Width Based on Page Size Figure Example}{35}{section.A.1}
+\contentsline {chapter}{\numberline {Appendix\nobreakspace {}B\hspace {1em} }Formatting Guidelines for Thesis}{36}{appendix.B}
+\contentsline {section}{\numberline {B.1}Font}{36}{section.B.1}
+\contentsline {section}{\numberline {B.2}Margins}{36}{section.B.2}
+\contentsline {section}{\numberline {B.3}Printing}{36}{section.B.3}
+\contentsline {section}{\numberline {B.4}Page Numbering}{36}{section.B.4}
+\contentsline {section}{\numberline {B.5}Spacing}{37}{section.B.5}
+\contentsline {section}{\numberline {B.6}Figures}{38}{section.B.6}
+\contentsline {section}{\numberline {B.7}Tables}{38}{section.B.7}
