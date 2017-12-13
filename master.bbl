@@ -40,4 +40,16 @@ M.~W. Spong, S.~Hutchinson, and M.~Vidyasagar, \emph{Robot modeling and
   control}.\hskip 1em plus 0.5em minus 0.4em\relax Wiley New York, 2006,
   vol.~3.
 
+\bibitem{Beard2008}
+R.~Beard, ``{Quadrotor Dynamics and Control Rev 0.1},'' 2008.
+
+\bibitem{khalil1996noninear}
+H.~K. Khalil, ``Noninear systems,'' \emph{Prentice-Hall, New Jersey}, vol.~2,
+  no.~5, pp. 5--1, 1996.
+
+\bibitem{raptis2010linear}
+I.~A. Raptis and K.~P. Valavanis, \emph{Linear and nonlinear control of
+  small-scale unmanned helicopters}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Springer Science \& Business Media, 2010, vol.~45.
+
 \end{thebibliography}

@@ -26,14 +26,14 @@
 \contentsline {section}{\numberline {4.1}Motivation}{22}{section.4.1}
 \contentsline {section}{\numberline {4.2}Controller Derivation for Simple UAV Dynamics}{23}{section.4.2}
 \contentsline {section}{\numberline {4.3}Backstepping Controller Derivation for Multirotor Dynamics}{30}{section.4.3}
-\contentsline {chapter}{References}{34}{section*.21}
-\contentsline {chapter}{\numberline {Appendix\nobreakspace {}A\hspace {1em} }Making a Figure with Width Based on Page Size}{35}{appendix.A}
-\contentsline {section}{\numberline {A.1}Width Based on Page Size Figure Example}{35}{section.A.1}
-\contentsline {chapter}{\numberline {Appendix\nobreakspace {}B\hspace {1em} }Formatting Guidelines for Thesis}{36}{appendix.B}
-\contentsline {section}{\numberline {B.1}Font}{36}{section.B.1}
-\contentsline {section}{\numberline {B.2}Margins}{36}{section.B.2}
-\contentsline {section}{\numberline {B.3}Printing}{36}{section.B.3}
-\contentsline {section}{\numberline {B.4}Page Numbering}{36}{section.B.4}
-\contentsline {section}{\numberline {B.5}Spacing}{37}{section.B.5}
-\contentsline {section}{\numberline {B.6}Figures}{38}{section.B.6}
-\contentsline {section}{\numberline {B.7}Tables}{38}{section.B.7}
+\contentsline {chapter}{References}{35}{section*.21}
+\contentsline {chapter}{\numberline {Appendix\nobreakspace {}A\hspace {1em} }Making a Figure with Width Based on Page Size}{36}{appendix.A}
+\contentsline {section}{\numberline {A.1}Width Based on Page Size Figure Example}{36}{section.A.1}
+\contentsline {chapter}{\numberline {Appendix\nobreakspace {}B\hspace {1em} }Formatting Guidelines for Thesis}{37}{appendix.B}
+\contentsline {section}{\numberline {B.1}Font}{37}{section.B.1}
+\contentsline {section}{\numberline {B.2}Margins}{37}{section.B.2}
+\contentsline {section}{\numberline {B.3}Printing}{37}{section.B.3}
+\contentsline {section}{\numberline {B.4}Page Numbering}{37}{section.B.4}
+\contentsline {section}{\numberline {B.5}Spacing}{38}{section.B.5}
+\contentsline {section}{\numberline {B.6}Figures}{39}{section.B.6}
+\contentsline {section}{\numberline {B.7}Tables}{39}{section.B.7}

@@ -216,7 +216,7 @@ which proves that $s$ is asymptotically stable. Thus, the original objective of 
 \end{figure}
 
 \section{Backstepping Controller Derivation for Multirotor Dynamics}
-The multirotor dynamics expressed in vehicle-1 frame is given by 
+The multirotor dynamics expressed in vehicle-1 frame \cite{Beard2008} is given by 
 \begin{equation}
 \ddot{p}_x=-\cos\phi\sin\theta\frac{F}{m}
 \label{pxddot}
@@ -335,5 +335,62 @@ Assuming that $B$ is constant or slowly changing meaning $\dot{\tilde{B}}=-\dot{
 By selecting $\dot{\hat{B}}=s\Gamma\Phi$, the above equation further becomes 
 \begin{equation}
 \dot{V}_1=s(k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3).
+\label{v1dot}
 \end{equation}
-For some cases, $\theta$ is the direct control input that can be commanded making the problem less complicated. However, for the multirotor dynamics, $\theta$ is indirectly controlled by torque $\tau_\theta$ which leads to the development of Backstepping control technique. 
+For some cases, $\theta$ is the direct control input that can be commanded making the problem less complicated. However, for the multirotor dynamics, $\theta$ is indirectly controlled by torque $\tau_\theta$ which leads to the development of backstepping control technique. The backstepping control is especially useful when the system has cascaded structure such as this multirotor case by using some of the state variables as pseudo controls to backstep until the final external control input is reached. While backstepping, a Lyapunov function is derived for the entire system for stability test \cite{khalil1996noninear}, \cite{raptis2010linear}. Thus, (\ref{v1dot}) needs to be backstepped until $\tau_\theta$ is reached. We start by adding and subtracting a pseudo control $\xi_1$ to the equation (\ref{v1dot}) as
+\begin{equation}
+\dot{V}_1=s(k\dot{e_x}+\hat{\beta}_1\phi_1\frac{F_e}{m}\theta+\hat{\beta}_2\phi_2+\hat{\beta}_3\phi_3+\xi_1-\xi_1).
+\end{equation}
+By selecting $\xi_1=-k\dot{e}_x-\hat{\beta}_2\phi_2-\hat{\beta}_3\phi_3-k_1s$, 
+\begin{equation}
+\dot{V}_1=-k_1s^2+ s(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1).
+\label{v2dot}
+\end{equation}
+Another Lyapunov function candidate can be tried to prove the stability of the second term in (\ref{v2dot}) as
+\begin{equation}
+V_2=V_1+\frac{1}{2}(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)^2.
+\label{v2}
+\end{equation}
+By taking derivative of (\ref{v2}), adding and subtracting a pseudo control $\xi_2$ for this step , we get
+\begin{align}
+\dot{V}_2&=\dot{V}_1+(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)(\phi_1\frac{F_e}{m}(\dot{\hat{\beta}}_1\theta+\hat{\beta}_1\dot{\theta})-\dot{\xi}_1)
+\\&=-k_1s^2+
+(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)
+(s+\phi_1\frac{F_e}{m}(\dot{\hat{\beta}}_1\theta+\hat{\beta}_1\dot{\theta})-\dot{\xi}_1+\xi_2-\xi_2).
+\end{align}
+Assigning $\xi_2=\dot{\xi}_1-s-\phi_1\frac{F_e}{m}\dot{\hat{\beta}}_1\theta-k_2(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)$ leads to
+\begin{equation}
+\dot{V}_2=-k_1s^2-k_2(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)^2+
+(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)
+(\phi_1\frac{F_e}{m}\hat{\beta}_1\dot{\theta}-\xi_2).
+\label{v2dotfinal}
+\end{equation}
+Finally, theh last Lyapunov function can be set as 
+\begin{equation}
+V_3=V_2+\frac{1}{2}(\phi_1\frac{F_e}{m}\hat{\beta}_1\dot{\theta}-\xi_2)^2.
+\label{v3}
+\end{equation}
+Differentiating (\ref{v3}) and plugging (\ref{v2dotfinal}) yields
+\begin{align}
+\dot{V}_3&=\dot{V}_2+
+(\phi_1\frac{F_e}{m}\hat{\beta}_1\dot{\theta}-\xi_2)
+(\phi_1\frac{F_e}{m}\dot{\hat{\beta}}_1\dot{\theta}+\phi_1\frac{F_e}{m}\hat{\beta}_1\ddot{\theta}-\dot{\xi}_2)
+\\&=-k_1s^2-k_2(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)^2+(\phi_1\frac{F_e}{m}\hat{\beta}_1\dot{\theta}-\xi_2)
+(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1+\phi_1\frac{F_e}{m}\dot{\hat{\beta}}_1\dot{\theta}+\phi_1\frac{F_e}{m}\hat{\beta}_1\ddot{\theta}-\dot{\xi}_2)
+\label{v3dot}
+\end{align}
+ Using the relationship between the angular acceleration and torque in (\ref{thetaddot}), the above equation becomes
+\begin{equation}
+\dot{V}_3=-k_1s^2-k_2(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)^2+(\phi_1\frac{F_e}{m}\hat{\beta}_1\dot{\theta}-\xi_2)
+(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1+\phi_1\frac{F_e}{m}\dot{\hat{\beta}}_1\dot{\theta}+\phi_1\frac{F_e}{m}\hat{\beta}_1\frac{1}{J_y}\tau_\theta-\dot{\xi}_2)
+\label{v3dotfinal}
+\end{equation}
+Notice that $\tau_\theta$ finally showed up in the equation (\ref{v3dotfinal}) which we can directly control. Thus, by setting 
+\begin{equation}
+\tau_\theta=\frac{J_ym}{\phi_1F_e\hat{\beta}_1}
+(\xi_1+\dot{\xi}_2-\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\phi_1\frac{F_e}{m}\dot{\hat{\beta}}_1\dot{\theta}-k_3(\phi_1\frac{F_e}{m}\hat{\beta}_1\dot{\theta}-\xi_2)),
+\end{equation}
+we can show that (\ref{v3dotfinal}) is asymptotically stable as
+\begin{equation}
+\dot{V}_3=-k_1s^2-k_2(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)^2-k_3(\phi_1\frac{F_e}{m}\hat{\beta}_1\dot{\theta}-\xi_2)^2.
+\end{equation}
