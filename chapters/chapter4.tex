@@ -2,7 +2,7 @@
 \section{Motivation}
 \begin{figure}[thpb]
 	\centering
-	\framebox{\includegraphics[width=0.6\textwidth]{images/advanced_control_motivation.pdf}}
+	\framebox{\includegraphics[width=0.6\textwidth]{images/chapter4/advanced_control_motivation.pdf}}
 	\caption{Non-flat-earth model example. The unit optical axis vector $\hat{m}$ and the unit line of sight vector $\hat{l}$ are key components of the controller presented in this chapter.}
 	\label{nonflatearth}
 \end{figure}
@@ -11,7 +11,7 @@ The UAV control algorithm introduced in the previous chapter is relatively simpl
 \section{Controller Derivation for Simple UAV Dynamics}
 \begin{figure}[thpb]
 	\centering
-	\framebox{\includegraphics[width=0.6\textwidth]{images/advanced_control_overview.pdf}}
+	\framebox{\includegraphics[width=0.6\textwidth]{images/chapter4/advanced_control_overview.pdf}}
 	\caption{Graphical overview of the problem}
 	\label{overview}
 \end{figure}
@@ -35,7 +35,7 @@ P_{\hat{m}}&=(I-\hat{m}\hat{m}^\top)
 Note that the controller is developed as if the multirotor is in 3D plane even if we only show 2D dynamics.
 \begin{figure}[thpb]
 	\centering
-	\framebox{\includegraphics[width=0.2\textwidth]{images/projection.pdf}}
+	\framebox{\includegraphics[width=0.2\textwidth]{images/chapter4/projection.pdf}}
 	\caption{Projection onto the null space of the optical axis unit vector}
 	\label{projection}
 \end{figure}
@@ -192,37 +192,59 @@ Finally, by choosing $\dot{\hat{B}}=s\Gamma\Phi$,
 \begin{equation}
 \dot{V}=-\alpha s^2
 \end{equation}
-which proves that $s$ is asymptotically stable. Thus, the original objective of stabilizing $e_x$ is achieved. This control scheme is simulated in Simulink and the result shows that the above controller is valid (See Figure \ref{simple_simulation} and \ref{simple_ex}).
+which proves that $s$ is asymptotically stable. Thus, the original objective of stabilizing $e_x$ is achieved. This control scheme is simulated in Simulink and the result shows that the above controller is valid after some gain tuning process (See Figure \ref{simple_simulation} and \ref{another_simple_simulation}). 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{images/simple_zero}
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/chapter4/simple_zero}
 		\caption{when $t=0$}
 	\end{subfigure}
 	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
 	%(or a blank line to force the subfigure onto a new line)
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{images/simple_ten}
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/chapter4/simple_ten}
 		\caption{when $t=10$}
 	\end{subfigure}
-	\caption{Simple UAV dynamics visual servoing Simulink simulation. The blue square is flying UAV at constant altitude and the red square is a target on the ground moving at $5m/s$}\label{fig:animals}
+	\begin{subfigure}[b]{0.8\linewidth}
+		\centering
+		\includegraphics[width=0.5\textwidth]{images/chapter4/simple_ex}
+		\caption{The horizontal error between the unit LOS vector and the unit optical axis vector converges to zero.}
+	\end{subfigure}	
+	\caption{Simple UAV dynamics visual servoing Simulink simulation. The blue square is flying UAV at constant altitude and the red square is a target on the ground moving at $5m/s$. The initial UAV and target positions are [-10, 15] and [20, 0] respectively. Tuning parameters are set to $k=1$, $\Gamma=I_3$ (identity matrix), and $\alpha=1000$.}
 	\label{simple_simulation}
 \end{figure}
-\begin{figure}[thpb]
+
+\begin{figure}
 	\centering
-	\framebox{\includegraphics[width=0.5\textwidth]{images/simple_ex}}
-	\caption{The horizontal error between the unit LOS vector and the unit optical axis vector converges to zero.}
-	\label{simple_ex}
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/chapter4/another_simple_zero}
+		\caption{when $t=0$}
+	\end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/chapter4/another_simple_ten}
+		\caption{when $t=10$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.8\linewidth}
+		\centering
+		\includegraphics[width=0.5\textwidth]{images/chapter4/another_simple_ex}
+		\caption{The horizontal error between the unit LOS vector and the unit optical axis vector converges to zero.}
+	\end{subfigure}	
+	\caption{Simple UAV dynamics visual servoing Simulink simulation. The blue square is flying UAV at constant altitude and the red square is a target on the ground moving at $-5m/s$. The initial UAV and target positions are [10, 15] and [-10, 0] respectively. Tuning parameters are set to $k=1$, $\Gamma=I_3$ (identity matrix), and $\alpha=1000$.}
+	\label{another_simple_simulation}
 \end{figure}
 
+
 \section{Backstepping Controller Derivation for Multirotor Dynamics}
+\subsection{Derivation}
 The multirotor dynamics expressed in vehicle-1 frame \cite{Beard2008} is given by 
 \begin{equation}
 \ddot{p}_x=-\cos\phi\sin\theta\frac{F}{m}
 \label{pxddot}
 \end{equation}
 \begin{equation}
-\ddot{p}_y=\sin\phi{F}{m}
+\ddot{p}_y=\sin\phi\frac{F}{m}
 \end{equation}
 \begin{equation}
 \ddot{p}_z=g-\cos\phi\cos\theta\frac{F}{m}
@@ -292,7 +314,7 @@ where
 \end{equation}
 and
 \begin{equation}
-\phi_1=1-m_1^2,\quad \phi_2=-2\hat{e_1}^{\top}P_{\hat{m}}\dot{\hat{l}}, \quad \phi_3=-\hat{e_1}^{\top}P_{\hat{m}}\hat{l}.
+\phi_1=1-m_1^2,\quad \phi_2=-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}}, \quad \phi_3=-\hat{e}_1^{\top}P_{\hat{m}}\hat{l}.
 \end{equation}
 Since we have all necessary components, we can get 
 \begin{align}
@@ -394,3 +416,6 @@ we can show that (\ref{v3dotfinal}) is asymptotically stable as
 \begin{equation}
 \dot{V}_3=-k_1s^2-k_2(\hat{\beta}_1\phi_1\frac{F_e}{m}\theta-\xi_1)^2-k_3(\phi_1\frac{F_e}{m}\hat{\beta}_1\dot{\theta}-\xi_2)^2.
 \end{equation}
+
+\subsection{Simulation}
+The backstepping control algorithm derived above is simulated in Simulink with more realistic multirotor dynamics that can be found in {\cite{Beard2008}}. The simulation only tests the forward motion control of the multirotor by having separate PID controller to keep roll and yaw motions unmoved. There are two types of backstepping controller tested. The first is using the inertial LOS vector and normalize it to get the unit LOS vector. This is rather unrealistic because it is usually not feasible to know the target location in inertial frame to get the inertial LOS vector. However, this is still tested as an intermediate step and is used to test the validity of the backstepping control algorithm itself. The second backstepping controller is actually to simulate the hardware demonstration. When the multirotor is equipped with monocular camera only, the multirotor has no other way to know where the target is relative to itself but through the information received from the camera. Thus, the second controller is only using the camera information (target pixel location) to control the multirotor. 

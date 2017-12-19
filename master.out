@@ -29,14 +29,16 @@
 \BOOKMARK [1][-]{section.4.1}{4.1 Motivation}{chapter.4}% 29
 \BOOKMARK [1][-]{section.4.2}{4.2 Controller Derivation for Simple UAV Dynamics}{chapter.4}% 30
 \BOOKMARK [1][-]{section.4.3}{4.3 Backstepping Controller Derivation for Multirotor Dynamics}{chapter.4}% 31
-\BOOKMARK [0][-]{section*.21}{References}{}% 32
-\BOOKMARK [0][-]{appendix.A}{Appendix A \040 Making a Figure with Width Based on Page Size}{}% 33
-\BOOKMARK [1][-]{section.A.1}{A.1 Width Based on Page Size Figure Example}{appendix.A}% 34
-\BOOKMARK [0][-]{appendix.B}{Appendix B \040 Formatting Guidelines for Thesis}{}% 35
-\BOOKMARK [1][-]{section.B.1}{B.1 Font}{appendix.B}% 36
-\BOOKMARK [1][-]{section.B.2}{B.2 Margins}{appendix.B}% 37
-\BOOKMARK [1][-]{section.B.3}{B.3 Printing}{appendix.B}% 38
-\BOOKMARK [1][-]{section.B.4}{B.4 Page Numbering}{appendix.B}% 39
-\BOOKMARK [1][-]{section.B.5}{B.5 Spacing}{appendix.B}% 40
-\BOOKMARK [1][-]{section.B.6}{B.6 Figures}{appendix.B}% 41
-\BOOKMARK [1][-]{section.B.7}{B.7 Tables}{appendix.B}% 42
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Derivation}{section.4.3}% 32
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Simulation}{section.4.3}% 33
+\BOOKMARK [0][-]{section*.21}{References}{}% 34
+\BOOKMARK [0][-]{appendix.A}{Appendix A \040 Making a Figure with Width Based on Page Size}{}% 35
+\BOOKMARK [1][-]{section.A.1}{A.1 Width Based on Page Size Figure Example}{appendix.A}% 36
+\BOOKMARK [0][-]{appendix.B}{Appendix B \040 Formatting Guidelines for Thesis}{}% 37
+\BOOKMARK [1][-]{section.B.1}{B.1 Font}{appendix.B}% 38
+\BOOKMARK [1][-]{section.B.2}{B.2 Margins}{appendix.B}% 39
+\BOOKMARK [1][-]{section.B.3}{B.3 Printing}{appendix.B}% 40
+\BOOKMARK [1][-]{section.B.4}{B.4 Page Numbering}{appendix.B}% 41
+\BOOKMARK [1][-]{section.B.5}{B.5 Spacing}{appendix.B}% 42
+\BOOKMARK [1][-]{section.B.6}{B.6 Figures}{appendix.B}% 43
+\BOOKMARK [1][-]{section.B.7}{B.7 Tables}{appendix.B}% 44
