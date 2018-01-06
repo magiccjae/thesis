@@ -380,7 +380,13 @@ The system block diagram of this controller can be found in Figure \ref{avcg_blo
 \section{Adaptive Depth Gimbal Control}
 The gimbal control algorithm in the previous section provides with a great way to keep a target of interest in the camera's field of view with gimbal azimuth and elevation incorporating control effort rather than decoupled controls for azimuth and elevation separately. On top of the framework established in the previous section, this section examines a way to remove the necessity of externally feeding the depth, $z$ term in the Image Jacobian equation (\ref{image_jacobian}). Instead, the controller estimates the depth online as a part of the controller while the control objective of pointing to the target is still being accomplished. This controller is inspired by a non-linear adaptive control technique called Model Reference Adaptive Control (MRAC).
 \subsection{Introduction}
-!!!!!!!!!!!!!!!!! HERE EXPLAIN MRAC BRIEFLY !!!!!!!!!
+Model Reference Adaptive Control (MRAC) is a useful control scheme to stabilize dynamical systems even when there are unknown parameters in the system. A general MRAC closed-loop block diagram can be found in \ref{MRAC_blockdiagram} \cite{Lavretsky2013}. In designing of MRAC system, it is required to have a reference model and we desire that the actual system behaves as similar as it can to the reference model. An adaptive law works on online parameter adaptation using the error between the reference model output and the system output, external command, and the system output. Finally, the controller computes the command for the plant using the adjusted parameters, external command, and the system output. 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width = 5in]{images/chapter2/MRAC.pdf}
+	\caption{An MRAC closed-loop block diagram}
+	\label{MRAC_blockdiagram}
+\end{figure}
 \subsection{Derivation}
 Let's revisit the Image Jacobian matrix
 \begin{equation}
@@ -394,7 +400,8 @@ Let's revisit the Image Jacobian matrix
 \begin{bmatrix}
 v_{Cx} \\ v_{Cy} \\ v_{Cz} \\
 \omega_{Cx} \\ \omega_{Cy} \\ \omega_{Cz}
-\end{bmatrix}
+\end{bmatrix}\\
+\label{image_jacobian4}
 \end{equation}
 or for simplicity
 \begin{equation}
@@ -402,7 +409,76 @@ or for simplicity
 \end{equation}
 Since we desire that the target is pushed to the center of image plane, the reference model can be set as 
 \begin{equation}
-\mathbf{\dot{s}}^{ref}=A_{ref}\mathbf{s}^{ref}
+\mathbf{\dot{s}}^{ref}=A\mathbf{s}^{ref}
 \label{reference_model}
 \end{equation}
-where $\mathbf{s}=[u, w]^\top$ and $A^{ref}$ is Hurwitz or every eigenvalue of $A^{ref}$ has strictly negative real part. It is clear that the reference model in (\ref{reference_model}) is globally asymptotically stable. Manipulating the Image Jacobian matrix to be in more convenient form to develop the adaptive controller yields 
+where $\mathbf{s}=[u, w]^\top$ and $A$ is Hurwitz or every eigenvalue of $A$ has strictly negative real part. It is clear that the reference model in (\ref{reference_model}) is globally asymptotically stable. From the image jacobian matrix, $\mathbf{\omega}_C$ is the control input because it is common situation to track the target with gimbal movement rather than platform movement. Thus, the equation (\ref{image_jacobian4}) can be manipulated into more convenient form for MRAC design as 
+\begin{align}
+\mathbf{\dot{s}}
+&=\frac{1}{z}
+\begin{bmatrix}
+-\lambda v_{Cx}+uv_{Cz} \\
+-\lambda v_{Cy}+wv_{Cz} \\
+\end{bmatrix}
++\begin{bmatrix}
+\frac{uw}{\lambda} & -\frac{\lambda^2+u^2}{\lambda} & w \\
+\frac{\lambda^2+w^2}{\lambda} & -\frac{uw}{\lambda} & -u
+\end{bmatrix}
+\begin{bmatrix}
+\omega_{Cx} \\ \omega_{Cy} \\ \omega_{Cz}
+\end{bmatrix}
+\\&=\beta\varphi + L_{\omega}U
+\label{adaptive_image_jacobian}
+\end{align}
+where $U$ is the control input and $\beta$ is the uncertain parameter. If it is supposed that $\beta$ is known, the ideal control input would be
+\begin{equation}
+U=L_\omega^\sharp(-\beta\varphi+K\mathbf{s})
+\end{equation}
+where $L_\omega^\sharp$ is the right pseudoinverse of $L_\omega$ and $K$ is negative definite matrix that the designer chooses. Then, the subsequent dynamics would become
+\begin{equation}
+\mathbf{\dot{s}}=K\mathbf{s}
+\end{equation}
+which is globally asymptotically stable system. However, since $\beta$ is unknown and needs to be adapted, more realistic control input is
+\begin{equation}
+U=L_\omega^\sharp(-\hat{\beta}\varphi+K\mathbf{s})
+\end{equation}
+where $\hat{\beta}$ is the estimate of $\beta$. Plugging this control input into the equation (\ref{adaptive_image_jacobian}) gives
+\begin{align}
+\mathbf{\dot{s}}&=\beta\varphi-\hat{\beta}\varphi+K\mathbf{s}
+\\&= \tilde{\beta}\varphi+K\mathbf{s}
+\end{align}
+where $\tilde{\beta}=\beta-\hat{\beta}$. Let the error defined as 
+\begin{equation}
+\mathbf{e}=\mathbf{s}-\mathbf{s}^{ref}.
+\end{equation}
+Taking derivative and equating $K$ to $A$ gives
+\begin{align}
+\dot{\mathbf{e}}&=\dot{\mathbf{s}}-\dot{\mathbf{s}}^{ref}
+\\&=\tilde{\beta}\varphi+K\mathbf{s}-A\mathbf{s}^{ref}
+\\&=\tilde{\beta}\varphi+A\mathbf{e}.
+\end{align}
+Using the variables of interest, a Lyapunov function candidate can be constructed as 
+\begin{equation}
+V=\frac{1}{2}\mathbf{e}^\top\mathbf{e}+\frac{1}{2\gamma_\beta}\tilde{\beta}^2.
+\end{equation}
+Taking derivative yields
+\begin{align}
+\dot{V}&=\mathbf{e}^\top\dot{\mathbf{e}}+\frac{1}{\gamma_\beta}\tilde{\beta}\dot{\tilde{\beta}}
+\\&=\mathbf{e}^\top(\tilde{\beta}\varphi+A\mathbf{e})+\frac{1}{\gamma_\beta}\tilde{\beta}\dot{\tilde{\beta}}.
+\label{vdot2}
+\end{align}
+Assuming that the inverse depth $\beta$ is constant or slowly moving ($\dot{\beta}=0$, $\dot{\tilde{\beta}}=-\dot{\hat{\beta}}$), the above equation becomes
+\begin{align}
+\dot{V}&=\mathbf{e}^\top(\tilde{\beta}\varphi+A\mathbf{e})-\frac{1}{\gamma_\beta}\tilde{\beta}\dot{\hat{\beta}}
+\\&=\mathbf{e}^\top A\mathbf{e}+\tilde{\beta}(\mathbf{e}^\top\varphi-\frac{\dot{\hat{\beta}}}{\gamma_\beta}).
+\end{align}
+Since $\dot{\hat{\beta}}$ is a design parameter, its value can be picked as 
+\begin{equation}
+\dot{\hat{\beta}}=\gamma_\beta\mathbf{e}^\top\varphi.
+\end{equation}
+Then, the equation (\ref{vdot2}) becomes
+\begin{equation}
+\dot{V}=\mathbf{e}^\top A\mathbf{e}.
+\end{equation}
+Recalling that $A$ is Hurwitz, the asymptotic stability of the system is proved.
+\subsection{Simulation}

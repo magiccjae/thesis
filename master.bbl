@@ -40,6 +40,14 @@ M.~W. Spong, S.~Hutchinson, and M.~Vidyasagar, \emph{Robot modeling and
   control}.\hskip 1em plus 0.5em minus 0.4em\relax Wiley New York, 2006,
   vol.~3.
 
+\bibitem{Lavretsky2013}
+\BIBentryALTinterwordspacing
+E.~Lavretsky and K.~A. Wise, \emph{State Feedback Direct Model Reference
+  Adaptive Control}.\hskip 1em plus 0.5em minus 0.4em\relax London: Springer
+  London, 2013, pp. 263--292. [Online]. Available:
+  \url{https://doi.org/10.1007/978-1-4471-4396-3_9}
+\BIBentrySTDinterwordspacing
+
 \bibitem{Beard2008}
 R.~Beard, ``{Quadrotor Dynamics and Control Rev 0.1},'' 2008.
 
