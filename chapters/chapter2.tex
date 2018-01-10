@@ -3,14 +3,14 @@
 \graphicspath{{figures/}{figures/chapter2/}}
 Gimbal is a widely used device for flying drones with camera because it stabilizes the camera from vibration and movement of the platform. Stabilizing camera is important in order to take high-quality, smooth videos and photos. For this reason, most of high-end commercial drones are equipped with gimbal. For autonomous systems, gimbal becomes more important because it adds maneuverability to the camera to provide with more visual awareness and to keep the object of interest in the camera field of view. There are two ways to keep the object of interest in the camera field of view: First, when we know the relative location of the target to the camera. Second, when we know the target location in image. For many practical applications, it is not feasible to assume that we know the target location in global frame. Thus, image-based gimbal control becomes more practical and realistic way to achieve the goal. In this chapter, we introduce multiple image-based gimbal control schemes.
 
-\begin{figure*}[t]
+\begin{figure*}[htbp]
     \centering
     \begin{subfigure}[t]{0.5\textwidth}
     	\centering
     	\includegraphics[width=2in]{images/chapter2/gimbal1_frame}
     	\caption{Top view to show the relationship between body frame and gimbal-1 frame}
     \end{subfigure}%
-    ~ 
+    ~
     \begin{subfigure}[t]{0.5\textwidth}
     	\centering
     	\includegraphics[width=2in]{images/chapter2/gimbal_frame}
@@ -58,7 +58,7 @@ R^{g}_b(\alpha_{az}, \alpha_{el}) = R^g_{g1}(\alpha_{az})R^{g1}_b(\alpha_{el}) =
 \label{eq3}
 \end{equation}
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 3.5in]{images/chapter2/camera_frame}
 	\caption{Camera frame and visual aid for projective camera model}
@@ -155,15 +155,16 @@ If we solve for $\alpha_{az}^d$ and $\alpha_{el}^d$ as
 they become the gimbal commands to place the object of interest at the center of image.
 
 \subsection{Hardware Testing Result}
-\begin{figure}[t]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 3in]{images/chapter2/gimbal_webcam.jpg}
 	\caption{Prototype hardware to test gimbal control algorithm}
 	\label{gimbal_webcam}
 \end{figure}
+
 The angle commanding control algorithm has been implemented and tested with simple hardware (see Figure \ref{gimbal_webcam}). The major hardware component includes BaseCam SimpleBGC 32-bit gimbal controller, a webcam, DYS 3-axis GoPro gimbal, and AS5048B magnetic rotary encoder attached to each rotating axis to get the exact gimbal angles. Note that in this hardware experiment, the roll axis of gimbal is always commanded to be zero to pan-tilt camera gimbal. The focal length of camera is known through the camera calibration process and the target pixel location is given by the color detection algorithm implemented using OpenCV \cite{itseez2015opencv}. The gimbal control algorithm is keeping the target, a line following ground robot, at the center of the camera field of view (see Figure \ref{gimbal_result}. Also, the result video can be found at \href{https://www.youtube.com/watch?v=OZ0Mg8AoAzk}{https://www.youtube.com/watch?v=OZ0Mg8AoAzk}). 
 
-\begin{figure*}[t]
+\begin{figure*}[htbp]
 	\centering
 	\begin{subfigure}{0.5\textwidth}
 		\centering
@@ -198,7 +199,7 @@ The angle commanding control algorithm has been implemented and tested with simp
 \section{Angular Velocity Commanding Gimbal Control}
 In the previous section, a relatively simple gimbal control algorithm is presented. One disadvantage of it is that it does not take the camera velocity into consideration. When gimbal is mounted on a stationary platform, the angle commanding controller can perform without any performance degradation. However, if the gimbal is mounted on UAV, taking the camera velocity into account in the controller becomes important. The work in \cite{Hurak2012} addresses this issue and derives the control algorithm that overcomes the issue. This angular velocity commanding gimbal control algorithm is presented briefly in this section because some of the concepts in this section introduces important background for the next section. 
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 3in]{images/chapter2/cross_elevation.pdf}
 	\caption{Elevation and cross-elevation axis}
@@ -369,7 +370,7 @@ we can compute the desired angular rate on azimuth axis instead of cross-elevati
 \begin{equation}
 \omega_{AZ}^{ref}=\frac{1}{\cos \theta}\bigg(\frac{-\lambda^2 v_x+\lambda v_z u+\lambda \alpha uz +uwv_y -w^2 v_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_{Ex}w}{\lambda}\bigg).
 \end{equation}
-\begin{figure}[t]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 5in]{images/chapter2/gp_blockdiagram.pdf}
 	\caption{Angular velocity commanding gimbal controller block diagram}
@@ -380,8 +381,8 @@ The system block diagram of this controller can be found in Figure \ref{avcg_blo
 \section{Adaptive Depth Gimbal Control}
 The gimbal control algorithm in the previous section provides with a great way to keep a target of interest in the camera's field of view with gimbal azimuth and elevation incorporating control effort rather than decoupled controls for azimuth and elevation separately. On top of the framework established in the previous section, this section examines a way to remove the necessity of externally feeding the depth, $z$ term in the Image Jacobian equation (\ref{image_jacobian}). Instead, the controller estimates the depth online as a part of the controller while the control objective of pointing to the target is still being accomplished. This controller is inspired by a non-linear adaptive control technique called Model Reference Adaptive Control (MRAC).
 \subsection{Introduction}
-Model Reference Adaptive Control (MRAC) is a useful control scheme to stabilize dynamical systems even when there are unknown parameters in the system. A general MRAC closed-loop block diagram can be found in \ref{MRAC_blockdiagram} \cite{Lavretsky2013}. In designing of MRAC system, it is required to have a reference model and we desire that the actual system behaves as similar as it can to the reference model. An adaptive law works on online parameter adaptation using the error between the reference model output and the system output, external command, and the system output. Finally, the controller computes the command for the plant using the adjusted parameters, external command, and the system output. 
-\begin{figure}[t]
+Model Reference Adaptive Control (MRAC) is a useful control scheme to stabilize dynamical systems even when there are unknown parameters in the system. A general MRAC closed-loop block diagram can be found in Figure \ref{MRAC_blockdiagram} \cite{Lavretsky2013}. In designing of MRAC system, it is required to have a reference model and we desire that the actual system behaves as similar as it can to the reference model. An adaptive law works on online parameter adaptation using the error between the reference model output and the system output, external command, and the system output. Finally, the controller computes the command for the plant using the adjusted parameters, external command, and the system output. 
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 5in]{images/chapter2/MRAC.pdf}
 	\caption{An MRAC closed-loop block diagram}
@@ -438,7 +439,7 @@ where $L_\omega^\sharp$ is the right pseudoinverse of $L_\omega$ and $K$ is nega
 \begin{equation}
 \mathbf{\dot{s}}=K\mathbf{s}
 \end{equation}
-which is globally asymptotically stable system. However, since $\beta$ is unknown and needs to be adapted, more realistic control input is
+which is globally asymptotically stable system. However, since $\beta$ is unknown quantity and needs to be adapted, more realistic control input is
 \begin{equation}
 U=L_\omega^\sharp(-\hat{\beta}\varphi+K\mathbf{s})
 \end{equation}
@@ -482,3 +483,36 @@ Then, the equation (\ref{vdot2}) becomes
 \end{equation}
 Recalling that $A$ is Hurwitz, the asymptotic stability of the system is proved.
 \subsection{Simulation}
+First, the behavior of reference model is set as the equation (\ref{reference_model}) with starting image coordinates at $[0, 0]$ meaning that the reference model is $[0, 0]$ over time. The objective of the MRAC controller is to drive the actual image dynamics with unknown quantity $z$ as close as it can to the reference model. In simulation, a square image with 800 pixel width and height is used. The camera field of view is set to 60 degree and one pixel is set to one millimeter. Thus, we can obtain the focal length and image width in meter metric. The initial image coordinates are randomly selected and these coordinates are expected to converge to the origin as the reference model. In reality, the depth $z$ is varying quantity because of the movement of the camera on UAV and the target. However, in this simulation $z$ is initialized to any value between 30 and 300, and is changing with increment either 2 or -2 every second. In order to simulate the translational velocity of the UAV, $v_{Cx}$ and $v_{Cy}$ are initialized to zeros and changing with increment either 2 or -2 every other seconds. $v_{Cz}$ is kept zero assuming that the camera is not directly flying into nor away from the target. Figure \ref{adaptive_result} shows that the controller keeps the target in the center of image which is the primary objective. Figure \ref{adaptive_command} presents the angular velocity commands computed by the adaptive depth gimbal controller and the depth estimation. Based on the observation of Figure \ref{adaptive_command}, the estimation of uncertain parameters seem to be guaranteed to converge to the true value. However, note that this is rather special case than normal case. In normal cases, only uniform boundness of the uncertain parameters is guaranteed \cite{Lavretsky2013}. 
+\begin{figure*}[htbp]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/chapter2/u_adaptive}
+		\caption{Reference image coordinate $u_{ref}$ and the system output $u$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/chapter2/w_adaptive}
+		\caption{Reference image coordinate $w_{ref}$ and the system output $w$}
+	\end{subfigure}
+	\caption{The simulation result for the adaptive depth gimbal control. The system output $u$ and $w$ are converging to the reference model output $u_{ref}$ and $w_{ref}$.}
+	\label{adaptive_result}
+\end{figure*}
+
+\begin{figure*}[htbp]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/chapter2/angular_velocity_adaptive}
+		\caption{Angular velocity commands of the controller.}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/chapter2/z_adaptive}
+		\caption{$\hat{z}$ is estimated online.}
+	\end{subfigure}
+	\caption{Angular velocity commands of the adaptive depth gimbal controller. Note that only two commands are actively used as if it is a pan-tilt gimbal. The depth $z$ estimation using the adaptive law of the MRAC.}
+	\label{adaptive_command}
+\end{figure*}
+
