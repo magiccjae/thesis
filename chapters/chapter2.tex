@@ -505,14 +505,85 @@ First, the behavior of reference model is set as the equation (\ref{reference_mo
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{images/chapter2/angular_velocity_adaptive}
-		\caption{Angular velocity commands of the controller.}
+		\caption{Angular velocity commands of the controller}
 	\end{subfigure}%
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{images/chapter2/z_adaptive}
-		\caption{$\hat{z}$ is estimated online.}
+		\caption{Online depth estimation, $\hat{z}$}
 	\end{subfigure}
 	\caption{Angular velocity commands of the adaptive depth gimbal controller. Note that only two commands are actively used as if it is a pan-tilt gimbal. The depth $z$ estimation using the adaptive law of the MRAC.}
 	\label{adaptive_command}
 \end{figure*}
 
+In addition, this gimbal control is simulated on a multirotor equipped with a pan-tilt gimbal. The multirotor is moving and suppose that its translational velocity is available. Also, the target is moving on the ground. The adaptive depth gimbal controller takes the pixel location of the target from a camera of $30Hz$ frame rate and its goal is to push the target to the center of image. The simulated multirotor and camera view are presented in Figure \ref{uav_adaptive}. Additional information regarding the simulation can be found in Figure \ref{uav_adaptive_additional}. This is rather typical case of MRAC, meeting the control objective without guarantee for uncertain parameter converging to its true value. 
+
+\begin{figure*}[htbp]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{images/chapter2/uav_adaptive_0s}
+		\caption{Multirotor at $t=0s$. The blue star indicates the desired multirotor position for the position PID controller for moving camera platform.}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{images/chapter2/camera_adaptive_0s}
+		\caption{Camera view at $t=0s$}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{images/chapter2/uav_adaptive_60s}
+		\caption{Multirotor at $t=60s$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{images/chapter2/camera_adaptive_60s}
+		\caption{Camera view at $t=60s$}
+	\end{subfigure}	
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{images/chapter2/uav_adaptive_120s}
+		\caption{Multirotor at $t=120s$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{images/chapter2/camera_adaptive_120s}
+		\caption{Camera view at $t=120s$}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{images/chapter2/uav_adaptive_180s}
+		\caption{Multirotor at $t=180s$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{images/chapter2/camera_adaptive_180s}
+		\caption{Camera view at $t=180s$}
+	\end{subfigure}					
+	\caption{Multirotor simulation with camera view. The gimbal pointing objective is well achieved.}
+	\label{uav_adaptive}
+\end{figure*}
+
+\begin{figure*}[htbp]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/chapter2/uav_z}
+		\caption{Depth $z$ and its estimate $\hat{z}$. Uncertain parameter converging to true value is not guaranteed.}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/chapter2/uav_gimbal_command}
+		\caption{Angular velocity gimbal azimuth and elevation commands}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/chapter2/uav_pixel}
+		\caption{Pixel value $u$ and $w$. They are well kept around the center of the image.}
+	\end{subfigure}	
+	\caption{Uncertain parameter estimation, gimbal angular velocity commands from the controller, and where target lies in the image.}
+	\label{uav_adaptive_additional}
+\end{figure*}
+
+\subsection{Hardware}
+The adaptive depth gimbal controller is tested with custom hardware. 

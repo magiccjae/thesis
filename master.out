@@ -22,24 +22,25 @@
 \BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Introduction}{section.2.3}% 22
 \BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Derivation}{section.2.3}% 23
 \BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 Simulation}{section.2.3}% 24
-\BOOKMARK [0][-]{chapter.3}{Chapter 3 \040 UAV Control}{}% 25
-\BOOKMARK [1][-]{section.3.1}{3.1 UAV visual-servoing controller using projective camera geometry}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Coordinate Frame Convention}{section.3.1}% 27
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Forward and heading motion control}{section.3.1}% 28
-\BOOKMARK [0][-]{chapter.4}{Chapter 4 \040 Advanced UAV Control}{}% 29
-\BOOKMARK [1][-]{section.4.1}{4.1 Motivation}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.2}{4.2 Controller Derivation for Simple UAV Dynamics}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.3}{4.3 Backstepping Controller Derivation for Multirotor Dynamics}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Derivation}{section.4.3}% 33
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Simulation}{section.4.3}% 34
-\BOOKMARK [0][-]{section*.32}{References}{}% 35
-\BOOKMARK [0][-]{appendix.A}{Appendix A \040 Making a Figure with Width Based on Page Size}{}% 36
-\BOOKMARK [1][-]{section.A.1}{A.1 Width Based on Page Size Figure Example}{appendix.A}% 37
-\BOOKMARK [0][-]{appendix.B}{Appendix B \040 Formatting Guidelines for Thesis}{}% 38
-\BOOKMARK [1][-]{section.B.1}{B.1 Font}{appendix.B}% 39
-\BOOKMARK [1][-]{section.B.2}{B.2 Margins}{appendix.B}% 40
-\BOOKMARK [1][-]{section.B.3}{B.3 Printing}{appendix.B}% 41
-\BOOKMARK [1][-]{section.B.4}{B.4 Page Numbering}{appendix.B}% 42
-\BOOKMARK [1][-]{section.B.5}{B.5 Spacing}{appendix.B}% 43
-\BOOKMARK [1][-]{section.B.6}{B.6 Figures}{appendix.B}% 44
-\BOOKMARK [1][-]{section.B.7}{B.7 Tables}{appendix.B}% 45
+\BOOKMARK [2][-]{subsection.2.3.4}{2.3.4 Hardware}{section.2.3}% 25
+\BOOKMARK [0][-]{chapter.3}{Chapter 3 \040 UAV Control}{}% 26
+\BOOKMARK [1][-]{section.3.1}{3.1 UAV visual-servoing controller using projective camera geometry}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Coordinate Frame Convention}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Forward and heading motion control}{section.3.1}% 29
+\BOOKMARK [0][-]{chapter.4}{Chapter 4 \040 Advanced UAV Control}{}% 30
+\BOOKMARK [1][-]{section.4.1}{4.1 Motivation}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.2}{4.2 Controller Derivation for Simple UAV Dynamics}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.3}{4.3 Backstepping Controller Derivation for Multirotor Dynamics}{chapter.4}% 33
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Derivation}{section.4.3}% 34
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Simulation}{section.4.3}% 35
+\BOOKMARK [0][-]{section*.34}{References}{}% 36
+\BOOKMARK [0][-]{appendix.A}{Appendix A \040 Making a Figure with Width Based on Page Size}{}% 37
+\BOOKMARK [1][-]{section.A.1}{A.1 Width Based on Page Size Figure Example}{appendix.A}% 38
+\BOOKMARK [0][-]{appendix.B}{Appendix B \040 Formatting Guidelines for Thesis}{}% 39
+\BOOKMARK [1][-]{section.B.1}{B.1 Font}{appendix.B}% 40
+\BOOKMARK [1][-]{section.B.2}{B.2 Margins}{appendix.B}% 41
+\BOOKMARK [1][-]{section.B.3}{B.3 Printing}{appendix.B}% 42
+\BOOKMARK [1][-]{section.B.4}{B.4 Page Numbering}{appendix.B}% 43
+\BOOKMARK [1][-]{section.B.5}{B.5 Spacing}{appendix.B}% 44
+\BOOKMARK [1][-]{section.B.6}{B.6 Figures}{appendix.B}% 45
+\BOOKMARK [1][-]{section.B.7}{B.7 Tables}{appendix.B}% 46
