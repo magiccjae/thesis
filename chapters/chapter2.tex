@@ -578,7 +578,7 @@ In addition, this gimbal control is simulated on a multirotor equipped with a pa
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/chapter2/uav_pixel}
+		\includegraphics[width=\linewidth]{images/chapter2/uav_pixel}
 		\caption{Pixel value $u$ and $w$. They are well kept around the center of the image.}
 	\end{subfigure}	
 	\caption{Uncertain parameter estimation, gimbal angular velocity commands from the controller, and where target lies in the image.}
@@ -586,4 +586,73 @@ In addition, this gimbal control is simulated on a multirotor equipped with a pa
 \end{figure*}
 
 \subsection{Hardware}
-The adaptive depth gimbal controller is tested with custom hardware. 
+The adaptive depth gimbal controller is tested with custom pan-tilt gimbal shown in Figure \ref{gimbal}. The gimbal consists of uEye UI-3250-LE-C-HQ camera, BaseCam SimpleBGC 32-bit gimbal controller, CUI AMT203 ABS SPI encoder, Quanum 4008 precision brushless gimbal motor, and 3D printed housing (See Figure \ref{gimbal_parts}). The system block diagram can be found in Figure \ref{gimbal_blockdiagram}. The Arduino acts as a communication bridge by receiving the current azimuth and elevation angle from the encoder and pass them to onboard computer. Also, it passes the angular velocity commands from the onboard computer to the gimbal controller. A tracking algorithm running on the onboard computer receives image from the camera and outputs the pixel location of the target. The onboard computer also runs the controller that computes the gimbal angular velocity and passes it to the Arduino.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height = 3in]{images/chapter2/gimbal.jpg}
+	\caption{A custom pan-tilt camera gimbal}
+	\label{gimbal}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{images/chapter2/gimbal_parts.png}
+	\caption{A custom pan-tilt camera gimbal}
+	\label{gimbal_parts}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{images/chapter2/gimbal_system_blockdiagram}
+	\caption{Custom gimbal block diagram}
+	\label{gimbal_blockdiagram}
+\end{figure}
+A series of snapshots that shows the gimbal pointing result with the custom hardware and the adaptive depth gimbal controller can be found in Figure \ref{gimbal_hardware_result}. Also, a video showing the same result can be seen at \href{https://www.youtube.com/watch?v=VMfvQkhD9-o}{https://www.youtube.com/watch?v=VMfvQkhD9-o}. In this particular result, the camera is static which means that $v_{C}$ is set to zeros.
+\begin{figure*}[htbp]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=6cm]{images/chapter2/gimbal_hardware_1.png}
+		\caption{At $t=0s$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=6cm]{images/chapter2/gimbal_hardware_2.png}
+		\caption{At $t=10s$}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=6cm]{images/chapter2/gimbal_hardware_3.png}
+		\caption{At $t=20s$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=6cm]{images/chapter2/gimbal_hardware_4.png}
+		\caption{At $t=30s$}
+	\end{subfigure}	
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=6cm]{images/chapter2/gimbal_hardware_5.png}
+		\caption{At $t=40s$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[height=6cm]{images/chapter2/gimbal_hardware_6.png}
+		\caption{At $t=50s$}
+	\end{subfigure}	
+	\caption{Adaptive depth gimbal control result on the custom-built hardware.}
+	\label{gimbal_hardware_result}
+\end{figure*}
+
+\section{Conclusion}
+There is a few controller options when it is desired to keep the target in the camera field of view using gimbal. Depending on whether the camera is moving or stationary, either angle commanding gimbal control (ACGC) or angular velocity commanding gimbal control (AVCGC) can be used. The advantage of the ACGC is easy to implement and does not require the depth information. The AVCGC is expected to perform better than ACGC on a moving camera since the AVCGC take the moving platform into account. However, the AVCGC requires to know the depth $z$ term externally. When there is no way to measure or estimate the depth $z$ term reliably, the adaptive depth gimbal control (ADGC) can be used. A summary is shown in Table \ref{gimbal_summary}.
+\begin{table}[htbp]
+	\begin{tabular}{ |c|c|c| } 
+		\hline
+		ACGC & AVCGC & ADGC \\
+		\hline
+		Easy to implement & Designed for moving camera & Designed for moving camera \\ 
+		Designed for static camera & Requires to know the depth $z$ & Works without knowing $z$ \\  
+		\hline
+	\end{tabular}
+	\caption{Summary of gimbal control schemes}
+	\label{gimbal_summary}
+\end{table}

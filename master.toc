@@ -19,25 +19,26 @@
 \contentsline {subsection}{\numberline {2.3.1}Introduction}{16}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Derivation}{17}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Simulation}{20}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Hardware}{20}{subsection.2.3.4}
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }UAV Control}{24}{chapter.3}
-\contentsline {section}{\numberline {3.1}UAV visual-servoing controller using projective camera geometry}{24}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Coordinate Frame Convention}{24}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Forward and heading motion control}{25}{subsection.3.1.2}
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Advanced UAV Control}{28}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivation}{28}{section.4.1}
-\contentsline {section}{\numberline {4.2}Controller Derivation for Simple UAV Dynamics}{29}{section.4.2}
-\contentsline {section}{\numberline {4.3}Backstepping Controller Derivation for Multirotor Dynamics}{35}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Derivation}{35}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Simulation}{41}{subsection.4.3.2}
-\contentsline {chapter}{References}{49}{section*.34}
-\contentsline {chapter}{\numberline {Appendix\nobreakspace {}A\hspace {1em} }Making a Figure with Width Based on Page Size}{50}{appendix.A}
-\contentsline {section}{\numberline {A.1}Width Based on Page Size Figure Example}{50}{section.A.1}
-\contentsline {chapter}{\numberline {Appendix\nobreakspace {}B\hspace {1em} }Formatting Guidelines for Thesis}{51}{appendix.B}
-\contentsline {section}{\numberline {B.1}Font}{51}{section.B.1}
-\contentsline {section}{\numberline {B.2}Margins}{51}{section.B.2}
-\contentsline {section}{\numberline {B.3}Printing}{51}{section.B.3}
-\contentsline {section}{\numberline {B.4}Page Numbering}{51}{section.B.4}
-\contentsline {section}{\numberline {B.5}Spacing}{52}{section.B.5}
-\contentsline {section}{\numberline {B.6}Figures}{53}{section.B.6}
-\contentsline {section}{\numberline {B.7}Tables}{53}{section.B.7}
+\contentsline {subsection}{\numberline {2.3.4}Hardware}{21}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}Conclusion}{26}{section.2.4}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }UAV Control}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}UAV visual-servoing controller using projective camera geometry}{27}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Coordinate Frame Convention}{27}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Forward and heading motion control}{28}{subsection.3.1.2}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Advanced UAV Control}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{31}{section.4.1}
+\contentsline {section}{\numberline {4.2}Controller Derivation for Simple UAV Dynamics}{32}{section.4.2}
+\contentsline {section}{\numberline {4.3}Backstepping Controller Derivation for Multirotor Dynamics}{38}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Derivation}{38}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Simulation}{44}{subsection.4.3.2}
+\contentsline {chapter}{References}{52}{section*.39}
+\contentsline {chapter}{\numberline {Appendix\nobreakspace {}A\hspace {1em} }Making a Figure with Width Based on Page Size}{53}{appendix.A}
+\contentsline {section}{\numberline {A.1}Width Based on Page Size Figure Example}{53}{section.A.1}
+\contentsline {chapter}{\numberline {Appendix\nobreakspace {}B\hspace {1em} }Formatting Guidelines for Thesis}{54}{appendix.B}
+\contentsline {section}{\numberline {B.1}Font}{54}{section.B.1}
+\contentsline {section}{\numberline {B.2}Margins}{54}{section.B.2}
+\contentsline {section}{\numberline {B.3}Printing}{54}{section.B.3}
+\contentsline {section}{\numberline {B.4}Page Numbering}{54}{section.B.4}
+\contentsline {section}{\numberline {B.5}Spacing}{55}{section.B.5}
+\contentsline {section}{\numberline {B.6}Figures}{56}{section.B.6}
+\contentsline {section}{\numberline {B.7}Tables}{56}{section.B.7}
