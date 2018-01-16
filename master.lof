@@ -2,7 +2,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Frames of interest: body frame, gimbal-1 frame, and gimbal frame\relax }}{2}{figure.caption.7}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Camera frame and visual aid for projective camera model\relax }}{4}{figure.caption.8}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Prototype hardware to test gimbal control algorithm\relax }}{7}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Prototype hardware to test the gimbal control algorithm\relax }}{7}{figure.caption.9}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Hardware demonstration. The gimbal control algorithm is keeping the target object at the center of the camera field of view.\relax }}{8}{figure.caption.10}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Elevation and cross-elevation axis\relax }}{9}{figure.caption.11}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Angular velocity commanding gimbal controller block diagram\relax }}{13}{figure.caption.12}
