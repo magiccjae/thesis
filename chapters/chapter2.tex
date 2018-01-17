@@ -22,7 +22,7 @@ Gimbals are widely used device for flying drones with a camera because they stab
 
 \section{Angle Commanding Gimbal Control}
 \subsection{Coordinate Frame Convention and Projective Camera Geometry}
-Before giving a detailed explanation of the gimbal control algorithms, we describe the coordinate frame convention and projective camera geometry. Note that the coordinate frame convention follows the convention from chapter 13 of \cite{beard2012 small}. We assume that the origins of the gimbal and camera frames are at the center of mass (COM) of the UAV. This is a reasonable assumption because the distance between the camera, gimbal and UAV COM is negligible compared to the distance between the UAV COM and the target. Also, note that all coordinate frames and the direction of rotation follow the right-hand rule. There are four frames of interests: the body frame of the UAV denoted by $\mathcal{F}^b=(x^{b}, y^{b}, z^{b})$, the gimbal-1 frame denoted by $\mathcal{F}^{g1}=(x^{g1}, y^{g1}, z^{g1})$, the gimbal frame denoted by $\mathcal{F}^{g}=(x^{g}, y^{g}, z^{g})$, and the camera frame denoted by $\mathcal{F}^{c}=(x^{c}, y^{c}, z^{c})$. The gimbal-1 frame can be obtained by rotating $\mathcal{F}^b$ about $z^{b}$ axis by $\alpha_{az}$ which we call the gimbal azimuth angle. The gimbal frame can be obtained by rotating $\mathcal{F}^{g1}$ about $y^{g1}$ by $\alpha_{el}$ which we call the gimbal elevation angle. Note that pointing the gimbal toward the ground is a negative elevation angle (See Fig. \ref{gimbal_frame}). The camera frame is defined so that the $z^{c}$ axis points along the optical axis. Thus, the rotation from body frame to gimbal-1 frame can be expressed as
+Before giving a detailed explanation of the gimbal control algorithms, we describe the coordinate frame convention and projective camera geometry. Note that the coordinate frame convention follows the convention from chapter 13 of \cite{beard2012small}. We assume that the origins of the gimbal and camera frames are at the center of mass (COM) of the UAV. This is a reasonable assumption because the distance between the camera, gimbal and UAV COM is negligible compared to the distance between the UAV COM and the target. Also, note that all coordinate frames and the direction of rotation follow the right-hand rule. There are four frames of interests: the body frame of the UAV denoted by $\mathcal{F}^b=(x^{b}, y^{b}, z^{b})$, the gimbal-1 frame denoted by $\mathcal{F}^{g1}=(x^{g1}, y^{g1}, z^{g1})$, the gimbal frame denoted by $\mathcal{F}^{g}=(x^{g}, y^{g}, z^{g})$, and the camera frame denoted by $\mathcal{F}^{c}=(x^{c}, y^{c}, z^{c})$. The gimbal-1 frame can be obtained by rotating $\mathcal{F}^b$ about $z^{b}$ axis by $\alpha_{az}$ which we call the gimbal azimuth angle. The gimbal frame can be obtained by rotating $\mathcal{F}^{g1}$ about $y^{g1}$ by $\alpha_{el}$ which we call the gimbal elevation angle. Note that pointing the gimbal toward the ground is a negative elevation angle (See Fig. \ref{gimbal_frame}). The camera frame is defined so that the $z^{c}$ axis points along the optical axis. Thus, the rotation from body frame to gimbal-1 frame can be expressed as
 
 \begin{equation}
 R^{g1}_b(\alpha_{az}) = \begin{bmatrix}
@@ -212,7 +212,7 @@ A full derivation of getting Image Jacobian matrix (often called interaction mat
 \mathbf{\xi}=[{\mathbf{v}^c}^\top, {\mathbf{\omega}^c}^\top]^\top.
 \label{camera_velocity}
 \end{equation}
-Let $\theta$ be the elevation angle, and let $\psi$ be the azimuth angle. Also, following the convention in Figure \ref{camera_frame}, 
+Let $\alpha_{el}$ be the elevation angle, and let $\alpha_{az}$ be the azimuth angle. Also, following the convention in Figure \ref{camera_frame}, 
 \begin{equation}
 R^{g}_c =
 \begin{bmatrix}
@@ -265,12 +265,12 @@ where $z$ is the depth along the optical axis to the target, and $\lambda$ is th
 It is worth noting that only the translational term depends on the target depth $z$. 
 
 \subsection{Feedback Linearization-based Visual Pointing and Tracking}
-The control objective is to drive an image feature to the center of the image. The horizontal error can be eliminated by moving two axis gimbal motors attached on azimuth and elevation axis. Moving only the azimuth axis cannot fully compensate for the horizontal error because it only indirectly affects $z^g$ axis which is often referred as cross-elevation axis $CEL$ (see Figure \ref{cross_elevation}). Thus, some vertical error is introduced and it needs to be compensated by moving the elevation at next time step. However, the key idea of the controller is that by exploiting $\omega_x^g$ term which is the angular velocity along the optical axis, we can find the azimuth and elevation commands for the same time step that smoothly compensates for the horizontal error without introducing the vertical error. Let the error in the image plane be
+The control objective is to drive an image feature to the center of the image. The horizontal error can be eliminated by moving two axis gimbal motors attached on azimuth and elevation axis. Moving only the azimuth axis cannot fully compensate for the horizontal error because it only indirectly affects $z^g$ axis which is often referred as cross-elevation axis $cel$ (see Figure \ref{cross_elevation}). Thus, some vertical error is introduced and it needs to be compensated by moving the elevation at next time step. However, the key idea of the controller is that by exploiting $\omega_x^g$ term which is the angular velocity along the optical axis, we can find the azimuth and elevation commands for the same time step that smoothly compensates for the horizontal error without introducing the vertical error. Let the error in the image plane be
 \begin{equation}
 e(t)=s(t)-s^{ref}
 \label{image_feature_error}
 \end{equation}
-where $s^{ref}=[0, 0]^\top$ to push the image feature to the image center. We would like to drive $e(t)$ to zeros by controlling the elevation angular velocity $\omega_{EL}=\omega_y^g$ and the azimuth angular velocity $\omega_{AZ}=\frac{\omega_z^g}{\cos \theta}$. Re-arranging equation (\ref{image_jacobian1}) gives
+where $s^{ref}=[0, 0]^\top$ to push the image feature to the image center. We would like to drive $e(t)$ to zeros by controlling the elevation angular velocity $\omega_{EL}=\omega_y^g$ and the azimuth angular velocity $\omega_{az}=\frac{\omega_z^g}{\cos \alpha_{el}}$. Re-arranging equation (\ref{image_jacobian1}) gives
 \begin{equation}
 L_{\omega}(u,w)\mathbf{\omega}^c=\dot{s}-L_v(u,w,z)\mathbf{v}^c.
 \label{image_jacobian2}
@@ -352,18 +352,18 @@ k=uv_y-wv_x+\frac{z(\lambda^2+u^2+w^2)}{\lambda}\omega_x^g
 \end{equation}
 where $\omega_x^g$ must be measured from a sensor such as a MEMS gyro attached to the camera. Substituting for $k$ in ${\omega_y^g}^{ref}$ and ${\omega_z^g}^{ref}$ from the equation (\ref{angular_rate_ref_elevation}) with (\ref{k}) gives
 \begin{equation}
-\omega_{EL}^{ref}={\omega_y^g}^{ref}=\frac{\lambda^2 v_y-\lambda v_z w -\lambda \alpha wz+u^2 v_y-uwv_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_x^g u}{\lambda}
+\omega_{el}^{ref}={\omega_y^g}^{ref}=\frac{\lambda^2 v_y-\lambda v_z w -\lambda \alpha wz+u^2 v_y-uwv_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_x^g u}{\lambda}
 \end{equation}
 \begin{equation}
-\omega_{CEL}^{ref}={\omega_z^g}^{ref}=\frac{-\lambda^2 v_x+\lambda v_z u+\lambda \alpha uz +uwv_y -w^2 v_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_x^g w}{\lambda}.
+\omega_{cel}^{ref}={\omega_z^g}^{ref}=\frac{-\lambda^2 v_x+\lambda v_z u+\lambda \alpha uz +uwv_y -w^2 v_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_x^g w}{\lambda}.
 \end{equation}
 Using the relationship 
 \begin{equation}
-\omega_{AZ}=\frac{1}{\cos\theta}\omega_{CEL},
+\omega_{az}=\frac{1}{\cos\alpha_{el}}\omega_{cel},
 \end{equation}
 we can compute the desired angular rate on the azimuth axis as
 \begin{equation}
-\omega_{AZ}^{ref}=\frac{1}{\cos \theta}\bigg(\frac{-\lambda^2 v_x+\lambda v_z u+\lambda \alpha uz +uwv_y -w^2 v_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_x^g w}{\lambda}\bigg).
+\omega_{az}^{ref}=\frac{1}{\cos \alpha_{el}}\bigg(\frac{-\lambda^2 v_x+\lambda v_z u+\lambda \alpha uz +uwv_y -w^2 v_x}{z(\lambda^2+u^2+w^2)}+\frac{\omega_x^g w}{\lambda}\bigg).
 \end{equation}
 \begin{figure}[htbp]
 	\centering
@@ -374,9 +374,10 @@ we can compute the desired angular rate on the azimuth axis as
 The system block diagram of this controller is shown in Figure \ref{avcg_blockdiagram}. The controller presents the ideal control scheme for a two axis inertially stabilized gimbal system, but it also presents some technical challenges such as estimating the depth to the target or estimating the camera translational velocity. The camera translational velocity can be either estimated by using the UAV velocity if available or be treated as a disturbance. Estimating the depth can be handled using a laser range finder if available or geolocation technique. Another option is to use the novel adaptive depth gimbal control algorithm that we introduce in the next section.
 
 \section{Adaptive Depth Gimbal Control}
-The gimbal control algorithm in the previous section provides with a great way to keep a target of interest in the camera's field of view with gimbal azimuth and elevation incorporating control effort rather than decoupled controls for azimuth and elevation separately. On top of the framework established in the previous section, this section examines a way to remove the necessity of externally feeding the depth, $z$ term in the Image Jacobian equation (\ref{image_jacobian}). Instead, the controller estimates the depth online as a part of the controller while the control objective of pointing to the target is still being accomplished. This controller is inspired by a non-linear adaptive control technique called Model Reference Adaptive Control (MRAC).
+The gimbal control algorithm in the previous section provides a method to keep a target of interest in the camera's field of view with gimbal azimuth and elevation control. However, the target depth $z$ is required to complete the Jacobian (\ref{image_jacobian}). This section examines a strategy to remove this requirement by estimating the depth online. This controller is derived using Model Reference Adaptive Control (MRAC).
+
 \subsection{Introduction}
-Model Reference Adaptive Control (MRAC) is a useful control scheme to stabilize dynamical systems even when there are unknown parameters in the system. A general MRAC closed-loop block diagram can be found in Figure \ref{MRAC_blockdiagram} \cite{Lavretsky2013}. In designing of MRAC system, it is required to have a reference model and we desire that the actual system behaves as similar as it can to the reference model. An adaptive law works on online parameter adaptation using the error between the reference model output and the system output, external command, and the system output. Finally, the controller computes the command for the plant using the adjusted parameters, external command, and the system output. 
+Model Reference Adaptive Control (MRAC) is a useful control scheme to stabilize dynamical systems even when there are unknown parameters in the system. A general MRAC closed-loop block diagram can be found in Figure \ref{MRAC_blockdiagram} \cite{Lavretsky2013}. The design of an MRAC system requires a reference model that specifies how the actual system should behave. An adaptive law then adapts the parameters using the error between the reference model and the system output. Finally, the controller computes the command for the plant using the adjusted parameters, the external command, and the system output. 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 5in]{images/chapter2/MRAC.pdf}
@@ -384,7 +385,7 @@ Model Reference Adaptive Control (MRAC) is a useful control scheme to stabilize 
 	\label{MRAC_blockdiagram}
 \end{figure}
 \subsection{Derivation}
-Let's revisit the Image Jacobian matrix
+Consider again the Image Jacobian matrix
 \begin{equation}
 \begin{bmatrix}
 \dot{u} \\ \dot{w}
@@ -394,47 +395,47 @@ Let's revisit the Image Jacobian matrix
 0 & -\frac{\lambda}{z} & \frac{w}{z} & \frac{\lambda^2+w^2}{\lambda} & -\frac{uw}{\lambda} & -u
 \end{bmatrix}
 \begin{bmatrix}
-v_{Cx} \\ v_{Cy} \\ v_{Cz} \\
-\omega_{Cx} \\ \omega_{Cy} \\ \omega_{Cz}
+v_x^c \\ v_y^c \\ v_z^c \\
+\omega_x^c \\ \omega_y^c \\ \omega_z^c
 \end{bmatrix}\\
 \label{image_jacobian4}
 \end{equation}
 or for simplicity
 \begin{equation}
-\mathbf{\dot{s}}=L_v(u,w,z)\mathbf{v}_C+L_{\omega}(u,w)\mathbf{\omega}_C.
+\mathbf{\dot{s}}=L_v(u,w,z)\mathbf{v}^c+L_{\omega}(u,w)\mathbf{\omega}^c.
 \end{equation}
-Since we desire that the target is pushed to the center of image plane, the reference model can be set as 
+Since we desire that the target is pushed to the center of the image plane, the reference model can be set as 
 \begin{equation}
 \mathbf{\dot{s}}^{ref}=A\mathbf{s}^{ref}
 \label{reference_model}
 \end{equation}
-where $\mathbf{s}=[u, w]^\top$ and $A$ is Hurwitz or every eigenvalue of $A$ has strictly negative real part. It is clear that the reference model in (\ref{reference_model}) is globally asymptotically stable. From the image jacobian matrix, $\mathbf{\omega}_C$ is the control input because it is common situation to track the target with gimbal movement rather than platform movement. Thus, the equation (\ref{image_jacobian4}) can be manipulated into more convenient form for MRAC design as 
+where $\mathbf{s}=[u, w]^\top$ and $A$ is Hurwitz (i.e. every eigenvalue of $A$ has strictly negative real part). It is clear that the reference model in (\ref{reference_model}) is globally asymptotically stable. From the image jacobian matrix, $\mathbf{\omega}^c$ is the control input, because it is common situation to track the target with gimbal movement rather than platform movement. Thus, equation (\ref{image_jacobian4}) can be manipulated into a more convenient form for MRAC design as 
 \begin{align}
 \mathbf{\dot{s}}
 &=\frac{1}{z}
 \begin{bmatrix}
--\lambda v_{Cx}+uv_{Cz} \\
--\lambda v_{Cy}+wv_{Cz} \\
+-\lambda v_x^c+uv_z^c \\
+-\lambda v_y^c+wv_z^c \\
 \end{bmatrix}
 +\begin{bmatrix}
 \frac{uw}{\lambda} & -\frac{\lambda^2+u^2}{\lambda} & w \\
 \frac{\lambda^2+w^2}{\lambda} & -\frac{uw}{\lambda} & -u
 \end{bmatrix}
 \begin{bmatrix}
-\omega_{Cx} \\ \omega_{Cy} \\ \omega_{Cz}
+\omega_x^c \\ \omega_y^c \\ \omega_z^c
 \end{bmatrix}
 \\&=\beta\varphi + L_{\omega}U
 \label{adaptive_image_jacobian}
 \end{align}
-where $U$ is the control input and $\beta$ is the uncertain parameter. If it is supposed that $\beta$ is known, the ideal control input would be
+where $U$ is the control input and $\beta=\frac{1}{z}$. If $\beta$ were known, then the ideal control input would be
 \begin{equation}
 U=L_\omega^\sharp(-\beta\varphi+K\mathbf{s})
 \end{equation}
-where $L_\omega^\sharp$ is the right pseudoinverse of $L_\omega$ and $K$ is negative definite matrix that the designer chooses. Then, the subsequent dynamics would become
+where $L_\omega^\sharp$ is the right pseudoinverse of $L_\omega$ and $K$ is a negative definite tuning matrix. Then, the subsequent dynamics would become
 \begin{equation}
 \mathbf{\dot{s}}=K\mathbf{s}
 \end{equation}
-which is globally asymptotically stable system. However, since $\beta$ is unknown quantity and needs to be adapted, more realistic control input is
+which is globally asymptotically stable. However, since $\beta$ is an unknown quantity and needs to be adapted, a more realistic control input is
 \begin{equation}
 U=L_\omega^\sharp(-\hat{\beta}\varphi+K\mathbf{s})
 \end{equation}
@@ -443,7 +444,7 @@ where $\hat{\beta}$ is the estimate of $\beta$. Plugging this control input into
 \mathbf{\dot{s}}&=\beta\varphi-\hat{\beta}\varphi+K\mathbf{s}
 \\&= \tilde{\beta}\varphi+K\mathbf{s}
 \end{align}
-where $\tilde{\beta}=\beta-\hat{\beta}$. Let the error defined as 
+where $\tilde{\beta}=\beta-\hat{\beta}$. Let the error be defined as 
 \begin{equation}
 \mathbf{e}=\mathbf{s}-\mathbf{s}^{ref}.
 \end{equation}
@@ -457,7 +458,7 @@ Using the variables of interest, a Lyapunov function candidate can be constructe
 \begin{equation}
 V=\frac{1}{2}\mathbf{e}^\top\mathbf{e}+\frac{1}{2\gamma_\beta}\tilde{\beta}^2.
 \end{equation}
-Taking derivative yields
+Taking the derivative yields
 \begin{align}
 \dot{V}&=\mathbf{e}^\top\dot{\mathbf{e}}+\frac{1}{\gamma_\beta}\tilde{\beta}\dot{\tilde{\beta}}
 \\&=\mathbf{e}^\top(\tilde{\beta}\varphi+A\mathbf{e})+\frac{1}{\gamma_\beta}\tilde{\beta}\dot{\tilde{\beta}}.
@@ -465,10 +466,9 @@ Taking derivative yields
 \end{align}
 Assuming that the inverse depth $\beta$ is constant or slowly moving ($\dot{\beta}=0$, $\dot{\tilde{\beta}}=-\dot{\hat{\beta}}$), the above equation becomes
 \begin{align}
-\dot{V}&=\mathbf{e}^\top(\tilde{\beta}\varphi+A\mathbf{e})-\frac{1}{\gamma_\beta}\tilde{\beta}\dot{\hat{\beta}}
-\\&=\mathbf{e}^\top A\mathbf{e}+\tilde{\beta}(\mathbf{e}^\top\varphi-\frac{\dot{\hat{\beta}}}{\gamma_\beta}).
+\dot{V}&=\mathbf{e}^\top A\mathbf{e}+\tilde{\beta}(\mathbf{e}^\top\varphi-\frac{\dot{\hat{\beta}}}{\gamma_\beta}).
 \end{align}
-Since $\dot{\hat{\beta}}$ is a design parameter, its value can be picked as 
+Since $\dot{\hat{\beta}}$ is a design parameter, its value can be selected as 
 \begin{equation}
 \dot{\hat{\beta}}=\gamma_\beta\mathbf{e}^\top\varphi.
 \end{equation}
@@ -476,9 +476,9 @@ Then, the equation (\ref{vdot2}) becomes
 \begin{equation}
 \dot{V}=\mathbf{e}^\top A\mathbf{e}.
 \end{equation}
-Recalling that $A$ is Hurwitz, the asymptotic stability of the system is proved.
+Asymptotic stability of the system follows from the fact that A is Hurwitz.
 \subsection{Simulation}
-First, the behavior of reference model is set as the equation (\ref{reference_model}) with starting image coordinates at $[0, 0]$ meaning that the reference model is $[0, 0]$ over time. The objective of the MRAC controller is to drive the actual image dynamics with unknown quantity $z$ as close as it can to the reference model. In simulation, a square image with 800 pixel width and height is used. The camera field of view is set to 60 degree and one pixel is set to one millimeter. Thus, we can obtain the focal length and image width in meter metric. The initial image coordinates are randomly selected and these coordinates are expected to converge to the origin as the reference model. In reality, the depth $z$ is varying quantity because of the movement of the camera on UAV and the target. However, in this simulation $z$ is initialized to any value between 30 and 300, and is changing with increment either 2 or -2 every second. In order to simulate the translational velocity of the UAV, $v_{Cx}$ and $v_{Cy}$ are initialized to zeros and changing with increment either 2 or -2 every other seconds. $v_{Cz}$ is kept zero assuming that the camera is not directly flying into nor away from the target. Figure \ref{adaptive_result} shows that the controller keeps the target in the center of image which is the primary objective. Figure \ref{adaptive_command} presents the angular velocity commands computed by the adaptive depth gimbal controller and the depth estimation. Based on the observation of Figure \ref{adaptive_command}, the estimation of uncertain parameters seem to be guaranteed to converge to the true value. However, note that this is rather special case than normal case. In normal cases, only uniform boundness of the uncertain parameters is guaranteed \cite{Lavretsky2013}. 
+First, the reference model $\mathbf{s}^{ref}$, in equation (\ref{reference_model}) is selected as $[0, 0]$ over time. The objective of the MRAC controller is to drive the actual image dynamics with unknown quantity $z$ as close as it can to the reference model. In simulation, a square image with 800 pixel width and height is used. The camera field of view is set to 60 degrees and one pixel is set to one millimeter. Thus, we can obtain the focal length and image width in metric units. The initial image coordinates are randomly selected and these coordinates are expected to converge to the origin as the reference model. In reality, the depth $z$ is a varying quantity because of the relative movement between the camera and the target. However, in this simulation $z$ is initialized to an arbitrary value between 30 and 300, and is changed randomly with increment $\pm2$ every second. In order to simulate the translational velocity of the UAV, $v_x^c$ and $v_y^c$ are initialized to zeros and changed with increment $\pm2$ every other second. $v_z^c$ is kept zero assuming that the camera is not directly flying into nor away from the target. Figure \ref{adaptive_result} shows that the controller keeps the target in the center of the image which is the primary objective. Figure \ref{adaptive_command} presents the angular velocity commands computed by the adaptive depth gimbal controller and the depth estimation. Based on Figure \ref{adaptive_command}, the estimation of the uncertain parameter seems to converge to its true value. However, note that this is rather a special case. In normal cases, only uniform boundness of the uncertain parameters is guaranteed \cite{Lavretsky2013}. 
 \begin{figure*}[htbp]
 	\centering
 	\begin{subfigure}{0.5\textwidth}
@@ -507,11 +507,11 @@ First, the behavior of reference model is set as the equation (\ref{reference_mo
 		\includegraphics[width=0.9\linewidth]{images/chapter2/z_adaptive}
 		\caption{Online depth estimation, $\hat{z}$}
 	\end{subfigure}
-	\caption{Angular velocity commands of the adaptive depth gimbal controller. Note that only two commands are actively used as if it is a pan-tilt gimbal. The depth $z$ estimation using the adaptive law of the MRAC.}
+	\caption{Angular velocity commands of the adaptive depth gimbal controller. Note that only two commands are used, since it is a pan-tilt gimbal. The depth $z$ estimate using MRAC.}
 	\label{adaptive_command}
 \end{figure*}
 
-In addition, this gimbal control is simulated on a multirotor equipped with a pan-tilt gimbal. The multirotor is moving and suppose that its translational velocity is available. Also, the target is moving on the ground. The adaptive depth gimbal controller takes the pixel location of the target from a camera of $30Hz$ frame rate and its goal is to push the target to the center of image. The simulated multirotor and camera view are presented in Figure \ref{uav_adaptive}. Additional information regarding the simulation can be found in Figure \ref{uav_adaptive_additional}. This is rather typical case of MRAC, meeting the control objective without guarantee for uncertain parameter converging to its true value. 
+In addition, this gimbal control is simulated on a multirotor equipped with a pan-tilt gimbal. The multirotor is moving and suppose that its translational velocity is available. Also, the target is moving on the ground. The adaptive depth gimbal controller takes the pixel location of the target from a camera at a $30Hz$ frame rate, and its goal is to push the target to the center of the image. The simulated multirotor and camera view are presented in Figure \ref{uav_adaptive}. Additional information regarding the simulation can be found in Figure \ref{uav_adaptive_additional}. These plots are rather typical for MRAC: meeting the control objective without a guarantee that the uncertain parameter will converge to its true value. 
 
 \begin{figure*}[htbp]
 	\centering
@@ -574,14 +574,14 @@ In addition, this gimbal control is simulated on a multirotor equipped with a pa
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/chapter2/uav_pixel}
-		\caption{Pixel value $u$ and $w$. They are well kept around the center of the image.}
+		\caption{Pixel value $u$ and $w$. They are maintained around the center of the image.}
 	\end{subfigure}	
 	\caption{Uncertain parameter estimation, gimbal angular velocity commands from the controller, and where target lies in the image.}
 	\label{uav_adaptive_additional}
 \end{figure*}
 
 \subsection{Hardware}
-The adaptive depth gimbal controller is tested with custom pan-tilt gimbal shown in Figure \ref{gimbal}. The gimbal consists of uEye UI-3250-LE-C-HQ camera, BaseCam SimpleBGC 32-bit gimbal controller, CUI AMT203 ABS SPI encoder, Quanum 4008 precision brushless gimbal motor, and 3D printed housing (See Figure \ref{gimbal_parts}). The system block diagram can be found in Figure \ref{gimbal_blockdiagram}. The Arduino acts as a communication bridge by receiving the current azimuth and elevation angle from the encoder and pass them to onboard computer. Also, it passes the angular velocity commands from the onboard computer to the gimbal controller. A tracking algorithm running on the onboard computer receives image from the camera and outputs the pixel location of the target. The onboard computer also runs the controller that computes the gimbal angular velocity and passes it to the Arduino.
+The adaptive depth gimbal controller is tested on the custom pan-tilt gimbal shown in Figure \ref{gimbal}. The gimbal consists of a uEye UI-3250-LE-C-HQ camera, BaseCam SimpleBGC 32-bit gimbal controller, CUI AMT203 ABS SPI encoder, Quanum 4008 precision brushless gimbal motor, and 3D printed housing (See Figure \ref{gimbal_parts}). The system block diagram can be found in Figure \ref{gimbal_blockdiagram}. The Arduino acts as a communication bridge by receiving the current azimuth and elevation angle from the encoder and passes them to the onboard computer. Also, it passes the angular velocity commands from the onboard computer to the gimbal controller. A tracking algorithm running on the onboard computer receives an image from the camera and outputs the pixel location of the target. The onboard computer also runs the controller that computes the gimbal angular velocity and passes it to the Arduino.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height = 3in]{images/chapter2/gimbal.jpg}
@@ -600,7 +600,7 @@ The adaptive depth gimbal controller is tested with custom pan-tilt gimbal shown
 	\caption{Custom gimbal block diagram}
 	\label{gimbal_blockdiagram}
 \end{figure}
-A series of snapshots that shows the gimbal pointing result with the custom hardware and the adaptive depth gimbal controller can be found in Figure \ref{gimbal_hardware_result}. Also, a video showing the same result can be seen at \href{https://www.youtube.com/watch?v=VMfvQkhD9-o}{https://www.youtube.com/watch?v=VMfvQkhD9-o}. In this particular result, the camera is static which means that $v_{C}$ is set to zeros.
+A series of snapshots that shows the gimbal pointing result with the custom hardware and the adaptive depth gimbal controller are shown in Figure \ref{gimbal_hardware_result}. Also, a video showing the same result can be seen at \href{https://www.youtube.com/watch?v=VMfvQkhD9-o}{https://www.youtube.com/watch?v=VMfvQkhD9-o}. In this particular result, the camera is static which means that $v_{C}$ is set to zero.
 \begin{figure*}[htbp]
 	\centering
 	\begin{subfigure}{0.5\textwidth}
@@ -638,14 +638,14 @@ A series of snapshots that shows the gimbal pointing result with the custom hard
 \end{figure*}
 
 \section{Conclusion}
-There is a few controller options when it is desired to keep the target in the camera field of view using gimbal. Depending on whether the camera is moving or stationary, either angle commanding gimbal control (ACGC) or angular velocity commanding gimbal control (AVCGC) can be used. The advantage of the ACGC is easy to implement and does not require the depth information. The AVCGC is expected to perform better than ACGC on a moving camera since the AVCGC take the moving platform into account. However, the AVCGC requires to know the depth $z$ term externally. When there is no way to measure or estimate the depth $z$ term reliably, the adaptive depth gimbal control (ADGC) can be used. A summary is shown in Table \ref{gimbal_summary}.
+There are a few controller options to keep a target in the camera field of view using a gimbal. Depending on whether the camera is moving or stationary, either angle commanding gimbal control (ACGC) or angular velocity commanding gimbal control (AVCGC) can be used. The advantage of the ACGC is that it is easy to implement and that it does not require the depth information. The AVCGC is expected to perform better than ACGC for a moving camera since the AVCGC take the moving platform into account. However, the AVCGC requires knowledge of the depth $z$. When there is no way to reliably measure or estimate the depth $z$, the adaptive depth gimbal control (ADGC) can be used. A summary is shown in Table \ref{gimbal_summary}.
 \begin{table}[htbp]
 	\begin{tabular}{ |c|c|c| } 
 		\hline
 		ACGC & AVCGC & ADGC \\
 		\hline
 		Easy to implement & Designed for moving camera & Designed for moving camera \\ 
-		Designed for static camera & Requires to know the depth $z$ & Works without knowing $z$ \\  
+		Designed for static camera & Requires the knowledge of the depth $z$ & Works without knowing $z$ \\  
 		\hline
 	\end{tabular}
 	\caption{Summary of gimbal control schemes}

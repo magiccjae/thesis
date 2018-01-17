@@ -1,5 +1,5 @@
-\contentsline {chapter}{List of Tables}{vi}{section*.3}
-\contentsline {chapter}{List of Figures}{vii}{section*.5}
+\contentsline {chapter}{List of Tables}{v}{section*.3}
+\contentsline {chapter}{List of Figures}{vi}{section*.5}
 \contentsline {chapter}{\numberline {Chapter\nobreakspace {}1\hspace {1em} }Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Gimbal Control}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Autonomous Target Following System}{1}{section.1.2}
@@ -14,32 +14,22 @@
 \contentsline {subsection}{\numberline {2.2.2}Feedback Linearization-based Visual Pointing and Tracking}{10}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Adaptive Depth Gimbal Control}{14}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Introduction}{14}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Derivation}{15}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Simulation}{18}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.2}Derivation}{14}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Simulation}{17}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Hardware}{19}{subsection.2.3.4}
-\contentsline {section}{\numberline {2.4}Conclusion}{24}{section.2.4}
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }Autonomous Target Following System}{25}{chapter.3}
-\contentsline {section}{\numberline {3.1}System Overview}{25}{section.3.1}
-\contentsline {section}{\numberline {3.2}Recursive-RANSAC Tracker}{26}{section.3.2}
-\contentsline {section}{\numberline {3.3}UAV Control}{28}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Coordinate Frame Convention}{28}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Forward and heading motion control}{29}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Experiments and Results}{30}{section.3.4}
-\contentsline {section}{\numberline {3.5}Conclusion}{34}{section.3.5}
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Advanced UAV Control}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivation}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}Controller Derivation for Simple UAV Dynamics}{36}{section.4.2}
-\contentsline {section}{\numberline {4.3}Backstepping Controller Derivation for Multirotor Dynamics}{42}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Derivation}{42}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Simulation}{48}{subsection.4.3.2}
-\contentsline {chapter}{References}{56}{section*.43}
-\contentsline {chapter}{\numberline {Appendix\nobreakspace {}A\hspace {1em} }Making a Figure with Width Based on Page Size}{57}{appendix.A}
-\contentsline {section}{\numberline {A.1}Width Based on Page Size Figure Example}{57}{section.A.1}
-\contentsline {chapter}{\numberline {Appendix\nobreakspace {}B\hspace {1em} }Formatting Guidelines for Thesis}{58}{appendix.B}
-\contentsline {section}{\numberline {B.1}Font}{58}{section.B.1}
-\contentsline {section}{\numberline {B.2}Margins}{58}{section.B.2}
-\contentsline {section}{\numberline {B.3}Printing}{58}{section.B.3}
-\contentsline {section}{\numberline {B.4}Page Numbering}{58}{section.B.4}
-\contentsline {section}{\numberline {B.5}Spacing}{59}{section.B.5}
-\contentsline {section}{\numberline {B.6}Figures}{60}{section.B.6}
-\contentsline {section}{\numberline {B.7}Tables}{60}{section.B.7}
+\contentsline {section}{\numberline {2.4}Conclusion}{19}{section.2.4}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }Autonomous Target Following System}{24}{chapter.3}
+\contentsline {section}{\numberline {3.1}System Overview}{24}{section.3.1}
+\contentsline {section}{\numberline {3.2}Recursive-RANSAC Tracker}{25}{section.3.2}
+\contentsline {section}{\numberline {3.3}UAV Control}{27}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Coordinate Frame Convention}{27}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Forward and heading motion control}{28}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Experiments and Results}{29}{section.3.4}
+\contentsline {section}{\numberline {3.5}Conclusion}{33}{section.3.5}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Advanced UAV Control}{34}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{34}{section.4.1}
+\contentsline {section}{\numberline {4.2}Controller Derivation for Simple UAV Dynamics}{35}{section.4.2}
+\contentsline {section}{\numberline {4.3}Backstepping Controller Derivation for Multirotor Dynamics}{41}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Derivation}{41}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Simulation}{47}{subsection.4.3.2}
+\contentsline {chapter}{References}{55}{section*.43}

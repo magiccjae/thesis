@@ -3,7 +3,7 @@
 \begin{figure}[htbp]
 	\centering
 	\framebox{\includegraphics[width=0.6\textwidth]{images/chapter4/advanced_control_motivation.pdf}}
-	\caption{Non-flat-earth model example. The unit optical axis vector $\hat{m}$ and the unit line of sight vector $\hat{l}$ are key components of the controller presented in this chapter.}
+	\caption{Non-flat-earth model example. The unit optical axis vector $\hat{m}$ and the unit line of sight vector $\hat{\ell}$ are key components of the controller presented in this chapter.}
 	\label{nonflatearth}
 \end{figure}
 The UAV control algorithm introduced in the previous chapter is relatively simple and easy to implement. However, the controller makes strong assumption that can be unrealistic in some cases. For example, it assumes that the line of sight (LOS) vector to the target and the optical axis terminate on the same flat surface which is often called 'flat-earth assumption.' In that case, the altitude of the multirotor acts as a scale factor that can be used to compute how much the UAV should move forward. The more advanced UAV controller presented in this chapter overcomes the flat-earth assumption by working with the unit LOS vector and unit optical axis vector (see Figure \ref{nonflatearth}). Also, the controller does not require the altitude of the multirotor to be known because the scale factor does not have to be recovered.
@@ -24,7 +24,7 @@ As a first step in developing the control algorithm, we start with the simple ve
 \ddot{h}=u_2
 \end{equation} 
 where $z_v$ is multirotor's horizontal position and $h$ is its altitude.
-A required input to the proposed controller is the measured unit LOS vector $\hat{l}$. 
+A required input to the proposed controller is the measured unit LOS vector $\hat{\ell}$. 
 Let $\hat{m}$ be the unit vector aligned with the optical axis, and let the projection matrix onto the null space of $\hat{m}$ be 
 \begin{equation}
 P_{\hat{m}}=(I-\hat{m}\hat{m}^\top).
@@ -49,81 +49,80 @@ Note that the controller is developed as if the multirotor is in 3D plane even i
 	\caption{Projection onto the null space of the optical axis unit vector}
 	\label{projection}
 \end{figure}
-The objective is to drive the horizontal component of $P_{\hat{m}}\hat{l}$ to zero. If we let
+The objective is to drive the horizontal component of $P_{\hat{m}}\hat{\ell}$ to zero. If we let
 \begin{equation}
 \hat{e}_1=[1 \quad 0 \quad 0]^\top,
 \label{e_1}
 \end{equation}
-the horizontal component of $P_{\hat{m}}\hat{l}$ which is denoted by $e_x$ can be expressed as
+the horizontal component of $P_{\hat{m}}\hat{\ell}$ which is denoted by $e_x$ can be expressed as
 \begin{equation}
-e_x=\hat{e}_1^{\top}P_{\hat{m}}\hat{l}.
+e_x=\hat{e}_1^{\top}P_{\hat{m}}\hat{\ell}.
 \end{equation}
-Note that since $\hat{m}$ is fixed and known and $\hat{l}$ is measured, $e_x$ can also be measured. Also, since $\dot{\hat{l}}$ can be approximated by differentiating numerically,
+Note that since $\hat{m}$ is fixed and known and $\hat{\ell}$ is measured, $e_x$ can also be measured. Also, since $\dot{\hat{\ell}}$ can be approximated by differentiating numerically,
 \begin{equation}
-\dot{e}_x=\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}}
+\dot{e}_x=\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{\ell}}
 \label{exdot}
 \end{equation} is measurable.
 Meanwhile, the line of sight vector is
 \begin{equation}
-l=\begin{pmatrix} z_t \\ 0 \\ 0 \end{pmatrix}
+\ell=\begin{pmatrix} z_t \\ 0 \\ 0 \end{pmatrix}
 -\begin{pmatrix} z_v \\ 0 \\ h \end{pmatrix}.
 \label{los}
 \end{equation}
 Differentiating equation (\ref{los}) gives 
 \begin{equation}
-\dot{l}=\begin{pmatrix} \dot{z}_t \\ 0 \\ 0 \end{pmatrix}
+\dot{\ell}=\begin{pmatrix} \dot{z}_t \\ 0 \\ 0 \end{pmatrix}
 -\begin{pmatrix} \dot{z}_t \\ 0 \\ \dot{h} \end{pmatrix},
 \end{equation}
 and
 \begin{equation}
-\ddot{l}=\begin{pmatrix} \ddot{z}_t \\ 0 \\ 0 \end{pmatrix}
+\ddot{\ell}=\begin{pmatrix} \ddot{z}_t \\ 0 \\ 0 \end{pmatrix}
 -\begin{pmatrix} \ddot{z}_v \\ 0 \\ \ddot{h} \end{pmatrix}.
 \end{equation}
 Assuming that the velocity of the target and the UAV altitude (i.e. $u_2=0$) are not changing yields
 \begin{equation}
-\ddot{l}=\begin{pmatrix} -\ddot{z}_v \\ 0 \\ 0 \end{pmatrix}
+\ddot{\ell}=\begin{pmatrix} -\ddot{z}_v \\ 0 \\ 0 \end{pmatrix}
 =\begin{pmatrix} -u_1 \\ 0 \\ 0 \end{pmatrix}.
 \label{lddot}
 \end{equation}
 Thus, combining equations (\ref{p_mhat}), (\ref{e_1}) and (\ref{lddot})
 results in 
 \begin{equation}
-\hat{e}_1^{\top}P_{\hat{m}}\ddot{l}=-(1-m_1^2)u_1.
+\hat{e}_1^{\top}P_{\hat{m}}\ddot{\ell}=-(1-m_1^2)u_1.
 \label{eplddot}
 \end{equation}
 Let
 \begin{equation}
-L=\norm{l},
+L=\norm{\ell},
 \end{equation} be the unknown depth between the camera and the target, or the norm of the LOS vector. Then, the unit LOS vector is 
 \begin{equation}
-\hat{l}=\frac{l}{L}.
+\hat{\ell}=\frac{\ell}{L}.
 \label{lhat}
 \end{equation}
 Differentiating equation (\ref{lhat}) gives
 \begin{equation}
-\dot{\hat{l}}=\frac{\dot{l}L-l\dot{L}}{L^2}=\frac{\dot{l}}{L}-\hat{l}\bigg(\frac{\dot{L}}{L}\bigg).
+\dot{\hat{\ell}}=\frac{\dot{\ell}L-\ell\dot{L}}{L^2}=\frac{\dot{\ell}}{L}-\hat{\ell}\bigg(\frac{\dot{L}}{L}\bigg).
 \label{lhatdot}
 \end{equation}
 Differentiating again gives
 \begin{align}
-\ddot{\hat{l}}&=\frac{\ddot{l}L-\dot{l}\dot{L}}{L^2}-\dot{\hat{l}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{l}\bigg(\frac{\ddot{L}L-\dot{L}^2}{L^2}\bigg)
-\\&=\frac{\ddot{l}}{L}-\bigg(\frac{\dot{l}}{L}\bigg)\bigg(\frac{\dot{L}}{L}\bigg)-\dot{\hat{l}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{l}\bigg(\frac{\ddot{L}}{L}\bigg)+\hat{l}\bigg(\frac{\dot{L}}{L}\bigg)^2.
-\label{lhatddot}
+\ddot{\hat{\ell}}&=\frac{\ddot{\ell}L-\dot{\ell}\dot{L}}{L^2}-\dot{\hat{\ell}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{\ell}\bigg(\frac{\ddot{L}L-\dot{L}^2}{L^2}\bigg)
+\\&=\frac{\ddot{\ell}}{L}-\bigg(\frac{\dot{\ell}}{L}\bigg)\bigg(\frac{\dot{L}}{L}\bigg)-\dot{\hat{\ell}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{\ell}\bigg(\frac{\ddot{L}}{L}\bigg)+\hat{\ell}\bigg(\frac{\dot{L}}{L}\bigg)^2.
 \end{align}
-Plugging in for $\frac{\dot{l}}{L}=\dot{\hat{l}}+\hat{l}\bigg(\frac{\dot{L}}{L}\bigg)$ from equation (\ref{lhatdot}) gives
+Plugging in for $\frac{\dot{\ell}}{L}=\dot{\hat{\ell}}+\hat{\ell}\bigg(\frac{\dot{L}}{L}\bigg)$ from equation (\ref{lhatdot}) gives
 \begin{equation}
-\ddot{\hat{l}}=\frac{\ddot{l}}{L}-2\dot{\hat{l}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{l}\bigg(\frac{\ddot{L}}{L}\bigg).
+\ddot{\hat{\ell}}=\frac{\ddot{\ell}}{L}-2\dot{\hat{\ell}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{\ell}\bigg(\frac{\ddot{L}}{L}\bigg).
 \label{lhatddot}
 \end{equation}
-Differentiating equation (\ref{exdot}) and using equation (\ref{lhatddot}) for $\ddot{\hat{l}}$ yields
+Differentiating equation (\ref{exdot}) and using equation (\ref{lhatddot}) for $\ddot{\hat{\ell}}$ yields
 \begin{align}
-\ddot{e}_x&=\hat{e}_1^{\top}P_{\hat{m}}\ddot{\hat{l}}
-\\&=\hat{e}_1^{\top}P_{\hat{m}}\bigg(\frac{\ddot{l}}{L}-2\dot{\hat{l}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{l}\bigg(\frac{\ddot{L}}{L}\bigg)\bigg)
-\\&=\frac{1}{L}(\hat{e}_1^{\top}P_{\hat{m}}\ddot{l})+\frac{\dot{L}}{L}(-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}})+\frac{\ddot{L}}{L}(-\hat{e}_1^{\top}P_{\hat{m}}\hat{l}).
+\ddot{e}_x&=\hat{e}_1^{\top}P_{\hat{m}}\ddot{\hat{\ell}}
+\\&=\hat{e}_1^{\top}P_{\hat{m}}\bigg(\frac{\ddot{\ell}}{L}-2\dot{\hat{\ell}}\bigg(\frac{\dot{L}}{L}\bigg)-\hat{\ell}\bigg(\frac{\ddot{L}}{L}\bigg)\bigg)
+\\&=\frac{1}{L}(\hat{e}_1^{\top}P_{\hat{m}}\ddot{\ell})+\frac{\dot{L}}{L}(-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{\ell}})+\frac{\ddot{L}}{L}(-\hat{e}_1^{\top}P_{\hat{m}}\hat{\ell}).
 \end{align}
-Substituting (\ref{eplddot}) for $\hat{e_1}^{\top}P_{\hat{m}}\ddot{l}$ results in  
+Substituting (\ref{eplddot}) for $\hat{e_1}^{\top}P_{\hat{m}}\ddot{\ell}$ results in  
 \begin{equation}
-\ddot{e}_x=-\frac{1}{L}(1-m_1^2)u_1+\frac{\dot{L}}{L}(-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}})+\frac{\ddot{L}}{L}(-\hat{e}_1^{\top}P_{\hat{m}}\hat{l}).
+\ddot{e}_x=-\frac{1}{L}(1-m_1^2)u_1+\frac{\dot{L}}{L}(-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{\ell}})+\frac{\ddot{L}}{L}(-\hat{e}_1^{\top}P_{\hat{m}}\hat{\ell}).
 \end{equation} 
 Defining the unknown quantities
 \begin{equation}
@@ -131,7 +130,7 @@ Defining the unknown quantities
 \end{equation}
 and the measured quantities
 \begin{equation}
-\phi_1=1-m_1^2,\quad \phi_2=-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}}, \quad \phi_3=-\hat{e}_1^{\top}P_{\hat{m}}\hat{l}.
+\phi_1=1-m_1^2,\quad \phi_2=-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{\ell}}, \quad \phi_3=-\hat{e}_1^{\top}P_{\hat{m}}\hat{\ell}.
 \end{equation}
 we can rewrite 
 \begin{equation}
@@ -279,7 +278,7 @@ where $m$ is the mass of multirotor and $J_x$, $J_y$, and, $J_z$ are the moments
 \end{equation}
 where $F_e$ is the force to keep the multirotor in a constant altitude hover when the roll and pitch angles are zero. The line of sight vector is given by 
 \begin{equation}
-l=\begin{pmatrix}
+\ell=\begin{pmatrix}
 p_x^{tar} \\ 0 \\ 0
 \end{pmatrix}
 -\begin{pmatrix}
@@ -289,7 +288,7 @@ p_x^{uav} \\ 0 \\ p_z^{uav}
 \end{equation}
 Differentiating (\ref{l}) we get
 \begin{equation}
-\dot{l}=\begin{pmatrix}
+\dot{\ell}=\begin{pmatrix}
 \dot{p}_x^{tar} \\ 0 \\ 0
 \end{pmatrix}
 -\begin{pmatrix}
@@ -299,7 +298,7 @@ Differentiating (\ref{l}) we get
 \end{equation}
 and 
 \begin{equation}
-\ddot{l}=\begin{pmatrix}
+\ddot{\ell}=\begin{pmatrix}
 \ddot{p}_x^{tar} \\ 0 \\ 0
 \end{pmatrix}
 -\begin{pmatrix}
@@ -309,7 +308,7 @@ and
 \end{equation}
 Referring back to (\ref{p_mhat}), (\ref{e_1}) and (\ref{lddot1}) we get that  
 \begin{align}
-\hat{e}_1^{\top}P_{\hat{m}}\ddot{l}&=(1-m_1^2)(\ddot{p}_x^{tar}-\ddot{p}_x^{uav})+m_1m_2\ddot{p}_z^{uav}
+\hat{e}_1^{\top}P_{\hat{m}}\ddot{\ell}&=(1-m_1^2)(\ddot{p}_x^{tar}-\ddot{p}_x^{uav})+m_1m_2\ddot{p}_z^{uav}
 \\&=(1-m_1^2)\frac{F_e}{m}\theta
 \end{align}
 assuming that the multirotor keeps its altitude constant and the target does not accelerate. Notice that 
@@ -319,7 +318,7 @@ P_{\hat{m}}=\begin{pmatrix}1-m_1^2 & 0 & -m_1m_2 \\ 0 & 1 & 0 \\ -m_1m_2 & 0 & 1
 which is different from (\ref{p_mhat}) because now the $z$ component of the optical axis unit vector in vehicle-1 frame aligns with $z$ axis of the vehicle-1 frame (i.e. NED coordinate frame). However, this turns out to not affect the controller derivation.  Again, the control objective is to drive $e_x$ to zero and this can be achieved by driving $s=\dot{e_x}+ke_x$ to zero.
 Recalling (\ref{exddot}) we get
 \begin{align}
-\ddot{e}_x&=\frac{1}{L}(1-m_1^2)\frac{F_e}{m}\theta+\frac{\dot{L}}{L}(-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}})+\frac{\ddot{L}}{L}(-\hat{e}_1^{\top}P_{\hat{m}}\hat{l})
+\ddot{e}_x&=\frac{1}{L}(1-m_1^2)\frac{F_e}{m}\theta+\frac{\dot{L}}{L}(-2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{\ell}})+\frac{\ddot{L}}{L}(-\hat{e}_1^{\top}P_{\hat{m}}\hat{\ell})
 \\&=\beta_1\phi_1\frac{F_e}{m}\theta+\beta_2\phi_2+\beta_3\phi_3
 \label{exddot1}
 \end{align} 
@@ -329,7 +328,7 @@ where
 \end{equation}
 and
 \begin{equation}
-\phi_1 \triangleq 1-m_1^2,\quad \phi_2 \triangleq -2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{l}}, \quad \phi_3 \triangleq -\hat{e}_1^{\top}P_{\hat{m}}\hat{l}.
+\phi_1 \triangleq 1-m_1^2,\quad \phi_2 \triangleq -2\hat{e}_1^{\top}P_{\hat{m}}\dot{\hat{\ell}}, \quad \phi_3 \triangleq -\hat{e}_1^{\top}P_{\hat{m}}\hat{\ell}.
 \end{equation}
 Since we have all necessary components, we can get 
 \begin{align}
