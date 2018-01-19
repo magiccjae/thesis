@@ -1,5 +1,5 @@
 \chapter{Gimbal Control}
-\label{chp:chapter2}
+\label{chapter2}
 \graphicspath{{figures/}{figures/chapter2/}}
 Gimbals are widely used device for flying drones with a camera because they stabilize the camera from vibration and movement of the platform. Stabilizing the camera is important in order to take high-quality, smooth videos and photos. For this reason, most of the high-end commercial drones are equipped with a gimbal. For autonomous systems, a gimbal becomes more important because it adds maneuverability to the camera to provide more visual awareness and to keep the object of interest in the camera field of view. There are two cases when the object of interest can be centered on the optical axis. The first is when we know the relative location of the target to the camera. The second is when we know the target location in the image. For many practical applications, it is not feasible to assume that we know the target location in the global frame. Thus, image-based gimbal control is the more practical and realistic way to achieve the goal. In this chapter, we introduce several image-based gimbal control schemes.
 
@@ -600,7 +600,7 @@ The adaptive depth gimbal controller is tested on the custom pan-tilt gimbal sho
 	\caption{Custom gimbal block diagram}
 	\label{gimbal_blockdiagram}
 \end{figure}
-A series of snapshots that shows the gimbal pointing result with the custom hardware and the adaptive depth gimbal controller are shown in Figure \ref{gimbal_hardware_result}. Also, a video showing the same result can be seen at \href{https://www.youtube.com/watch?v=VMfvQkhD9-o}{https://www.youtube.com/watch?v=VMfvQkhD9-o}. In this particular result, the camera is static which means that $v_{C}$ is set to zero.
+A series of snapshots that shows the gimbal pointing result with the custom hardware and the adaptive depth gimbal controller are shown in Figure \ref{gimbal_hardware_result}. Also, a video showing the same result can be seen at \href{https://www.youtube.com/watch?v=VMfvQkhD9-o}{https://www.youtube.com/watch?v=VMfvQkhD9-o}. In this particular result, the camera is static which means that $v^c$ is set to zero.
 \begin{figure*}[htbp]
 	\centering
 	\begin{subfigure}{0.5\textwidth}

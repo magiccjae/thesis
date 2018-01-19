@@ -21,6 +21,148 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{Hutchinson1996}
+S.~Hutchinson, G.~Hager, and P.~I. Corke, ``{A tutorial on visual servo
+  control},'' \emph{IEEE International Conference on Robotics and Automation},
+  vol.~12, no.~5, pp. 651--670, 1996.
+
+\bibitem{Chaumette2006}
+F.~Chaumette and S.~Hutchinson, ``{Visual servo control. I. Basic
+  approaches},'' \emph{IEEE Robotics and Automation Magazine}, vol.~13, no.~4,
+  pp. 82--90, 2006.
+
+\bibitem{Hu2009}
+\BIBentryALTinterwordspacing
+G.~Hu, N.~Gans, and W.~E. Dixon, \emph{Adaptive Visual Servo Control}.\hskip
+  1em plus 0.5em minus 0.4em\relax New York, NY: Springer New York, 2009, pp.
+  42--63. [Online]. Available:
+  \url{https://doi.org/10.1007/978-0-387-30440-3_3}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Saunders2011}
+\BIBentryALTinterwordspacing
+J.~Saunders and R.~W. Beard, ``{Visual Tracking in Wind with Field of View
+  Constraints},'' \emph{International Journal of Micro Air Vehicles}, vol.~3,
+  no.~3, pp. 169--182, sep 2011. [Online]. Available:
+  \url{http://journals.sagepub.com/doi/10.1260/1756-8293.3.3.169}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Rysdyk2006}
+\BIBentryALTinterwordspacing
+R.~Rysdyk, ``{Unmanned Aerial Vehicle Path Following for Target Observation in
+  Wind},'' \emph{Journal of Guidance, Control, and Dynamics}, vol.~29, no.~5,
+  pp. 1092--1100, sep 2006. [Online]. Available:
+  \url{http://arc.aiaa.org/doi/10.2514/1.19101}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Dobrokhodov2006}
+\BIBentryALTinterwordspacing
+V.~Dobrokhodov, I.~Kaminer, K.~Jones, and R.~Ghabcheloo, ``{Vision-based
+  tracking and motion estimation for moving targets using small UAVs},'' in
+  \emph{2006 American Control Conference}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2006, p. 6 pp. [Online]. Available:
+  \url{http://ieeexplore.ieee.org/document/1656418/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Qadir2011}
+\BIBentryALTinterwordspacing
+A.~Qadir, J.~Neubert, W.~Semke, and R.~Schultz, ``{On-Board Visual Tracking
+  With Unmanned Aircraft System (UAS)},'' in \emph{Infotech@Aerospace
+  2011}.\hskip 1em plus 0.5em minus 0.4em\relax Reston, Virigina: American
+  Institute of Aeronautics and Astronautics, mar 2011, p.~9. [Online].
+  Available: \url{http://arc.aiaa.org/doi/10.2514/6.2011-1503}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Theodorakopoulos2008}
+\BIBentryALTinterwordspacing
+P.~Theodorakopoulos and S.~Lacroix, ``{A strategy for tracking a ground target
+  with a UAV},'' in \emph{2008 IEEE/RSJ International Conference on Intelligent
+  Robots and Systems}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, sep 2008,
+  pp. 1254--1259. [Online]. Available:
+  \url{http://ieeexplore.ieee.org/document/4650939/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Pestana2013}
+\BIBentryALTinterwordspacing
+J.~Pestana, J.~L. Sanchez-Lopez, P.~Campoy, and S.~Saripalli, ``{Vision based
+  GPS-denied Object Tracking and following for unmanned aerial vehicles},'' in
+  \emph{2013 IEEE International Symposium on Safety, Security, and Rescue
+  Robotics (SSRR)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, oct 2013, pp.
+  1--6. [Online]. Available: \url{http://ieeexplore.ieee.org/document/6719359/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Thomas2017}
+\BIBentryALTinterwordspacing
+J.~Thomas, J.~Welde, G.~Loianno, K.~Daniilidis, and V.~Kumar, ``{Autonomous
+  Flight for Detection, Localization, and Tracking of Moving Targets With a
+  Small Quadrotor},'' \emph{IEEE Robotics and Automation Letters}, vol.~2,
+  no.~3, pp. 1762--1769, jul 2017. [Online]. Available:
+  \url{http://ieeexplore.ieee.org/document/7921549/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Teuliere2011}
+C.~Teuliere, L.~Eck, and E.~Marchand, ``{Chasing a moving target from a flying
+  UAV},'' \emph{IEEE International Conference on Intelligent Robots and
+  Systems}, pp. 4929--4934, 2011.
+
+\bibitem{Kim2013}
+\BIBentryALTinterwordspacing
+J.~Kim and D.~H. Shim, ``{A vision-based target tracking control system of a
+  quadrotor by using a tablet computer},'' in \emph{2013 International
+  Conference on Unmanned Aircraft Systems (ICUAS)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, may 2013, pp. 1165--1172. [Online]. Available:
+  \url{http://ieeexplore.ieee.org/document/6564808/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Hurak2012}
+Z.~Hurak and M.~Rezac, ``{Image-based pointing and tracking for inertially
+  stabilized airborne camera platform},'' \emph{IEEE Transactions on Control
+  Systems Technology}, vol.~20, no.~5, pp. 1146--1159, 2012.
+
+\bibitem{Lee2012}
+\BIBentryALTinterwordspacing
+D.~Lee, T.~Ryan, and H.~J. Kim, ``{Autonomous landing of a VTOL UAV on a moving
+  platform using image-based visual servoing},'' in \emph{2012 IEEE
+  International Conference on Robotics and Automation}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, may 2012, pp. 971--976. [Online]. Available:
+  \url{http://ieeexplore.ieee.org/document/6224828/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Kalal2012}
+\BIBentryALTinterwordspacing
+Z.~Kalal, K.~Mikolajczyk, and J.~Matas, ``{Tracking-Learning-Detection},''
+  \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  vol.~34, no.~7, pp. 1409--1422, jul 2012. [Online]. Available:
+  \url{http://ieeexplore.ieee.org/document/6104061/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Niedfeldt2014}
+\BIBentryALTinterwordspacing
+P.~C. Niedfeldt and R.~W. Beard, ``{Multiple target tracking using recursive
+  RANSAC},'' in \emph{2014 American Control Conference}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, jun 2014, pp. 3393--3398. [Online]. Available:
+  \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6859273
+  http://ieeexplore.ieee.org/document/6859273/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Quist2016}
+E.~B. Quist, P.~C. Niedfeldt, and R.~W. Beard, ``{Radar odometry with
+  recursive-RANSAC},'' \emph{IEEE Transactions on Aerospace and Electronic
+  Systems}, vol.~52, no.~4, pp. 1618--1630, 2016.
+
+\bibitem{Wikle2012}
+J.~Wikle and T.~W. Mclain, ``Detection and tracking of multiple intruders using
+  the recursive-ransac algorithm state of practice,'' Utah Space Grant
+  Fellowship Symposium, 2012.
+
+\bibitem{Ingersoll2015}
+K.~Ingersoll, ``Vision based multiple target tracking using recursive ransac,''
+  Master's thesis, Brigham Young University, Provo, UT, 2015.
+
+\bibitem{Defranco2015}
+P.~Defranco, ``Detecting and tracking moving objects from a small unmanned air
+  vehicle,'' Master's thesis, Brigham Young University, Provo, UT, 2015.
+
 \bibitem{beard2012small}
 R.~W. Beard and T.~W. McLain, \emph{Small unmanned aircraft: Theory and
   practice}.\hskip 1em plus 0.5em minus 0.4em\relax Princeton university press,
@@ -29,11 +171,6 @@ R.~W. Beard and T.~W. McLain, \emph{Small unmanned aircraft: Theory and
 \bibitem{itseez2015opencv}
 Itseez, ``Open source computer vision library,''
   \url{https://github.com/itseez/opencv}, 2015.
-
-\bibitem{Hurak2012}
-Z.~Hurak and M.~Rezac, ``{Image-based pointing and tracking for inertially
-  stabilized airborne camera platform},'' \emph{IEEE Transactions on Control
-  Systems Technology}, vol.~20, no.~5, pp. 1146--1159, 2012.
 
 \bibitem{spong2006robot}
 M.~W. Spong, S.~Hutchinson, and M.~Vidyasagar, \emph{Robot modeling and
@@ -46,15 +183,6 @@ E.~Lavretsky and K.~A. Wise, \emph{State Feedback Direct Model Reference
   Adaptive Control}.\hskip 1em plus 0.5em minus 0.4em\relax London: Springer
   London, 2013, pp. 263--292. [Online]. Available:
   \url{https://doi.org/10.1007/978-1-4471-4396-3_9}
-\BIBentrySTDinterwordspacing
-
-\bibitem{Niedfeldt2014}
-\BIBentryALTinterwordspacing
-P.~C. Niedfeldt and R.~W. Beard, ``{Multiple target tracking using recursive
-  RANSAC},'' in \emph{2014 American Control Conference}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, jun 2014, pp. 3393--3398. [Online]. Available:
-  \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6859273
-  http://ieeexplore.ieee.org/document/6859273/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{mavros}
