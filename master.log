@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  27 FEB 2018 06:54
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.2)  22 JAN 2018 14:58
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -472,7 +476,12 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 118.
 \tempwidth=\skip84
  (./master.aux
 (./chapters/chapter1.aux) (./chapters/chapter2.aux) (./chapters/chapter3.aux)
+<<<<<<< HEAD
 (./chapters/chapter4.aux) (./chapters/chapter5.aux))
+=======
+(./chapters/chapter4.aux) (./chapters/chapter5.aux) (./appendix/appendixa.aux)
+(./appendix/appendixb.aux))
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
@@ -630,7 +639,11 @@ Package pdftex.def Info: images/ibvs.pdf used on input line 9.
 
  (./chapters/chapter2.tex
 Chapter 2.
+<<<<<<< HEAD
 <images/chapter2/gimbal1_frame.pdf, id=450, 115.43124pt x 116.435pt>
+=======
+<images/chapter2/gimbal1_frame.pdf, id=441, 115.43124pt x 116.435pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal1_frame.pdf Graphic file (type pdf)
 
 <use images/chapter2/gimbal1_frame.pdf>
@@ -638,7 +651,11 @@ Package pdftex.def Info: images/chapter2/gimbal1_frame.pdf used on input line 1
 1.
 (pdftex.def)             Requested size: 144.54pt x 145.8081pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_frame.pdf, id=451, 119.44624pt x 94.3525pt>
+=======
+<images/chapter2/gimbal_frame.pdf, id=442, 119.44624pt x 94.3525pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_frame.pdf Graphic file (type pdf)
 
 <use images/chapter2/gimbal_frame.pdf>
@@ -655,15 +672,24 @@ Overfull \hbox (4.56004pt too wide) in paragraph at lines 9--20
 
 
  <./images/chapter2/gimbal1_frame.pdf> <./images/chapter2/gimbal_frame.pdf>]
+<<<<<<< HEAD
 <images/chapter2/camera_frame.pdf, id=473, 132.495pt x 102.3825pt>
+=======
+[5] <images/chapter2/camera_frame.pdf, id=472, 132.495pt x 102.3825pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/camera_frame.pdf Graphic file (type pdf)
 
 <use images/chapter2/camera_frame.pdf>
 Package pdftex.def Info: images/chapter2/camera_frame.pdf used on input line 59
 .
 (pdftex.def)             Requested size: 252.94499pt x 195.47235pt.
+<<<<<<< HEAD
  [6] [7 <./images/chapter2/camera_frame.pdf>] [8] <images/chapter2/gimbal_webca
 m.jpg, id=535, 3131.7pt x 4175.6pt>
+=======
+ [6 <./images/chapter2/camera_frame.pdf>] [7] <images/chapter2/gimbal_webcam.jp
+g, id=521, 3131.7pt x 4175.6pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_webcam.jpg Graphic file (type jpg)
 
 <use images/chapter2/gimbal_webcam.jpg>
@@ -671,7 +697,11 @@ Package pdftex.def Info: images/chapter2/gimbal_webcam.jpg used on input line 1
 56.
 (pdftex.def)             Requested size: 216.81pt x 289.07243pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_0s.png, id=540, 483.8075pt x 558.085pt>
+=======
+<images/chapter2/gimbal_0s.png, id=526, 483.8075pt x 558.085pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_0s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_0s.png>
@@ -684,7 +714,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 168.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_10s.png, id=541, 483.8075pt x 558.085pt>
+=======
+<images/chapter2/gimbal_10s.png, id=527, 483.8075pt x 558.085pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_10s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_10s.png>
@@ -692,7 +726,11 @@ Package pdftex.def Info: images/chapter2/gimbal_10s.png used on input line 172.
 
 (pdftex.def)             Requested size: 147.99294pt x 170.71652pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_20s.png, id=542, 483.8075pt x 558.085pt>
+=======
+<images/chapter2/gimbal_20s.png, id=528, 483.8075pt x 558.085pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_20s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_20s.png>
@@ -700,7 +738,11 @@ Package pdftex.def Info: images/chapter2/gimbal_20s.png used on input line 177.
 
 (pdftex.def)             Requested size: 147.99294pt x 170.71652pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_30s.png, id=543, 483.8075pt x 558.085pt>
+=======
+<images/chapter2/gimbal_30s.png, id=529, 483.8075pt x 558.085pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_30s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_30s.png>
@@ -708,34 +750,57 @@ Package pdftex.def Info: images/chapter2/gimbal_30s.png used on input line 182.
 
 (pdftex.def)             Requested size: 147.99294pt x 170.71652pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_40s.png, id=544, 483.8075pt x 558.085pt>
+=======
+<images/chapter2/gimbal_40s.png, id=530, 483.8075pt x 558.085pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_40s.png Graphic file (type png)
 
 <use images/chapter2/gimbal_40s.png>
 Package pdftex.def Info: images/chapter2/gimbal_40s.png used on input line 187.
 
 (pdftex.def)             Requested size: 147.99294pt x 170.71652pt.
+<<<<<<< HEAD
  [9 <./images/chapter2/gimbal_webcam.jpg>]
 [10 <./images/chapter2/gimbal_0s.png> <./images/chapter2/gimbal_10s.png> <./ima
 ges/chapter2/gimbal_20s.png> <./images/chapter2/gimbal_30s.png> <./images/chapt
 er2/gimbal_40s.png>]
 <images/chapter2/cross_elevation.pdf, id=555, 238.8925pt x 146.5475pt>
+=======
+ [8]
+<images/chapter2/cross_elevation.pdf, id=542, 238.8925pt x 146.5475pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/cross_elevation.pdf Graphic file (type pdf)
 
 <use images/chapter2/cross_elevation.pdf>
 Package pdftex.def Info: images/chapter2/cross_elevation.pdf used on input line
  200.
 (pdftex.def)             Requested size: 216.81pt x 133.00063pt.
+<<<<<<< HEAD
  [11 <./images/chapter2/cross_elevation.pdf>] [12] [13] [14]
 <images/chapter2/gp_blockdiagram.pdf, id=611, 488.82625pt x 257.96375pt>
+=======
+ [9 <./images/chapter2/gimbal_webcam.jpg>] [10 <./images/chapter2/gimbal_0s.png
+> <./images/chapter2/gimbal_10s.png> <./images/chapter2/gimbal_20s.png> <./imag
+es/chapter2/gimbal_30s.png> <./images/chapter2/gimbal_40s.png>] [11 <./images/c
+hapter2/cross_elevation.pdf>] [12]
+[13] [14]
+<images/chapter2/gp_blockdiagram.pdf, id=609, 488.82625pt x 257.96375pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gp_blockdiagram.pdf Graphic file (type pdf)
 
 <use images/chapter2/gp_blockdiagram.pdf>
 Package pdftex.def Info: images/chapter2/gp_blockdiagram.pdf used on input line
  371.
 (pdftex.def)             Requested size: 361.34999pt x 190.69336pt.
+<<<<<<< HEAD
  [15]
 <images/chapter2/MRAC.pdf, id=627, 362.35374pt x 197.73875pt>
+=======
+ [15 <./images/chapter2/gp_blockdiagram.pdf>] <images/chapter2/MRAC.pdf, id=625
+, 362.35374pt x 197.73875pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/MRAC.pdf Graphic file (type pdf)
 
 <use images/chapter2/MRAC.pdf>
@@ -755,7 +820,11 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 487.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/u_adaptive-eps-converted-to.pdf, id=681, 437.635pt x 321.2pt>
+=======
+<images/chapter2/u_adaptive-eps-converted-to.pdf, id=667, 437.635pt x 321.2pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/u_adaptive-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/chapter2/u_adaptive-eps-converted-to.pdf>
@@ -774,7 +843,11 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 492.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/w_adaptive-eps-converted-to.pdf, id=682, 437.635pt x 321.2pt>
+=======
+<images/chapter2/w_adaptive-eps-converted-to.pdf, id=668, 437.635pt x 321.2pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/w_adaptive-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/chapter2/w_adaptive-eps-converted-to.pdf>
@@ -795,7 +868,11 @@ eps>
 (epstopdf)             \includegraphics on input line 503.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/angular_velocity_adaptive-eps-converted-to.pdf, id=683, 490.83
+=======
+<images/chapter2/angular_velocity_adaptive-eps-converted-to.pdf, id=678, 490.83
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 376pt x 341.275pt>
 File: images/chapter2/angular_velocity_adaptive-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -816,7 +893,11 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 508.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/z_adaptive-eps-converted-to.pdf, id=684, 491.8375pt x 341.275p
+=======
+<images/chapter2/z_adaptive-eps-converted-to.pdf, id=679, 491.8375pt x 341.275p
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 t>
 File: images/chapter2/z_adaptive-eps-converted-to.pdf Graphic file (type pdf)
  <use images/chapter2/z_adaptive-eps-converted-to.pdf>
@@ -835,7 +916,11 @@ ve_0s-eps-converted-to.pdf images/chapter2/uav_adaptive_0s.eps>
 (epstopdf)             \includegraphics on input line 521.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/uav_adaptive_0s-eps-converted-to.pdf, id=687, 1429.34pt x 761.
+=======
+<images/chapter2/uav_adaptive_0s-eps-converted-to.pdf, id=709, 1429.34pt x 761.
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 84625pt>
 File: images/chapter2/uav_adaptive_0s-eps-converted-to.pdf Graphic file (type p
 df)
@@ -860,7 +945,11 @@ ptive_0s-eps-converted-to.pdf images/chapter2/camera_adaptive_0s.eps>
 (epstopdf)             \includegraphics on input line 526.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/camera_adaptive_0s-eps-converted-to.pdf, id=688, 425.59pt x 31
+=======
+<images/chapter2/camera_adaptive_0s-eps-converted-to.pdf, id=710, 425.59pt x 31
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 9.1925pt>
 File: images/chapter2/camera_adaptive_0s-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -880,7 +969,11 @@ ve_60s-eps-converted-to.pdf images/chapter2/uav_adaptive_60s.eps>
 (epstopdf)             \includegraphics on input line 531.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/uav_adaptive_60s-eps-converted-to.pdf, id=689, 1429.34pt x 761
+=======
+<images/chapter2/uav_adaptive_60s-eps-converted-to.pdf, id=711, 1429.34pt x 761
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 .84625pt>
 File: images/chapter2/uav_adaptive_60s-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -905,7 +998,11 @@ ptive_60s-eps-converted-to.pdf images/chapter2/camera_adaptive_60s.eps>
 (epstopdf)             \includegraphics on input line 536.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/camera_adaptive_60s-eps-converted-to.pdf, id=690, 425.59pt x 3
+=======
+<images/chapter2/camera_adaptive_60s-eps-converted-to.pdf, id=712, 425.59pt x 3
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 19.1925pt>
 File: images/chapter2/camera_adaptive_60s-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -925,7 +1022,11 @@ ve_120s-eps-converted-to.pdf images/chapter2/uav_adaptive_120s.eps>
 (epstopdf)             \includegraphics on input line 541.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/uav_adaptive_120s-eps-converted-to.pdf, id=691, 1429.34pt x 76
+=======
+<images/chapter2/uav_adaptive_120s-eps-converted-to.pdf, id=713, 1429.34pt x 76
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 1.84625pt>
 File: images/chapter2/uav_adaptive_120s-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -950,7 +1051,11 @@ ptive_120s-eps-converted-to.pdf images/chapter2/camera_adaptive_120s.eps>
 (epstopdf)             \includegraphics on input line 546.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/camera_adaptive_120s-eps-converted-to.pdf, id=692, 425.59pt x 
+=======
+<images/chapter2/camera_adaptive_120s-eps-converted-to.pdf, id=714, 425.59pt x 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 319.1925pt>
 File: images/chapter2/camera_adaptive_120s-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -970,7 +1075,11 @@ ve_180s-eps-converted-to.pdf images/chapter2/uav_adaptive_180s.eps>
 (epstopdf)             \includegraphics on input line 551.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/uav_adaptive_180s-eps-converted-to.pdf, id=693, 1429.34pt x 76
+=======
+<images/chapter2/uav_adaptive_180s-eps-converted-to.pdf, id=715, 1429.34pt x 76
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 1.84625pt>
 File: images/chapter2/uav_adaptive_180s-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -995,7 +1104,11 @@ ptive_180s-eps-converted-to.pdf images/chapter2/camera_adaptive_180s.eps>
 (epstopdf)             \includegraphics on input line 556.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/camera_adaptive_180s-eps-converted-to.pdf, id=694, 425.59pt x 
+=======
+<images/chapter2/camera_adaptive_180s-eps-converted-to.pdf, id=716, 425.59pt x 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 319.1925pt>
 File: images/chapter2/camera_adaptive_180s-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1019,7 +1132,11 @@ converted-to.pdf images/chapter2/uav_z.eps>
 (epstopdf)             \includegraphics on input line 567.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/uav_z-eps-converted-to.pdf, id=695, 440.64626pt x 346.29375pt>
+=======
+<images/chapter2/uav_z-eps-converted-to.pdf, id=717, 440.64626pt x 346.29375pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/uav_z-eps-converted-to.pdf Graphic file (type pdf)
 <use images/chapter2/uav_z-eps-converted-to.pdf>
 Package pdftex.def Info: images/chapter2/uav_z-eps-converted-to.pdf used on inp
@@ -1037,7 +1154,11 @@ _command-eps-converted-to.pdf images/chapter2/uav_gimbal_command.eps>
 (epstopdf)             \includegraphics on input line 572.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/uav_gimbal_command-eps-converted-to.pdf, id=696, 440.64626pt x
+=======
+<images/chapter2/uav_gimbal_command-eps-converted-to.pdf, id=718, 440.64626pt x
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
  346.29375pt>
 File: images/chapter2/uav_gimbal_command-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -1057,7 +1178,11 @@ eps-converted-to.pdf images/chapter2/uav_pixel.eps>
 (epstopdf)             \includegraphics on input line 577.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter2/uav_pixel-eps-converted-to.pdf, id=697, 439.6425pt x 346.29375
+=======
+<images/chapter2/uav_pixel-eps-converted-to.pdf, id=719, 439.6425pt x 346.29375
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 pt>
 File: images/chapter2/uav_pixel-eps-converted-to.pdf Graphic file (type pdf)
  <use images/chapter2/uav_pixel-eps-converted-to.pdf>
@@ -1065,14 +1190,22 @@ Package pdftex.def Info: images/chapter2/uav_pixel-eps-converted-to.pdf used on
  input line 577.
 (pdftex.def)             Requested size: 234.87749pt x 185.00375pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal.jpg, id=701, 3131.7pt x 4175.6pt>
+=======
+<images/chapter2/gimbal.jpg, id=723, 3131.7pt x 4175.6pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal.jpg Graphic file (type jpg)
 
 <use images/chapter2/gimbal.jpg>
 Package pdftex.def Info: images/chapter2/gimbal.jpg used on input line 588.
 (pdftex.def)             Requested size: 162.5674pt x 216.81pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_parts.png, id=702, 1311.90125pt x 411.5375pt>
+=======
+<images/chapter2/gimbal_parts.png, id=724, 1311.90125pt x 411.5375pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_parts.png Graphic file (type png)
 
 <use images/chapter2/gimbal_parts.png>
@@ -1080,7 +1213,11 @@ Package pdftex.def Info: images/chapter2/gimbal_parts.png used on input line 59
 4.
 (pdftex.def)             Requested size: 375.80542pt x 117.88596pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_system_blockdiagram.pdf, id=703, 254.9525pt x 82.3075pt
+=======
+<images/chapter2/gimbal_system_blockdiagram.pdf, id=725, 254.9525pt x 82.3075pt
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 >
 File: images/chapter2/gimbal_system_blockdiagram.pdf Graphic file (type pdf)
  <use images/chapter2/gimbal_system_blockdiagram.pdf>
@@ -1088,7 +1225,11 @@ Package pdftex.def Info: images/chapter2/gimbal_system_blockdiagram.pdf used on
  input line 600.
 (pdftex.def)             Requested size: 375.80542pt x 121.32964pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_hardware_1.png, id=706, 387.4475pt x 361.35pt>
+=======
+<images/chapter2/gimbal_hardware_1.png, id=728, 387.4475pt x 361.35pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_hardware_1.png Graphic file (type png)
 
 <use images/chapter2/gimbal_hardware_1.png>
@@ -1096,7 +1237,11 @@ Package pdftex.def Info: images/chapter2/gimbal_hardware_1.png used on input li
 ne 609.
 (pdftex.def)             Requested size: 198.29913pt x 184.9429pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_hardware_2.png, id=707, 387.4475pt x 361.35pt>
+=======
+<images/chapter2/gimbal_hardware_2.png, id=729, 387.4475pt x 361.35pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_hardware_2.png Graphic file (type png)
 
 <use images/chapter2/gimbal_hardware_2.png>
@@ -1104,7 +1249,11 @@ Package pdftex.def Info: images/chapter2/gimbal_hardware_2.png used on input li
 ne 614.
 (pdftex.def)             Requested size: 198.29913pt x 184.9429pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_hardware_3.png, id=708, 387.4475pt x 361.35pt>
+=======
+<images/chapter2/gimbal_hardware_3.png, id=730, 387.4475pt x 361.35pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_hardware_3.png Graphic file (type png)
 
 <use images/chapter2/gimbal_hardware_3.png>
@@ -1112,7 +1261,11 @@ Package pdftex.def Info: images/chapter2/gimbal_hardware_3.png used on input li
 ne 619.
 (pdftex.def)             Requested size: 198.29913pt x 184.9429pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_hardware_4.png, id=709, 387.4475pt x 361.35pt>
+=======
+<images/chapter2/gimbal_hardware_4.png, id=731, 387.4475pt x 361.35pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_hardware_4.png Graphic file (type png)
 
 <use images/chapter2/gimbal_hardware_4.png>
@@ -1120,7 +1273,11 @@ Package pdftex.def Info: images/chapter2/gimbal_hardware_4.png used on input li
 ne 624.
 (pdftex.def)             Requested size: 198.29913pt x 184.9429pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_hardware_5.png, id=710, 387.4475pt x 361.35pt>
+=======
+<images/chapter2/gimbal_hardware_5.png, id=732, 387.4475pt x 361.35pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_hardware_5.png Graphic file (type png)
 
 <use images/chapter2/gimbal_hardware_5.png>
@@ -1128,7 +1285,11 @@ Package pdftex.def Info: images/chapter2/gimbal_hardware_5.png used on input li
 ne 629.
 (pdftex.def)             Requested size: 198.29913pt x 184.9429pt.
 
+<<<<<<< HEAD
 <images/chapter2/gimbal_hardware_6.png, id=711, 387.4475pt x 361.35pt>
+=======
+<images/chapter2/gimbal_hardware_6.png, id=733, 387.4475pt x 361.35pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter2/gimbal_hardware_6.png Graphic file (type png)
 
 <use images/chapter2/gimbal_hardware_6.png>
@@ -1161,7 +1322,11 @@ pter2/gimbal_hardware_5.png> <./images/chapter2/gimbal_hardware_6.png>]
 
  (./chapters/chapter3.tex
 Chapter 3.
+<<<<<<< HEAD
 <images/chapter3/system_diagram.pdf, id=840, 350.30875pt x 257.96375pt>
+=======
+<images/chapter3/system_diagram.pdf, id=831, 350.30875pt x 257.96375pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter3/system_diagram.pdf Graphic file (type pdf)
 
 <use images/chapter3/system_diagram.pdf>
@@ -1173,22 +1338,36 @@ Package pdftex.def Info: images/chapter3/system_diagram.pdf used on input line
 
 
  <./images/chapter3/system_diagram.pdf>] <images/chapter3/tracker_diagram.pdf, 
+<<<<<<< HEAD
 id=854, 491.8375pt x 112.42pt>
+=======
+id=844, 491.8375pt x 112.42pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter3/tracker_diagram.pdf Graphic file (type pdf)
 
 <use images/chapter3/tracker_diagram.pdf>
 Package pdftex.def Info: images/chapter3/tracker_diagram.pdf used on input line
  25.
 (pdftex.def)             Requested size: 375.80542pt x 85.90152pt.
+<<<<<<< HEAD
  [28] [29 <./images/chapter3/tracker_diagram.pdf>] <images/side_view_45deg_2.pd
 f, id=872, 305.14pt x 308.15125pt>
+=======
+ [27] [28 <./images/chapter3/tracker_diagram.pdf>] <images/side_view_45deg_2.pd
+f, id=862, 305.14pt x 308.15125pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/side_view_45deg_2.pdf Graphic file (type pdf)
 
 <use images/side_view_45deg_2.pdf>
 Package pdftex.def Info: images/side_view_45deg_2.pdf used on input line 57.
 (pdftex.def)             Requested size: 234.87749pt x 237.20195pt.
+<<<<<<< HEAD
  [30] [31 <./images/side_view_45deg_2.pdf>]
 <images/chapter3/ID51_track_begin.png, id=892, 433.62pt x 243.91125pt>
+=======
+ [29] [30 <./images/side_view_45deg_2.pdf>]
+<images/chapter3/ID51_track_begin.png, id=883, 433.62pt x 243.91125pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter3/ID51_track_begin.png Graphic file (type png)
 
 <use images/chapter3/ID51_track_begin.png>
@@ -1196,7 +1375,11 @@ Package pdftex.def Info: images/chapter3/ID51_track_begin.png used on input lin
 e 102.
 (pdftex.def)             Requested size: 214.20566pt x 120.49266pt.
 
+<<<<<<< HEAD
 <images/chapter3/ID51_follow_begin.png, id=893, 433.62pt x 243.91125pt>
+=======
+<images/chapter3/ID51_follow_begin.png, id=884, 433.62pt x 243.91125pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter3/ID51_follow_begin.png Graphic file (type png)
 
 <use images/chapter3/ID51_follow_begin.png>
@@ -1204,7 +1387,11 @@ Package pdftex.def Info: images/chapter3/ID51_follow_begin.png used on input li
 ne 108.
 (pdftex.def)             Requested size: 214.20566pt x 120.49266pt.
 
+<<<<<<< HEAD
 <images/chapter3/ID65_track_begin.png, id=894, 433.62pt x 243.91125pt>
+=======
+<images/chapter3/ID65_track_begin.png, id=885, 433.62pt x 243.91125pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter3/ID65_track_begin.png Graphic file (type png)
 
 <use images/chapter3/ID65_track_begin.png>
@@ -1212,7 +1399,11 @@ Package pdftex.def Info: images/chapter3/ID65_track_begin.png used on input lin
 e 114.
 (pdftex.def)             Requested size: 214.20566pt x 120.49266pt.
 
+<<<<<<< HEAD
 <images/chapter3/ID65_follow_begin.png, id=895, 433.62pt x 243.91125pt>
+=======
+<images/chapter3/ID65_follow_begin.png, id=886, 433.62pt x 243.91125pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter3/ID65_follow_begin.png Graphic file (type png)
 
 <use images/chapter3/ID65_follow_begin.png>
@@ -1220,15 +1411,24 @@ Package pdftex.def Info: images/chapter3/ID65_follow_begin.png used on input li
 ne 120.
 (pdftex.def)             Requested size: 214.20566pt x 120.49266pt.
 
+<<<<<<< HEAD
 <images/chapter3/ID65_following.png, id=896, 433.62pt x 243.91125pt>
+=======
+<images/chapter3/ID65_following.png, id=887, 433.62pt x 243.91125pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter3/ID65_following.png Graphic file (type png)
 
 <use images/chapter3/ID65_following.png>
 Package pdftex.def Info: images/chapter3/ID65_following.png used on input line 
 127.
 (pdftex.def)             Requested size: 225.48038pt x 126.83456pt.
+<<<<<<< HEAD
  [32]
 <images/chapter3/ID65_follow_begin_annotated.png, id=917, 1045.9075pt x 821.067
+=======
+ [31]
+<images/chapter3/ID65_follow_begin_annotated.png, id=908, 1045.9075pt x 821.067
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 5pt>
 File: images/chapter3/ID65_follow_begin_annotated.png Graphic file (type png)
  <use images/chapter3/ID65_follow_begin_annotated.png>
@@ -1236,7 +1436,11 @@ Package pdftex.def Info: images/chapter3/ID65_follow_begin_annotated.png used o
 n input line 140.
 (pdftex.def)             Requested size: 253.70409pt x 199.16928pt.
 
+<<<<<<< HEAD
 <images/chapter3/ID65_trace_annotated.png, id=923, 1047.915pt x 823.075pt>
+=======
+<images/chapter3/ID65_trace_annotated.png, id=914, 1047.915pt x 823.075pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter3/ID65_trace_annotated.png Graphic file (type png)
 
 <use images/chapter3/ID65_trace_annotated.png>
@@ -1244,24 +1448,40 @@ Package pdftex.def Info: images/chapter3/ID65_trace_annotated.png used on input
  line 147.
 (pdftex.def)             Requested size: 253.56743pt x 199.16928pt.
 
+<<<<<<< HEAD
 <images/chapter3/GPS_trace.png, id=928, 1045.9075pt x 823.075pt>
+=======
+<images/chapter3/GPS_trace.png, id=919, 1045.9075pt x 823.075pt>
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 File: images/chapter3/GPS_trace.png Graphic file (type png)
 
 <use images/chapter3/GPS_trace.png>
 Package pdftex.def Info: images/chapter3/GPS_trace.png used on input line 154.
 (pdftex.def)             Requested size: 253.08167pt x 199.16928pt.
+<<<<<<< HEAD
 ) [33] [34 <./images/chapter3/ID51_track_begin.png (PNG copy)> <./images/chapte
 r3/ID51_follow_begin.png (PNG copy)> <./images/chapter3/ID65_track_begin.png (P
 NG copy)> <./images/chapter3/ID65_follow_begin.png (PNG copy)> <./images/chapte
 r3/ID65_following.png (PNG copy)>] [35 <./images/chapter3/ID65_follow_begin_ann
 otated.png> <./images/chapter3/ID65_trace_annotated.png>] [36 <./images/chapter
+=======
+) [32] [33 <./images/chapter3/ID51_track_begin.png (PNG copy)> <./images/chapte
+r3/ID51_follow_begin.png (PNG copy)> <./images/chapter3/ID65_track_begin.png (P
+NG copy)> <./images/chapter3/ID65_follow_begin.png (PNG copy)> <./images/chapte
+r3/ID65_following.png (PNG copy)>] [34 <./images/chapter3/ID65_follow_begin_ann
+otated.png> <./images/chapter3/ID65_trace_annotated.png>] [35 <./images/chapter
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 3/GPS_trace.png>]
 \openout2 = `chapters/chapter4.aux'.
 
  (./chapters/chapter4.tex
 Chapter 4.
 
+<<<<<<< HEAD
 <images/chapter4/advanced_control_motivation.pdf, id=953, 141.52875pt x 86.3225
+=======
+<images/chapter4/advanced_control_motivation.pdf, id=944, 141.52875pt x 86.3225
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 pt>
 File: images/chapter4/advanced_control_motivation.pdf Graphic file (type pdf)
  <use images/chapter4/advanced_control_motivation.pdf>
@@ -1269,7 +1489,11 @@ Package pdftex.def Info: images/chapter4/advanced_control_motivation.pdf used o
 n input line 6.
 (pdftex.def)             Requested size: 281.85585pt x 171.94643pt.
 
+<<<<<<< HEAD
 <images/chapter4/advanced_control_overview.pdf, id=955, 219.82124pt x 158.5925p
+=======
+<images/chapter4/advanced_control_overview.pdf, id=946, 219.82124pt x 158.5925p
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 t>
 File: images/chapter4/advanced_control_overview.pdf Graphic file (type pdf)
  <use images/chapter4/advanced_control_overview.pdf>
@@ -1280,8 +1504,13 @@ input line 15.
 
 
 
+<<<<<<< HEAD
  <./images/chapter4/advanced_control_motivation.pdf>] [38 <./images/chapter4/ad
 vanced_control_overview.pdf>] <images/chapter4/projection.pdf, id=1029, 43.1612
+=======
+ <./images/chapter4/advanced_control_motivation.pdf>] [37 <./images/chapter4/ad
+vanced_control_overview.pdf>] <images/chapter4/projection.pdf, id=1020, 43.1612
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 5pt x 60.225pt>
 File: images/chapter4/projection.pdf Graphic file (type pdf)
 
@@ -1302,7 +1531,11 @@ o-eps-converted-to.pdf images/chapter4/simple_zero.eps>
 (epstopdf)             \includegraphics on input line 213.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/simple_zero-eps-converted-to.pdf, id=1120, 1277.77374pt x 738.
+=======
+<images/chapter4/simple_zero-eps-converted-to.pdf, id=1111, 1277.77374pt x 738.
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 76pt>
 File: images/chapter4/simple_zero-eps-converted-to.pdf Graphic file (type pdf)
  <use images/chapter4/simple_zero-eps-converted-to.pdf>
@@ -1321,7 +1554,11 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 219.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/simple_ten-eps-converted-to.pdf, id=1121, 1277.77374pt x 738.7
+=======
+<images/chapter4/simple_ten-eps-converted-to.pdf, id=1112, 1277.77374pt x 738.7
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 6pt>
 File: images/chapter4/simple_ten-eps-converted-to.pdf Graphic file (type pdf)
  <use images/chapter4/simple_ten-eps-converted-to.pdf>
@@ -1340,7 +1577,11 @@ eps-converted-to.pdf images/chapter4/simple_ex.eps>
 (epstopdf)             \includegraphics on input line 224.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/simple_ex-eps-converted-to.pdf, id=1122, 447.6725pt x 369.38pt
+=======
+<images/chapter4/simple_ex-eps-converted-to.pdf, id=1113, 447.6725pt x 369.38pt
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 >
 File: images/chapter4/simple_ex-eps-converted-to.pdf Graphic file (type pdf)
  <use images/chapter4/simple_ex-eps-converted-to.pdf>
@@ -1359,7 +1600,11 @@ mple_zero-eps-converted-to.pdf images/chapter4/another_simple_zero.eps>
 (epstopdf)             \includegraphics on input line 234.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/another_simple_zero-eps-converted-to.pdf, id=1123, 433.62pt x 
+=======
+<images/chapter4/another_simple_zero-eps-converted-to.pdf, id=1114, 433.62pt x 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 342.27875pt>
 File: images/chapter4/another_simple_zero-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1379,7 +1624,11 @@ mple_ten-eps-converted-to.pdf images/chapter4/another_simple_ten.eps>
 (epstopdf)             \includegraphics on input line 240.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/another_simple_ten-eps-converted-to.pdf, id=1124, 433.62pt x 3
+=======
+<images/chapter4/another_simple_ten-eps-converted-to.pdf, id=1115, 433.62pt x 3
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 42.27875pt>
 File: images/chapter4/another_simple_ten-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -1399,7 +1648,11 @@ mple_ex-eps-converted-to.pdf images/chapter4/another_simple_ex.eps>
 (epstopdf)             \includegraphics on input line 245.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/another_simple_ex-eps-converted-to.pdf, id=1125, 447.6725pt x 
+=======
+<images/chapter4/another_simple_ex-eps-converted-to.pdf, id=1116, 447.6725pt x 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 369.38pt>
 File: images/chapter4/another_simple_ex-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -1412,8 +1665,13 @@ Package pdftex.def Info: images/chapter4/another_simple_ex-eps-converted-to.pdf
 ple_ten-eps-converted-to.pdf> <./images/chapter4/simple_ex-eps-converted-to.pdf
 >] [45 <./images/chapter4/another_simple_zero-eps-converted-to.pdf> <./images/c
 hapter4/another_simple_ten-eps-converted-to.pdf> <./images/chapter4/another_sim
+<<<<<<< HEAD
 ple_ex-eps-converted-to.pdf>] [46] [47] [48] [49]
 <images/chapter4/inertial_LOS_backstepping.pdf, id=1275, 285.065pt x 154.5775pt
+=======
+ple_ex-eps-converted-to.pdf>] [45] [46] [47] [48]
+<images/chapter4/inertial_LOS_backstepping.pdf, id=1266, 285.065pt x 154.5775pt
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 >
 File: images/chapter4/inertial_LOS_backstepping.pdf Graphic file (type pdf)
  <use images/chapter4/inertial_LOS_backstepping.pdf>
@@ -1421,7 +1679,11 @@ Package pdftex.def Info: images/chapter4/inertial_LOS_backstepping.pdf used on
 input line 440.
 (pdftex.def)             Requested size: 375.80542pt x 203.78108pt.
 
+<<<<<<< HEAD
 <images/chapter4/image_based_backstepping.pdf, id=1276, 284.06125pt x 154.5775p
+=======
+<images/chapter4/image_based_backstepping.pdf, id=1267, 284.06125pt x 154.5775p
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 t>
 File: images/chapter4/image_based_backstepping.pdf Graphic file (type pdf)
  <use images/chapter4/image_based_backstepping.pdf>
@@ -1440,7 +1702,11 @@ AV_0mps-eps-converted-to.pdf images/chapter4/inertial_UAV_0mps.eps>
 (epstopdf)             \includegraphics on input line 455.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_UAV_0mps-eps-converted-to.pdf, id=1277, 425.59pt x 31
+=======
+<images/chapter4/inertial_UAV_0mps-eps-converted-to.pdf, id=1268, 425.59pt x 31
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 9.1925pt>
 File: images/chapter4/inertial_UAV_0mps-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -1461,7 +1727,11 @@ AV_0mps_60s-eps-converted-to.pdf images/chapter4/inertial_UAV_0mps_60s.eps>
 (epstopdf)             \includegraphics on input line 459.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_UAV_0mps_60s-eps-converted-to.pdf, id=1278, 425.59pt 
+=======
+<images/chapter4/inertial_UAV_0mps_60s-eps-converted-to.pdf, id=1269, 425.59pt 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 x 319.1925pt>
 File: images/chapter4/inertial_UAV_0mps_60s-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1481,7 +1751,11 @@ amera_0mps-eps-converted-to.pdf images/chapter4/inertial_camera_0mps.eps>
 (epstopdf)             \includegraphics on input line 463.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_camera_0mps-eps-converted-to.pdf, id=1279, 425.59pt x
+=======
+<images/chapter4/inertial_camera_0mps-eps-converted-to.pdf, id=1270, 425.59pt x
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
  319.1925pt>
 File: images/chapter4/inertial_camera_0mps-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1503,7 +1777,11 @@ s>
 (epstopdf)             \includegraphics on input line 467.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_camera_0mps_60s-eps-converted-to.pdf, id=1280, 425.59
+=======
+<images/chapter4/inertial_camera_0mps_60s-eps-converted-to.pdf, id=1271, 425.59
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 pt x 319.1925pt>
 File: images/chapter4/inertial_camera_0mps_60s-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -1524,7 +1802,11 @@ x_0mps-eps-converted-to.pdf images/chapter4/inertial_Ex_0mps.eps>
 (epstopdf)             \includegraphics on input line 472.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_Ex_0mps-eps-converted-to.pdf, id=1281, 470.75874pt x 
+=======
+<images/chapter4/inertial_Ex_0mps-eps-converted-to.pdf, id=1272, 470.75874pt x 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 437.635pt>
 File: images/chapter4/inertial_Ex_0mps-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -1544,7 +1826,11 @@ AV_5mps-eps-converted-to.pdf images/chapter4/inertial_UAV_5mps.eps>
 (epstopdf)             \includegraphics on input line 482.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_UAV_5mps-eps-converted-to.pdf, id=1282, 1277.77374pt 
+=======
+<images/chapter4/inertial_UAV_5mps-eps-converted-to.pdf, id=1273, 1277.77374pt 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 x 738.76pt>
 File: images/chapter4/inertial_UAV_5mps-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -1565,7 +1851,11 @@ AV_5mps_90s-eps-converted-to.pdf images/chapter4/inertial_UAV_5mps_90s.eps>
 (epstopdf)             \includegraphics on input line 486.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_UAV_5mps_90s-eps-converted-to.pdf, id=1283, 1277.7737
+=======
+<images/chapter4/inertial_UAV_5mps_90s-eps-converted-to.pdf, id=1274, 1277.7737
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 4pt x 738.76pt>
 File: images/chapter4/inertial_UAV_5mps_90s-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1587,7 +1877,11 @@ AV_5mps_180s-eps-converted-to.pdf images/chapter4/inertial_UAV_5mps_180s.eps>
 (epstopdf)             \includegraphics on input line 490.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_UAV_5mps_180s-eps-converted-to.pdf, id=1284, 1277.773
+=======
+<images/chapter4/inertial_UAV_5mps_180s-eps-converted-to.pdf, id=1275, 1277.773
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 74pt x 738.76pt>
 File: images/chapter4/inertial_UAV_5mps_180s-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -1608,7 +1902,11 @@ amera_5mps-eps-converted-to.pdf images/chapter4/inertial_camera_5mps.eps>
 (epstopdf)             \includegraphics on input line 494.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_camera_5mps-eps-converted-to.pdf, id=1285, 433.62pt x
+=======
+<images/chapter4/inertial_camera_5mps-eps-converted-to.pdf, id=1276, 433.62pt x
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
  342.27875pt>
 File: images/chapter4/inertial_camera_5mps-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1630,7 +1928,11 @@ s>
 (epstopdf)             \includegraphics on input line 498.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_camera_5mps_90s-eps-converted-to.pdf, id=1286, 433.62
+=======
+<images/chapter4/inertial_camera_5mps_90s-eps-converted-to.pdf, id=1277, 433.62
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 pt x 342.27875pt>
 File: images/chapter4/inertial_camera_5mps_90s-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -1653,7 +1955,11 @@ eps>
 (epstopdf)             \includegraphics on input line 502.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_camera_5mps_180s-eps-converted-to.pdf, id=1287, 425.5
+=======
+<images/chapter4/inertial_camera_5mps_180s-eps-converted-to.pdf, id=1278, 425.5
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 9pt x 319.1925pt>
 File: images/chapter4/inertial_camera_5mps_180s-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -1674,7 +1980,11 @@ x_5mps-eps-converted-to.pdf images/chapter4/inertial_Ex_5mps.eps>
 (epstopdf)             \includegraphics on input line 507.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_Ex_5mps-eps-converted-to.pdf, id=1288, 485.815pt x 48
+=======
+<images/chapter4/inertial_Ex_5mps-eps-converted-to.pdf, id=1279, 485.815pt x 48
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 2.80376pt>
 File: images/chapter4/inertial_Ex_5mps-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -1694,7 +2004,11 @@ AV_-5mps-eps-converted-to.pdf images/chapter4/inertial_UAV_-5mps.eps>
 (epstopdf)             \includegraphics on input line 517.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_UAV_-5mps-eps-converted-to.pdf, id=1289, 1277.77374pt
+=======
+<images/chapter4/inertial_UAV_-5mps-eps-converted-to.pdf, id=1280, 1277.77374pt
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
  x 738.76pt>
 File: images/chapter4/inertial_UAV_-5mps-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -1715,7 +2029,11 @@ AV_-5mps_90s-eps-converted-to.pdf images/chapter4/inertial_UAV_-5mps_90s.eps>
 (epstopdf)             \includegraphics on input line 521.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_UAV_-5mps_90s-eps-converted-to.pdf, id=1290, 1277.773
+=======
+<images/chapter4/inertial_UAV_-5mps_90s-eps-converted-to.pdf, id=1281, 1277.773
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 74pt x 738.76pt>
 File: images/chapter4/inertial_UAV_-5mps_90s-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -1738,7 +2056,11 @@ AV_-5mps_180s-eps-converted-to.pdf images/chapter4/inertial_UAV_-5mps_180s.eps>
 (epstopdf)             \includegraphics on input line 525.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_UAV_-5mps_180s-eps-converted-to.pdf, id=1291, 1277.77
+=======
+<images/chapter4/inertial_UAV_-5mps_180s-eps-converted-to.pdf, id=1282, 1277.77
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 374pt x 738.76pt>
 File: images/chapter4/inertial_UAV_-5mps_180s-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -1760,7 +2082,11 @@ amera_-5mps-eps-converted-to.pdf images/chapter4/inertial_camera_-5mps.eps>
 (epstopdf)             \includegraphics on input line 529.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_camera_-5mps-eps-converted-to.pdf, id=1292, 425.59pt 
+=======
+<images/chapter4/inertial_camera_-5mps-eps-converted-to.pdf, id=1283, 425.59pt 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 x 319.1925pt>
 File: images/chapter4/inertial_camera_-5mps-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1782,7 +2108,11 @@ eps>
 (epstopdf)             \includegraphics on input line 533.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_camera_-5mps_90s-eps-converted-to.pdf, id=1293, 425.5
+=======
+<images/chapter4/inertial_camera_-5mps_90s-eps-converted-to.pdf, id=1284, 425.5
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 9pt x 319.1925pt>
 File: images/chapter4/inertial_camera_-5mps_90s-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -1805,7 +2135,11 @@ s.eps>
 (epstopdf)             \includegraphics on input line 537.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_camera_-5mps_180s-eps-converted-to.pdf, id=1294, 425.
+=======
+<images/chapter4/inertial_camera_-5mps_180s-eps-converted-to.pdf, id=1285, 425.
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 59pt x 319.1925pt>
 File: images/chapter4/inertial_camera_-5mps_180s-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1826,7 +2160,11 @@ x_-5mps-eps-converted-to.pdf images/chapter4/inertial_Ex_-5mps.eps>
 (epstopdf)             \includegraphics on input line 542.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/inertial_Ex_-5mps-eps-converted-to.pdf, id=1295, 493.845pt x 5
+=======
+<images/chapter4/inertial_Ex_-5mps-eps-converted-to.pdf, id=1286, 493.845pt x 5
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 05.89pt>
 File: images/chapter4/inertial_Ex_-5mps-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -1846,7 +2184,11 @@ ed-to.pdf>
 (epstopdf)             \includegraphics on input line 554.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_UAV_0mps-eps-converted-to.pdf, id=1300, 425.59pt x 319.1
+=======
+<images/chapter4/image_UAV_0mps-eps-converted-to.pdf, id=1291, 425.59pt x 319.1
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 925pt>
 File: images/chapter4/image_UAV_0mps-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1866,7 +2208,11 @@ verted-to.pdf>
 (epstopdf)             \includegraphics on input line 558.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_UAV_0mps_60s-eps-converted-to.pdf, id=1301, 425.59pt x 3
+=======
+<images/chapter4/image_UAV_0mps_60s-eps-converted-to.pdf, id=1292, 425.59pt x 3
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 19.1925pt>
 File: images/chapter4/image_UAV_0mps_60s-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -1886,7 +2232,11 @@ ra_0mps-eps-converted-to.pdf images/chapter4/image_camera_0mps.eps>
 (epstopdf)             \includegraphics on input line 562.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_camera_0mps-eps-converted-to.pdf, id=1302, 425.59pt x 31
+=======
+<images/chapter4/image_camera_0mps-eps-converted-to.pdf, id=1293, 425.59pt x 31
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 9.1925pt>
 File: images/chapter4/image_camera_0mps-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -1907,7 +2257,11 @@ ra_0mps_60s-eps-converted-to.pdf images/chapter4/image_camera_0mps_60s.eps>
 (epstopdf)             \includegraphics on input line 566.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_camera_0mps_60s-eps-converted-to.pdf, id=1303, 425.59pt 
+=======
+<images/chapter4/image_camera_0mps_60s-eps-converted-to.pdf, id=1294, 425.59pt 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 x 319.1925pt>
 File: images/chapter4/image_camera_0mps_60s-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1927,7 +2281,11 @@ mps-eps-converted-to.pdf images/chapter4/image_Ex_0mps.eps>
 (epstopdf)             \includegraphics on input line 571.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_Ex_0mps-eps-converted-to.pdf, id=1304, 643.40375pt x 464
+=======
+<images/chapter4/image_Ex_0mps-eps-converted-to.pdf, id=1295, 643.40375pt x 464
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 .73625pt>
 File: images/chapter4/image_Ex_0mps-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -1947,7 +2305,11 @@ ed-to.pdf>
 (epstopdf)             \includegraphics on input line 581.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_UAV_5mps-eps-converted-to.pdf, id=1305, 1277.77374pt x 7
+=======
+<images/chapter4/image_UAV_5mps-eps-converted-to.pdf, id=1296, 1277.77374pt x 7
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 38.76pt>
 File: images/chapter4/image_UAV_5mps-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1967,7 +2329,11 @@ verted-to.pdf>
 (epstopdf)             \includegraphics on input line 585.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_UAV_5mps_90s-eps-converted-to.pdf, id=1306, 1277.77374pt
+=======
+<images/chapter4/image_UAV_5mps_90s-eps-converted-to.pdf, id=1297, 1277.77374pt
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
  x 738.76pt>
 File: images/chapter4/image_UAV_5mps_90s-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -1987,7 +2353,11 @@ nverted-to.pdf>
 (epstopdf)             \includegraphics on input line 589.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_UAV_5mps_180s-eps-converted-to.pdf, id=1307, 1277.77374p
+=======
+<images/chapter4/image_UAV_5mps_180s-eps-converted-to.pdf, id=1298, 1277.77374p
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 t x 738.76pt>
 File: images/chapter4/image_UAV_5mps_180s-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -2007,7 +2377,11 @@ ra_5mps-eps-converted-to.pdf images/chapter4/image_camera_5mps.eps>
 (epstopdf)             \includegraphics on input line 593.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_camera_5mps-eps-converted-to.pdf, id=1308, 425.59pt x 31
+=======
+<images/chapter4/image_camera_5mps-eps-converted-to.pdf, id=1299, 425.59pt x 31
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 9.1925pt>
 File: images/chapter4/image_camera_5mps-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -2028,7 +2402,11 @@ ra_5mps_90s-eps-converted-to.pdf images/chapter4/image_camera_5mps_90s.eps>
 (epstopdf)             \includegraphics on input line 597.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_camera_5mps_90s-eps-converted-to.pdf, id=1309, 425.59pt 
+=======
+<images/chapter4/image_camera_5mps_90s-eps-converted-to.pdf, id=1300, 425.59pt 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 x 319.1925pt>
 File: images/chapter4/image_camera_5mps_90s-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -2049,7 +2427,11 @@ ra_5mps_180s-eps-converted-to.pdf images/chapter4/image_camera_5mps_180s.eps>
 (epstopdf)             \includegraphics on input line 601.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_camera_5mps_180s-eps-converted-to.pdf, id=1310, 425.59pt
+=======
+<images/chapter4/image_camera_5mps_180s-eps-converted-to.pdf, id=1301, 425.59pt
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
  x 319.1925pt>
 File: images/chapter4/image_camera_5mps_180s-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -2070,7 +2452,11 @@ mps-eps-converted-to.pdf images/chapter4/image_Ex_5mps.eps>
 (epstopdf)             \includegraphics on input line 606.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_Ex_5mps-eps-converted-to.pdf, id=1311, 643.40375pt x 464
+=======
+<images/chapter4/image_Ex_5mps-eps-converted-to.pdf, id=1302, 643.40375pt x 464
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 .73625pt>
 File: images/chapter4/image_Ex_5mps-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2090,7 +2476,11 @@ ted-to.pdf>
 (epstopdf)             \includegraphics on input line 616.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_UAV_-5mps-eps-converted-to.pdf, id=1312, 1277.77374pt x 
+=======
+<images/chapter4/image_UAV_-5mps-eps-converted-to.pdf, id=1303, 1277.77374pt x 
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 738.76pt>
 File: images/chapter4/image_UAV_-5mps-eps-converted-to.pdf Graphic file (type p
 df)
@@ -2110,7 +2500,11 @@ nverted-to.pdf>
 (epstopdf)             \includegraphics on input line 620.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_UAV_-5mps_90s-eps-converted-to.pdf, id=1313, 1277.77374p
+=======
+<images/chapter4/image_UAV_-5mps_90s-eps-converted-to.pdf, id=1304, 1277.77374p
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 t x 738.76pt>
 File: images/chapter4/image_UAV_-5mps_90s-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -2130,7 +2524,11 @@ onverted-to.pdf>
 (epstopdf)             \includegraphics on input line 624.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_UAV_-5mps_180s-eps-converted-to.pdf, id=1314, 1277.77374
+=======
+<images/chapter4/image_UAV_-5mps_180s-eps-converted-to.pdf, id=1305, 1277.77374
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 pt x 738.76pt>
 File: images/chapter4/image_UAV_-5mps_180s-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -2150,7 +2548,11 @@ ra_-5mps-eps-converted-to.pdf images/chapter4/image_camera_-5mps.eps>
 (epstopdf)             \includegraphics on input line 628.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_camera_-5mps-eps-converted-to.pdf, id=1315, 425.59pt x 3
+=======
+<images/chapter4/image_camera_-5mps-eps-converted-to.pdf, id=1306, 425.59pt x 3
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 19.1925pt>
 File: images/chapter4/image_camera_-5mps-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -2171,7 +2573,11 @@ ra_-5mps_90s-eps-converted-to.pdf images/chapter4/image_camera_-5mps_90s.eps>
 (epstopdf)             \includegraphics on input line 632.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_camera_-5mps_90s-eps-converted-to.pdf, id=1316, 425.59pt
+=======
+<images/chapter4/image_camera_-5mps_90s-eps-converted-to.pdf, id=1307, 425.59pt
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
  x 319.1925pt>
 File: images/chapter4/image_camera_-5mps_90s-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -2194,7 +2600,11 @@ ra_-5mps_180s-eps-converted-to.pdf images/chapter4/image_camera_-5mps_180s.eps>
 (epstopdf)             \includegraphics on input line 636.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_camera_-5mps_180s-eps-converted-to.pdf, id=1317, 425.59p
+=======
+<images/chapter4/image_camera_-5mps_180s-eps-converted-to.pdf, id=1308, 425.59p
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 t x 319.1925pt>
 File: images/chapter4/image_camera_-5mps_180s-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -2215,7 +2625,11 @@ ed-to.pdf>
 (epstopdf)             \includegraphics on input line 641.
 Package epstopdf Info: Output file is already uptodate.
 
+<<<<<<< HEAD
 <images/chapter4/image_Ex_-5mps-eps-converted-to.pdf, id=1318, 636.3775pt x 441
+=======
+<images/chapter4/image_Ex_-5mps-eps-converted-to.pdf, id=1309, 636.3775pt x 441
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 .65pt>
 File: images/chapter4/image_Ex_-5mps-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -2256,6 +2670,7 @@ es/chapter4/image_camera_-5mps_90s-eps-converted-to.pdf> <./images/chapter4/ima
 ge_camera_-5mps_180s-eps-converted-to.pdf> <./images/chapter4/image_Ex_-5mps-ep
 s-converted-to.pdf>]
 \openout2 = `chapters/chapter5.aux'.
+<<<<<<< HEAD
 
  (./chapters/chapter5.tex
 Chapter 5.
@@ -2268,9 +2683,29 @@ Chapter 5.
 \openout7 = `master.brf'.
 
  [59
+=======
+
+ (./chapters/chapter5.tex
+Chapter 5.
+) [57
 
 
 
+] (./master.bbl (./master.brf)
+\tf@brf=\write7
+\openout7 = `master.brf'.
+
+ [58
+
+
+
+] [59]) [60]
+\openout2 = `appendix/appendixa.aux'.
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
+
+
+
+<<<<<<< HEAD
 ] [60])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 210.
  [61]
@@ -2284,15 +2719,37 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: 1A650106645FD969E84C331EA9BC119D;2615.
 Package rerunfilecheck Info: File `master.brf' has not changed.
 (rerunfilecheck)             Checksum: 51340617850BC7C5A828EFA989F96454;1969.
+=======
+(./appendix/appendixb.tex)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 210.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 210.
+ (./master.aux (./chapters/chapter1.aux)
+(./chapters/chapter2.aux) (./chapters/chapter3.aux) (./chapters/chapter4.aux)
+(./chapters/chapter5.aux) (./appendix/appendixa.aux) (./appendix/appendixb.aux)
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 210.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 210.
+Package rerunfilecheck Info: File `master.out' has not changed.
+(rerunfilecheck)             Checksum: C3ACA285C9AB432EAB88E41B979CE229;2604.
+Package rerunfilecheck Info: File `master.brf' has not changed.
+(rerunfilecheck)             Checksum: 8939955C78DD21ACF6230F0EF0D1C9BA;1967.
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 210.
  )
 (\end occurred when \iffalse on line 191 was incomplete)
 (\end occurred when \iffalse on line 191 was incomplete) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  9534 strings out of 494953
  157294 string characters out of 6180977
  260422 words of memory out of 5000000
  12139 multiletter control sequences out of 15000+600000
+=======
+ 9549 strings out of 494953
+ 157618 string characters out of 6180977
+ 261248 words of memory out of 5000000
+ 12140 multiletter control sequences out of 15000+600000
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
  43724 words of font info for 103 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  53i,15n,92p,1763b,610s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2308,10 +2765,18 @@ re/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+<<<<<<< HEAD
 Output written on master.pdf (69 pages, 13503790 bytes).
 PDF statistics:
  1796 PDF objects out of 2073 (max. 8388607)
  1422 compressed objects within 15 object streams
  332 named destinations out of 1000 (max. 500000)
+=======
+Output written on master.pdf (68 pages, 13501701 bytes).
+PDF statistics:
+ 1791 PDF objects out of 2073 (max. 8388607)
+ 1418 compressed objects within 15 object streams
+ 331 named destinations out of 1000 (max. 500000)
+>>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
  774 words of extra memory for PDF output out of 10000 (max. 10000000)
 
