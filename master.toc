@@ -1,32 +1,33 @@
 \contentsline {chapter}{List of Tables}{v}{section*.3}
 \contentsline {chapter}{List of Figures}{vi}{section*.5}
 \contentsline {chapter}{\numberline {Chapter\nobreakspace {}1\hspace {1em} }Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}2\hspace {1em} }Gimbal Control}{4}{chapter.2}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}2\hspace {1em} }Gimbal Control}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Angle Commanding Gimbal Control}{5}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Coordinate Frame Convention and Projective Camera Geometry}{5}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Derivation}{7}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Hardware Result}{8}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Angular Velocity Commanding Gimbal Control}{9}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Image Jacobian}{9}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Feedback Linearization-based Visual Pointing and Tracking}{12}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.1.2}Derivation}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Hardware Result}{9}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Angular Velocity Commanding Gimbal Control}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Image Jacobian}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Feedback Linearization-based Visual Pointing and Tracking}{13}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Adaptive Depth Gimbal Control}{16}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Introduction}{16}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Derivation}{16}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Simulation}{19}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.2}Derivation}{17}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Simulation}{20}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Hardware}{21}{subsection.2.3.4}
-\contentsline {section}{\numberline {2.4}Conclusion}{21}{section.2.4}
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }Autonomous Target Following System}{26}{chapter.3}
-\contentsline {section}{\numberline {3.1}System Overview}{26}{section.3.1}
-\contentsline {section}{\numberline {3.2}Recursive-RANSAC Tracker}{27}{section.3.2}
-\contentsline {section}{\numberline {3.3}UAV Control}{29}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Coordinate Frame Convention}{29}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Forward and heading motion control}{30}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Experiments and Results}{31}{section.3.4}
-\contentsline {section}{\numberline {3.5}Conclusion}{35}{section.3.5}
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Advanced UAV Control}{36}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivation}{36}{section.4.1}
-\contentsline {section}{\numberline {4.2}Controller Derivation for Simple UAV Dynamics}{37}{section.4.2}
-\contentsline {section}{\numberline {4.3}Backstepping Controller Derivation for Multirotor Dynamics}{43}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Derivation}{43}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Simulation}{49}{subsection.4.3.2}
-\contentsline {chapter}{References}{57}{section*.44}
+\contentsline {section}{\numberline {2.4}Conclusion}{26}{section.2.4}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }Autonomous Target Following System}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}System Overview}{27}{section.3.1}
+\contentsline {section}{\numberline {3.2}Recursive-RANSAC Tracker}{28}{section.3.2}
+\contentsline {section}{\numberline {3.3}UAV Control}{30}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Coordinate Frame Convention}{30}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Forward and heading motion control}{31}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Experiments and Results}{33}{section.3.4}
+\contentsline {section}{\numberline {3.5}Conclusion}{33}{section.3.5}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Unit Vector UAV Visual Servoing}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}Controller Derivation for Simple UAV Dynamics}{38}{section.4.2}
+\contentsline {section}{\numberline {4.3}Backstepping Controller Derivation for Multirotor Dynamics}{44}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Derivation}{44}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Simulation}{50}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}5\hspace {1em} }Conclusion}{58}{chapter.5}
+\contentsline {chapter}{References}{59}{section*.44}
