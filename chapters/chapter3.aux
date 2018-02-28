@@ -9,7 +9,6 @@
 \newlabel{system}{{3.1}{27}{System Architecture. The R-RANSAC tracker produces a set of target ID numbers and corresponding pixel locations. The visual-servoing controller outputs the desired position, heading, and yaw rate based on the pixel location of the requested target.\relax }{figure.caption.24}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Recursive-RANSAC Tracker}{28}{section.3.2}}
 \citation{Niedfeldt2014}
-<<<<<<< HEAD
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces This figure illustrates the detection framework used to generate measurements used by R-RANSAC. The KLT tracker creates point correspondences between frames which are used to calculate a homography. The difference image detects motion in the frame and creates position measurements of potential targets.\relax }}{29}{figure.caption.25}}
 \newlabel{visual_tracking}{{3.2}{29}{This figure illustrates the detection framework used to generate measurements used by R-RANSAC. The KLT tracker creates point correspondences between frames which are used to calculate a homography. The difference image detects motion in the frame and creates position measurements of potential targets.\relax }{figure.caption.25}{}}
 \@writefile{brf}{\backcite{Niedfeldt2014}{{29}{3.2}{figure.caption.25}}}
@@ -40,42 +39,10 @@
 \newlabel{image2}{{3.6}{35}{The movement of track ID 65 in the normalized image plane. Each event (3)-(5) corresponds to camera view in \ref {camera3}-\ref {camera5} respectively. The controller keeps the track ID 65 in the camera field of view after receiving the command to do so from the human operator.\relax }{figure.caption.29}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Multirotor GPS footage and heading corresponding to camera view in \ref  {camera1}-\ref  {camera5} respectively.\relax }}{36}{figure.caption.30}}
 \newlabel{gps}{{3.7}{36}{Multirotor GPS footage and heading corresponding to camera view in \ref {camera1}-\ref {camera5} respectively.\relax }{figure.caption.30}{}}
-=======
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces This figure illustrates the detection framework used to generate measurements used by R-RANSAC. The KLT tracker creates point correspondences between frames which are used to calculate a homography. The difference image detects motion in the frame and creates position measurements of potential targets.\relax }}{28}{figure.caption.25}}
-\newlabel{visual_tracking}{{3.2}{28}{This figure illustrates the detection framework used to generate measurements used by R-RANSAC. The KLT tracker creates point correspondences between frames which are used to calculate a homography. The difference image detects motion in the frame and creates position measurements of potential targets.\relax }{figure.caption.25}{}}
-\@writefile{brf}{\backcite{Niedfeldt2014}{{28}{3.2}{figure.caption.25}}}
-\citation{mavros}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}UAV Control}{29}{section.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Coordinate Frame Convention}{29}{subsection.3.3.1}}
-\@writefile{brf}{\backcite{mavros}{{29}{3.3.1}{subsection.3.3.1}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Forward and heading motion control}{30}{subsection.3.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Side view of the multirotor.\relax }}{30}{figure.caption.26}}
-\newlabel{side_view}{{3.3}{30}{Side view of the multirotor.\relax }{figure.caption.26}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Experiments and Results}{32}{section.3.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Conclusion}{32}{section.3.5}}
-\newlabel{camera1}{{3.4a}{33}{Track ID 51 initiated by R-RANSAC tracker (t=0s)\relax }{figure.caption.27}{}}
-\newlabel{sub@camera1}{{a}{33}{Track ID 51 initiated by R-RANSAC tracker (t=0s)\relax }{figure.caption.27}{}}
-\newlabel{camera2}{{3.4b}{33}{The human operator has commanded the UAV to follow track ID 51 (t=13s)\relax }{figure.caption.27}{}}
-\newlabel{sub@camera2}{{b}{33}{The human operator has commanded the UAV to follow track ID 51 (t=13s)\relax }{figure.caption.27}{}}
-\newlabel{camera3}{{3.4c}{33}{Track ID 65 initiated by R-RANSAC tracker (t=27s)\relax }{figure.caption.27}{}}
-\newlabel{sub@camera3}{{c}{33}{Track ID 65 initiated by R-RANSAC tracker (t=27s)\relax }{figure.caption.27}{}}
-\newlabel{camera4}{{3.4d}{33}{The human operator has commanded the UAV to follow track ID 65 (t=35s)\relax }{figure.caption.27}{}}
-\newlabel{sub@camera4}{{d}{33}{The human operator has commanded the UAV to follow track ID 65 (t=35s)\relax }{figure.caption.27}{}}
-\newlabel{camera5}{{3.4e}{33}{A snapshot of the track ID 65 being followed (t=60s)\relax }{figure.caption.27}{}}
-\newlabel{sub@camera5}{{e}{33}{A snapshot of the track ID 65 being followed (t=60s)\relax }{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Camera view at various events\relax }}{33}{figure.caption.27}}
-\newlabel{camera}{{3.4}{33}{Camera view at various events\relax }{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Tracks movement in the normalized image plane. Each event (1)-(4) corresponds to camera view in \ref  {camera1}-\ref  {camera4} respectively. Until the command to follow ID 65, the multirotor keeps the track ID 51 from leaving the camera view.\relax }}{34}{figure.caption.28}}
-\newlabel{image1}{{3.5}{34}{Tracks movement in the normalized image plane. Each event (1)-(4) corresponds to camera view in \ref {camera1}-\ref {camera4} respectively. Until the command to follow ID 65, the multirotor keeps the track ID 51 from leaving the camera view.\relax }{figure.caption.28}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces The movement of track ID 65 in the normalized image plane. Each event (3)-(5) corresponds to camera view in \ref  {camera3}-\ref  {camera5} respectively. The controller keeps the track ID 65 in the camera field of view after receiving the command to do so from the human operator.\relax }}{34}{figure.caption.29}}
-\newlabel{image2}{{3.6}{34}{The movement of track ID 65 in the normalized image plane. Each event (3)-(5) corresponds to camera view in \ref {camera3}-\ref {camera5} respectively. The controller keeps the track ID 65 in the camera field of view after receiving the command to do so from the human operator.\relax }{figure.caption.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Multirotor GPS footage and heading corresponding to camera view in \ref  {camera1}-\ref  {camera5} respectively.\relax }}{35}{figure.caption.30}}
-\newlabel{gps}{{3.7}{35}{Multirotor GPS footage and heading corresponding to camera view in \ref {camera1}-\ref {camera5} respectively.\relax }{figure.caption.30}{}}
->>>>>>> 64e071cb452a4c58d2856c73d9edc8dc13e2ad3e
 \@setckpt{chapters/chapter3}{
 \setcounter{page}{37}
 \setcounter{equation}{12}
-\setcounter{enumi}{0}
+\setcounter{enumi}{3}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -96,7 +63,7 @@
 \setcounter{r@tfl@t}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}
-\setcounter{Item}{0}
+\setcounter{Item}{3}
 \setcounter{Hfootnote}{0}
 \setcounter{bookmark@seq@number}{28}
 \setcounter{section@level}{1}
