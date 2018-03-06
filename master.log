@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  3 MAR 2018 11:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  5 MAR 2018 12:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2266,21 +2266,21 @@ ages/chapter4/image_Ex_-5mps-eps-converted-to.pdf>]
 
  (./chapters/chapter5.tex
 Chapter 5.
-) [59
+[59
 
 
 
-] (./master.bbl (./master.brf)
+] [60]) [61] (./master.bbl (./master.brf)
 \tf@brf=\write7
 \openout7 = `master.brf'.
 
- [60
+ [62
 
 
 
-] [61])
+] [63])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 210.
- [62]
+ [64]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 210.
  (./master.aux
 (./chapters/chapter1.aux) (./chapters/chapter2.aux) (./chapters/chapter3.aux)
@@ -2290,16 +2290,16 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 210.
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: A1F02085023FCD4FA310266C73B399ED;2636.
 Package rerunfilecheck Info: File `master.brf' has not changed.
-(rerunfilecheck)             Checksum: 51340617850BC7C5A828EFA989F96454;1969.
+(rerunfilecheck)             Checksum: 94E0857B7A8DA429A83AE0D2DB270288;2092.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 210.
  )
 (\end occurred when \iffalse on line 191 was incomplete)
 (\end occurred when \iffalse on line 191 was incomplete) 
 Here is how much of TeX's memory you used:
- 9538 strings out of 494953
- 157319 string characters out of 6180977
- 245880 words of memory out of 5000000
- 12139 multiletter control sequences out of 15000+600000
+ 9545 strings out of 494953
+ 157392 string characters out of 6180977
+ 245911 words of memory out of 5000000
+ 12143 multiletter control sequences out of 15000+600000
  43724 words of font info for 103 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  53i,15n,92p,1958b,610s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2315,10 +2315,10 @@ re/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on master.pdf (70 pages, 13506534 bytes).
+Output written on master.pdf (72 pages, 13509210 bytes).
 PDF statistics:
- 1811 PDF objects out of 2073 (max. 8388607)
- 1436 compressed objects within 15 object streams
- 336 named destinations out of 1000 (max. 500000)
+ 1826 PDF objects out of 2073 (max. 8388607)
+ 1449 compressed objects within 15 object streams
+ 339 named destinations out of 1000 (max. 500000)
  774 words of extra memory for PDF output out of 10000 (max. 10000000)
 
