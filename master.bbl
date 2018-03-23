@@ -140,7 +140,7 @@ Z.~Kalal, K.~Mikolajczyk, and J.~Matas, ``{Tracking-Learning-Detection},''
 \BIBentryALTinterwordspacing
 P.~C. Niedfeldt and R.~W. Beard, ``{Multiple target tracking using recursive
   RANSAC},'' in \emph{2014 American Control Conference}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, jun 2014, pp. 3393--3398. [Online]. Available:
+  minus 0.4em\relax IEEE, Jun 2014, pp. 3393--3398. [Online]. Available:
   \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6859273
   http://ieeexplore.ieee.org/document/6859273/}
 \BIBentrySTDinterwordspacing
@@ -151,13 +151,13 @@ E.~B. Quist, P.~C. Niedfeldt, and R.~W. Beard, ``{Radar odometry with
   Systems}, vol.~52, no.~4, pp. 1618--1630, 2016.
 
 \bibitem{Wikle2012}
-J.~Wikle and T.~W. Mclain, ``Detection and tracking of multiple intruders using
-  the recursive-ransac algorithm state of practice,'' Utah Space Grant
+J.~Wikle and T.~W. Mclain, ``{Detection and Tracking of Multiple Intruders
+  Using the Recursive-RANSAC Algorithm State of Practice},'' Utah Space Grant
   Fellowship Symposium, 2012.
 
 \bibitem{Ingersoll2015}
-K.~Ingersoll, ``Vision based multiple target tracking using recursive ransac,''
-  Master's thesis, Brigham Young University, Provo, UT, 2015.
+K.~Ingersoll, ``{Vision Based Multiple Target Tracking Using Recursive
+  RANSAC},'' Master's thesis, Brigham Young University, Provo, UT, 2015.
 
 \bibitem{Defranco2015}
 P.~Defranco, ``Detecting and tracking moving objects from a small unmanned air
@@ -165,7 +165,7 @@ P.~Defranco, ``Detecting and tracking moving objects from a small unmanned air
 
 \bibitem{beard2012small}
 R.~W. Beard and T.~W. McLain, \emph{Small unmanned aircraft: Theory and
-  practice}.\hskip 1em plus 0.5em minus 0.4em\relax Princeton university press,
+  practice}.\hskip 1em plus 0.5em minus 0.4em\relax Princeton University Press,
   2012.
 
 \bibitem{itseez2015opencv}
@@ -189,7 +189,7 @@ E.~Lavretsky and K.~A. Wise, \emph{State Feedback Direct Model Reference
 V.~Ermakov, ``mavros,'' http://wiki.ros.org/mavros.
 
 \bibitem{Beard2008}
-R.~Beard, ``{Quadrotor Dynamics and Control Rev 0.1},'' 2008.
+R.~W. Beard, ``{Quadrotor Dynamics and Control Rev 0.1},'' 2008.
 
 \bibitem{khalil1996noninear}
 H.~K. Khalil, ``Noninear systems,'' \emph{Prentice-Hall, New Jersey}, vol.~2,

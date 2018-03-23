@@ -11,7 +11,7 @@ This chapter presents a vision-based target tracking and following system using 
 \end{figure}
 The R-RANSAC tracker and the visual-servoing controller are major subsystems as shown in Figure \ref{system} and they communicate using the Robot Operating System (ROS) framework. The Pixhawk flight controller is used with the PX4 firmware for the autopilot. The R-RANSAC tracker is responsible for tracking moving objects in the image sequence and outputs a vector of normalized image coordinates with unique ID assigned to each track. Let the normalized pixel coordinates be defined as 
 \begin{equation}
-s = [\epsilon_x, \epsilon_y]
+s = [\epsilon_x, \epsilon_y],
 \end{equation} where $\epsilon_x$, $\epsilon_y$ are normalized pixel coordinates. Combined with IDs, a vector of track information is defined as 
 \begin{equation}
 T = [<ID_1, s_1>, <ID_2, s_2>, \dots, <ID_n, s_n>].
@@ -51,7 +51,7 @@ Third, the displacement between the center of mass of the UAV and the focal poin
 
 Fourth, we will rely on the GPS position controller on the autopilot. The visual-servoing controller in this work computes the desired multirotor position in order to follow the target and send the position command to the autopilot. The control algorithm computes the desired multirotor velocity command in the vehicle-1 frame, but it is converted to a position command as a matter of convenience to interface with the Pixhawk autopilot.
 
-\subsection{Forward and heading motion control}
+\subsection{Forward and Heading Motion Control}
 \begin{figure}[thpb]
 	\centering
 	\framebox{\includegraphics[width=0.5\textwidth]{images/side_view_45deg_2.pdf}}
@@ -60,7 +60,7 @@ Fourth, we will rely on the GPS position controller on the autopilot. The visual
 \end{figure}
 The first step of the motion control is to transform the line of sight (LOS) vector to the target from $\mathcal{F}^o$ to $\mathcal{F}^{v1}$. Let 
 \begin{equation}
-\mathbf{\ell}^o=[\epsilon_x^o, \epsilon_y^o, 1]^\top
+\mathbf{\ell}^o=[\epsilon_x^o, \epsilon_y^o, 1]^\top,
 \end{equation} where $\ell^o$ is the line of sight vector in $\mathcal{F}^o$ placed at the focal length of 1. Let also the unit vector along the optical axis in $\mathcal{F}^o$ be defined as 
 \begin{equation}
 \mathbf{m}^o=[0, 0, 1]^\top.
@@ -70,13 +70,13 @@ By applying sequential transformations to $\ell^o$ and $\mathbf{m}^o$, we get
 \mathbf{\ell}^{v1}=R^{v1}_b(\phi,\theta)R^b_c(\alpha)R^c_o\ell^o=[\ell^{v1}_x, \ell^{v1}_y, \ell^{v1}_z]^\top
 \end{equation}
 \begin{equation}
-\mathbf{m}^{v1}=R^{v1}_b(\phi,\theta)R^b_c(\alpha)R^c_o\mathbf{m}^o=[m^{v1}_x, m^{v1}_y, m^{v1}_z]^\top
+\mathbf{m}^{v1}=R^{v1}_b(\phi,\theta)R^b_c(\alpha)R^c_o\mathbf{m}^o=[m^{v1}_x, m^{v1}_y, m^{v1}_z]^\top,
 \end{equation} where $R^b_c$ is a matrix with fixed values depending on how the camera is mounted with respect to $\mathcal{F}^b$, and $R^{v1}_b$ is a matrix requiring the roll and pitch angles of the multirotor. The vector $\ell^{v1}$ is the displacement of the target relative to the multirotor and $\mathbf{m}^{v1}$ is the optical axis in $\mathcal{F}^{v1}$. The LOS vector $\ell^{v1}$ and $\mathbf{m}^{v1}$ do not have proper scalings due to the unknown depth information to the target in $\mathcal{F}^o$, but can be recovered using the altitude of the camera. Let
 \begin{equation}
 \beta=\frac{p_z}{\ell^{v1}_z}
 \end{equation} 
 \begin{equation}
-\gamma=\frac{p_z}{m^{v1}_z}
+\gamma=\frac{p_z}{m^{v1}_z},
 \end{equation} where $p_z$ is the altitude of the multirotor. Then, the desired forward position from the current multirotor position can be computed as 
 \begin{equation}
 d_x=\beta\ell^{v1}_x-\gamma{m}^{v1}_x.
@@ -100,32 +100,32 @@ The hardware is comprised of a 3DR X8 multirotor platform, a small form factor G
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{images/chapter3/ID51_track_begin.png}
-		\caption{Track ID 51 initiated by R-RANSAC tracker (t=0s)}
+		\caption{Track ID 51 initiated by R-RANSAC tracker ($t=0$ s)}
 		\label{camera1}
 	\end{subfigure}
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{images/chapter3/ID51_follow_begin.png}
-		\caption{The human operator has commanded the UAV to follow track ID 51 (t=13s)}
+		\caption{The human operator has commanded the UAV to follow track ID 51 ($t=13$ s)}
 		\label{camera2}
 	\end{subfigure}
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{images/chapter3/ID65_track_begin.png}
-		\caption{Track ID 65 initiated by R-RANSAC tracker (t=27s)}
+		\caption{Track ID 65 initiated by R-RANSAC tracker ($t=27$ s)}
 		\label{camera3}
 	\end{subfigure}
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{images/chapter3/ID65_follow_begin.png}
-		\caption{The human operator has commanded the UAV to follow track ID 65 (t=35s)}
+		\caption{The human operator has commanded the UAV to follow track ID 65 ($t=35$ s)}
 		\label{camera4}
 	\end{subfigure}
 	\centering
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{images/chapter3/ID65_following.png}
-		\caption{A snapshot of the track ID 65 being followed (t=60s)}
+		\caption{A snapshot of the track ID 65 being followed ($t=60$ s)}
 		\label{camera5}
 	\end{subfigure}
 	\caption{Camera view at various events}

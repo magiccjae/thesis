@@ -8,7 +8,7 @@
 \contentsline {subsection}{\numberline {2.1.3}Hardware Result}{9}{subsection.2.1.3}
 \contentsline {section}{\numberline {2.2}Angular Velocity Commanding Gimbal Control}{11}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Image Jacobian}{11}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Feedback Linearization-based Visual Pointing and Tracking}{13}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Feedback Linearization-Based Visual Pointing and Tracking}{13}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Adaptive Depth Gimbal Control}{16}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Introduction}{16}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Derivation}{17}{subsection.2.3.2}
@@ -20,7 +20,7 @@
 \contentsline {section}{\numberline {3.2}Recursive-RANSAC Tracker}{28}{section.3.2}
 \contentsline {section}{\numberline {3.3}UAV Control}{30}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Coordinate Frame Convention}{30}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Forward and heading motion control}{31}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Forward and Heading Motion Control}{31}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}Experiments and Results}{33}{section.3.4}
 \contentsline {section}{\numberline {3.5}Conclusion}{33}{section.3.5}
 \contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Unit Vector UAV Visual Servoing}{37}{chapter.4}

@@ -23,7 +23,7 @@ In this chapter, Angle Commanding Gimbal Control (ACGC), Angular Velocity Comman
 
 \section{Angle Commanding Gimbal Control}
 \subsection{Coordinate Frame Convention and Projective Camera Geometry}
-Before giving a detailed explanation of the gimbal control algorithms, we describe the coordinate frame convention and projective camera geometry. Note that the coordinate frame convention follows the convention from chapter 13 of \cite{beard2012small}. We assume that the origins of the gimbal and camera frames are at the center of mass (COM) of the UAV. This is a reasonable assumption because the distance between the camera, gimbal and UAV COM is negligible compared to the distance between the UAV COM and the target. Also, note that all coordinate frames and the direction of rotation follow the right-hand rule. There are four frames of interests: the body frame of the UAV denoted by $\mathcal{F}^b=(x^{b}, y^{b}, z^{b})$, the gimbal-1 frame denoted by $\mathcal{F}^{g1}=(x^{g1}, y^{g1}, z^{g1})$, the gimbal frame denoted by $\mathcal{F}^{g}=(x^{g}, y^{g}, z^{g})$, and the camera frame denoted by $\mathcal{F}^{c}=(x^{c}, y^{c}, z^{c})$. The gimbal-1 frame can be obtained by rotating $\mathcal{F}^b$ about $z^{b}$ axis by $\alpha_{az}$ which we call the gimbal azimuth angle. The gimbal frame can be obtained by rotating $\mathcal{F}^{g1}$ about $y^{g1}$ by $\alpha_{el}$ which we call the gimbal elevation angle. Note that pointing the gimbal toward the ground is a negative elevation angle (See Fig. \ref{gimbal_frame}). The camera frame is defined so that the $z^{c}$ axis points along the optical axis. Thus, the rotation from body frame to gimbal-1 frame can be expressed as
+Before giving a detailed explanation of the gimbal control algorithms, we describe the coordinate frame convention and projective camera geometry. Note that the coordinate frame convention follows the convention from chapter 13 of \cite{beard2012small}. We assume that the origins of the gimbal and camera frames are at the center of mass of the UAV. This is a reasonable assumption because the distance between the camera, gimbal and UAV c.m. is negligible compared to the distance between the UAV c.m. and the target. Also, note that all coordinate frames and the direction of rotation follow the right-hand rule. There are four frames of interests: the body frame of the UAV denoted by $\mathcal{F}^b=(x^{b}, y^{b}, z^{b})$, the gimbal-1 frame denoted by $\mathcal{F}^{g1}=(x^{g1}, y^{g1}, z^{g1})$, the gimbal frame denoted by $\mathcal{F}^{g}=(x^{g}, y^{g}, z^{g})$, and the camera frame denoted by $\mathcal{F}^{c}=(x^{c}, y^{c}, z^{c})$. The gimbal-1 frame can be obtained by rotating $\mathcal{F}^b$ about $z^{b}$ axis by $\alpha_{az}$ which we call the gimbal azimuth angle. The gimbal frame can be obtained by rotating $\mathcal{F}^{g1}$ about $y^{g1}$ by $\alpha_{el}$ which we call the gimbal elevation angle. Note that pointing the gimbal toward the ground is a negative elevation angle (See Figure \ref{gimbal_frame}). The camera frame is defined so that the $z^{c}$ axis points along the optical axis. Thus, the rotation from body frame to gimbal-1 frame can be expressed as
 
 \begin{equation}
 R^{g1}_b(\alpha_{az}) = \begin{bmatrix}
@@ -62,7 +62,7 @@ R^{g}_b(\alpha_{az}, \alpha_{el}) = R^g_{g1}(\alpha_{az})R^{g1}_b(\alpha_{el}) =
 	\label{camera_frame}
 \end{figure}
 
-The camera frame, often called the optical frame, follows the common computer vision convention: $x$-axis is directed to the right, $y$-axis is directed down and the $z$-axis is directed out from the camera optical sensor (See Fig. \ref{camera_frame}). Thus, the rotation from the gimbal frame to the camera frame is fixed and is given by 
+The camera frame, often called the optical frame, follows the common computer vision convention: $x$-axis is directed to the right, $y$-axis is directed down and the $z$-axis is directed out from the camera optical sensor (See Figure \ref{camera_frame}). Thus, the rotation from the gimbal frame to the camera frame is fixed and is given by 
 \begin{equation}
 R^{c}_g =
 \begin{bmatrix}
@@ -73,10 +73,10 @@ R^{c}_g =
 \label{eq4}
 \end{equation}
 
-The basic idea of the projective camera model is that the 3D world is projected onto a 2D image plane that is orthogonal to $z^c$ axis with distance being the focal length $\lambda$ from the origin of the optical axis (See Fig. \ref{camera_frame}). Because of this projection, we lose the distance information to the target which introduces many problems in computer vision and estimation. 
+The basic idea of the projective camera model is that the 3D world is projected onto a 2D image plane that is orthogonal to $z^c$ axis with distance being the focal length $\lambda$ from the origin of the optical axis (See Figure \ref{camera_frame}). Because of this projection, we lose the distance information to the target which introduces many problems in computer vision and estimation. 
 The focal length of the camera is the distance between the optical sensor and the lens, and it can be obtained through camera calibration. Since common camera calibration gives the focal length in the units of pixels, the camera's field of view angle ($M$) can also be obtained as
 \begin{equation}
-M=2\tan^{-1}\bigg(\frac{\epsilon_{max}}{\lambda}\bigg)
+M=2\tan^{-1}\bigg(\frac{\epsilon_{max}}{\lambda}\bigg),
 \end{equation}
 where $\epsilon_{max}$ is the maximum pixel value from the center of the image assuming the image is square. 
 
@@ -202,7 +202,7 @@ In the previous section, a relatively simple gimbal control algorithm is present
 	\label{cross_elevation}
 \end{figure}
 \subsection{Image Jacobian}
-A full derivation of getting Image Jacobian matrix (often called interaction matrix) can be found in \cite{spong2006robot}. Here, we only show the final form of the Image Jacobian in the process of developing the gimbal control algorithm. Let the camera translational and rotational velocities both expressed in the camera frame be defined as
+A full derivation of getting image Jacobian matrix (often called interaction matrix) can be found in \cite{spong2006robot}. Here, we only show the final form of the image Jacobian in the process of developing the gimbal control algorithm. Let the camera translational and rotational velocities both expressed in the camera frame be defined as
 \begin{equation}
 \mathbf{v}^c=[v_x^c, v_y^c, v_z^c]^\top
 \end{equation}
@@ -247,7 +247,7 @@ or more explicitly
 \begin{bmatrix}
 v_x^c \\ v_y^c \\ v_z^c \\
 \omega_x^c \\ \omega_y^c \\ \omega_z^c
-\end{bmatrix}
+\end{bmatrix},
 \label{image_jacobian}
 \end{equation}
 where $z$ is the depth along the optical axis to the target, and $\lambda$ is the focal length. Note that $\lambda$ is a fixed parameter once the camera is calibrated. The equation (\ref{image_jacobian}) can be divided into two parts: one for the camera translational velocity and the other for rotational velocity as
@@ -260,15 +260,15 @@ where $z$ is the depth along the optical axis to the target, and $\lambda$ is th
 \frac{uw}{\lambda} & -\frac{\lambda^2+u^2}{\lambda} & w \\
 \frac{\lambda^2+w^2}{\lambda} & -\frac{uw}{\lambda} & -u
 \end{bmatrix}\mathbf{\omega}^c
-\\&=L_v(u,w,z)\mathbf{v}^c+L_{\omega}(u,w)\mathbf{\omega}^c
+\\&=L_v(u,w,z)\mathbf{v}^c+L_{\omega}(u,w)\mathbf{\omega}^c.
 \label{image_jacobian1}
 \end{align}
 It is worth noting that only the translational term depends on the target depth $z$. 
 
-\subsection{Feedback Linearization-based Visual Pointing and Tracking}
+\subsection{Feedback Linearization-Based Visual Pointing and Tracking}
 The control objective is to drive an image feature to the center of the image. The horizontal error can be eliminated by moving two axis gimbal motors attached on azimuth and elevation axis. Moving only the azimuth axis cannot fully compensate for the horizontal error because it only indirectly affects $z^g$ axis which is often referred as cross-elevation axis $cel$ (see Figure \ref{cross_elevation}). Thus, some vertical error is introduced and it needs to be compensated by moving the elevation at next time step. However, the key idea of the controller is that by exploiting $\omega_x^g$ term which is the angular velocity along the optical axis, we can find the azimuth and elevation commands for the same time step that smoothly compensates for the horizontal error without introducing the vertical error. Let the error in the image plane be
 \begin{equation}
-e(t)=s(t)-s^{ref}
+e(t)=s(t)-s^{ref},
 \label{image_feature_error}
 \end{equation}
 where $s^{ref}=[0, 0]^\top$ to push the image feature to the image center. We would like to drive $e(t)$ to zeros by controlling the elevation angular velocity $\omega_{EL}=\omega_y^g$ and the azimuth angular velocity $\omega_{az}=\frac{\omega_z^g}{\cos \alpha_{el}}$. Re-arranging equation (\ref{image_jacobian1}) gives
@@ -324,7 +324,7 @@ u \\ w
 \end{bmatrix}.
 \label{sdot_reference}
 \end{equation}
-By plugging equation (\ref{sdot_reference}) into (\ref{angular_rate}), we can compute the desired camera angular rate that guarantees the asymptotic stability for the image error as
+By substituting equation (\ref{sdot_reference}) into (\ref{angular_rate}), we can compute the desired camera angular rate that guarantees the asymptotic stability for the image error as
 \begin{equation}
 {\mathbf{\omega}^c}^{ref}=\frac{1}{z(\lambda^2+u^2+w^2)}\begin{bmatrix}
 \lambda^2 v_y-\lambda v_z w -\lambda \alpha wz+ku \\
@@ -348,7 +348,7 @@ This angular rate reference command expressed in the camera frame must be transf
 \end{align}
 Unfortunately ${\mathbf{\omega}^c}^{ref}$ contains reference commands for three axes, but there are only two controllable axes, namely azimuth and elevation. This problem can be solved by using the free parameter $k$ to come up with two proper motor commands. The key strategy is to select $k$ so that $\omega_x^g=0$. Accordingly,  
 \begin{equation}
-k=uv_y-wv_x+\frac{z(\lambda^2+u^2+w^2)}{\lambda}\omega_x^g
+k=uv_y-wv_x+\frac{z(\lambda^2+u^2+w^2)}{\lambda}\omega_x^g,
 \label{k}
 \end{equation}
 where $\omega_x^g$ must be measured from a sensor such as a MEMS gyro attached to the camera. Substituting for $k$ in ${\omega_y^g}^{ref}$ and ${\omega_z^g}^{ref}$ from the equation (\ref{angular_rate_ref_elevation}) with (\ref{k}) gives
@@ -386,7 +386,7 @@ Model Reference Adaptive Control (MRAC) is a useful control scheme to stabilize 
 	\label{MRAC_blockdiagram}
 \end{figure}
 \subsection{Derivation}
-Consider again the Image Jacobian matrix
+Consider again the image Jacobian matrix
 \begin{equation}
 \begin{bmatrix}
 \dot{u} \\ \dot{w}
@@ -407,7 +407,7 @@ or for simplicity
 \end{equation}
 Since we desire that the target is pushed to the center of the image plane, the reference model can be set as 
 \begin{equation}
-\mathbf{\dot{s}}^{ref}=A\mathbf{s}^{ref}
+\mathbf{\dot{s}}^{ref}=A\mathbf{s}^{ref},
 \label{reference_model}
 \end{equation}
 where $\mathbf{s}=[u, w]^\top$ and $A$ is Hurwitz (i.e. every eigenvalue of $A$ has strictly negative real part). It is clear that the reference model in (\ref{reference_model}) is globally asymptotically stable. From the image jacobian matrix, $\mathbf{\omega}^c$ is the control input, because it is common situation to track the target with gimbal movement rather than platform movement. Thus, equation (\ref{image_jacobian4}) can be manipulated into a more convenient form for MRAC design as 
@@ -425,25 +425,25 @@ where $\mathbf{s}=[u, w]^\top$ and $A$ is Hurwitz (i.e. every eigenvalue of $A$ 
 \begin{bmatrix}
 \omega_x^c \\ \omega_y^c \\ \omega_z^c
 \end{bmatrix}
-\\&=\beta\varphi + L_{\omega}U
+\\&=\beta\varphi + L_{\omega}U,
 \label{adaptive_image_jacobian}
 \end{align}
 where $U$ is the control input and $\beta=\frac{1}{z}$. If $\beta$ were known, then the ideal control input would be
 \begin{equation}
-U=L_\omega^\sharp(-\beta\varphi+K\mathbf{s})
+U=L_\omega^\sharp(-\beta\varphi+K\mathbf{s}),
 \end{equation}
 where $L_\omega^\sharp$ is the right pseudoinverse of $L_\omega$ and $K$ is a negative definite tuning matrix. Then, the subsequent dynamics would become
 \begin{equation}
-\mathbf{\dot{s}}=K\mathbf{s}
+\mathbf{\dot{s}}=K\mathbf{s},
 \end{equation}
 which is globally asymptotically stable. However, since $\beta$ is an unknown quantity and needs to be adapted, a more realistic control input is
 \begin{equation}
-U=L_\omega^\sharp(-\hat{\beta}\varphi+K\mathbf{s})
+U=L_\omega^\sharp(-\hat{\beta}\varphi+K\mathbf{s}),
 \end{equation}
 where $\hat{\beta}$ is the estimate of $\beta$. Plugging this control input into the equation (\ref{adaptive_image_jacobian}) gives
 \begin{align}
 \mathbf{\dot{s}}&=\beta\varphi-\hat{\beta}\varphi+K\mathbf{s}
-\\&= \tilde{\beta}\varphi+K\mathbf{s}
+\\&= \tilde{\beta}\varphi+K\mathbf{s},
 \end{align}
 where $\tilde{\beta}=\beta-\hat{\beta}$. Let the error be defined as 
 \begin{equation}
@@ -512,49 +512,49 @@ First, the reference model $\mathbf{s}^{ref}$, in equation (\ref{reference_model
 	\label{adaptive_command}
 \end{figure*}
 
-In addition, this gimbal control is simulated on a multirotor equipped with a pan-tilt gimbal. The multirotor is moving and suppose that its translational velocity is available. Also, the target is moving on the ground. The adaptive depth gimbal controller takes the pixel location of the target from a camera at a $30Hz$ frame rate, and its goal is to push the target to the center of the image. The simulated multirotor and camera view are presented in Figure \ref{uav_adaptive}. Additional information regarding the simulation can be found in Figure \ref{uav_adaptive_additional}. These plots are rather typical for MRAC: meeting the control objective without a guarantee that the uncertain parameter will converge to its true value. 
+In addition, this gimbal control is simulated on a multirotor equipped with a pan-tilt gimbal. The multirotor is moving and suppose that its translational velocity is available. Also, the target is moving on the ground. The adaptive depth gimbal controller takes the pixel location of the target from a camera at a 30 Hz frame rate, and its goal is to push the target to the center of the image. The simulated multirotor and camera view are presented in Figure \ref{uav_adaptive}. Additional information regarding the simulation can be found in Figure \ref{uav_adaptive_additional}. These plots are rather typical for MRAC: meeting the control objective without a guarantee that the uncertain parameter will converge to its true value. 
 
 \begin{figure*}[htbp]
 	\centering
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{images/chapter2/uav_adaptive_0s}
-		\caption{Multirotor at $t=0s$. The blue star indicates the desired multirotor position for the position PID controller for moving camera platform.}
+		\caption{Multirotor at $t=0$ s. The blue star indicates the desired multirotor position for the position PID controller for moving camera platform.}
 	\end{subfigure}%
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{images/chapter2/camera_adaptive_0s}
-		\caption{Camera view at $t=0s$}
+		\caption{Camera view at $t=0$ s}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{images/chapter2/uav_adaptive_60s}
-		\caption{Multirotor at $t=60s$}
+		\caption{Multirotor at $t=60$ s}
 	\end{subfigure}%
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{images/chapter2/camera_adaptive_60s}
-		\caption{Camera view at $t=60s$}
+		\caption{Camera view at $t=60$ s}
 	\end{subfigure}	
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{images/chapter2/uav_adaptive_120s}
-		\caption{Multirotor at $t=120s$}
+		\caption{Multirotor at $t=120$ s}
 	\end{subfigure}%
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{images/chapter2/camera_adaptive_120s}
-		\caption{Camera view at $t=120s$}
+		\caption{Camera view at $t=120$ s}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{images/chapter2/uav_adaptive_180s}
-		\caption{Multirotor at $t=180s$}
+		\caption{Multirotor at $t=180$ s}
 	\end{subfigure}%
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{images/chapter2/camera_adaptive_180s}
-		\caption{Camera view at $t=180s$}
+		\caption{Camera view at $t=180$ s}
 	\end{subfigure}					
 	\caption{Multirotor simulation with camera view. The gimbal pointing objective is well achieved.}
 	\label{uav_adaptive}
@@ -586,13 +586,13 @@ The adaptive depth gimbal controller is tested on the custom pan-tilt gimbal sho
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height = 3in]{images/chapter2/gimbal.jpg}
-	\caption{A custom pan-tilt camera gimbal}
+	\caption{A custom pan-tilt camera gimbal.}
 	\label{gimbal}
 \end{figure}
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/chapter2/gimbal_parts.png}
-	\caption{A custom pan-tilt camera gimbal}
+	\caption{A custom pan-tilt camera gimbal.}
 	\label{gimbal_parts}
 \end{figure}
 \begin{figure}[htbp]
@@ -607,32 +607,32 @@ A series of snapshots that shows the gimbal pointing result with the custom hard
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=6.5cm]{images/chapter2/gimbal_hardware_1.png}
-		\caption{At $t=0s$}
+		\caption{At $t=0$ s}
 	\end{subfigure}%
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=6.5cm]{images/chapter2/gimbal_hardware_2.png}
-		\caption{At $t=10s$}
+		\caption{At $t=10$ s}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=6.5cm]{images/chapter2/gimbal_hardware_3.png}
-		\caption{At $t=20s$}
+		\caption{At $t=20$ s}
 	\end{subfigure}%
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=6.5cm]{images/chapter2/gimbal_hardware_4.png}
-		\caption{At $t=30s$}
+		\caption{At $t=30$ s}
 	\end{subfigure}	
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=6.5cm]{images/chapter2/gimbal_hardware_5.png}
-		\caption{At $t=40s$}
+		\caption{At $t=40$ s}
 	\end{subfigure}%
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[height=6.5cm]{images/chapter2/gimbal_hardware_6.png}
-		\caption{At $t=50s$}
+		\caption{At $t=50$ s}
 	\end{subfigure}	
 	\caption{Adaptive depth gimbal control result on the custom-built hardware.}
 	\label{gimbal_hardware_result}
