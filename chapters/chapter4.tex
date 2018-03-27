@@ -4,7 +4,7 @@
 \begin{figure}[htbp]
 	\centering
 	\framebox{\includegraphics[width=0.6\textwidth]{images/chapter4/advanced_control_motivation.pdf}}
-	\caption{Non-flat-earth model example. The unit optical axis vector $\hat{m}$ and the unit line of sight vector $\hat{\ell}$ are key components of the controller presented in this chapter.}
+	\caption[Non-flat-earth model example.]{Non-flat-earth model example. The unit optical axis vector $\hat{m}$ and the unit line of sight vector $\hat{\ell}$ are key components of the controller presented in this chapter.}
 	\label{nonflatearth}
 \end{figure}
 The UAV control algorithm introduced in the previous chapter is relatively simple and easy to implement. However, the controller makes a strong assumption that can be unrealistic in some cases. For example, it assumes that the line of sight (LOS) vector to the target and the optical-axis terminate on the same flat surface, which is often called 'flat-earth assumption.' In that case, the altitude of the multirotor acts as a scale factor that can be used to compute how much the UAV should move forward. The more advanced UAV controller presented in this chapter overcomes the flat-earth assumption by working with the unit LOS vector and unit optical axis vector (see Figure \ref{nonflatearth}). Also, the controller does not require the altitude of the multirotor to be known because the scale factor does not have to be recovered.
@@ -225,7 +225,7 @@ which implies that $s$ is asymptotically stable. Thus, the original objective of
 		\includegraphics[width=0.5\textwidth]{images/chapter4/simple_ex}
 		\caption{The horizontal error between the unit LOS vector and the unit optical axis vector converges to zero.}
 	\end{subfigure}	
-	\caption{Simple UAV dynamics visual servoing Simulink simulation. The blue square is flying UAV at constant altitude and the red square is a target on the ground moving at 5 m/s. The initial UAV and target positions are [-10, 15] and [20, 0] respectively. Tuning parameters are set to $k=1$, $\Gamma=I_3$ (identity matrix), and $\alpha=1000$.}
+	\caption[Simple UAV dynamics visual servoing Simulink simulation.]{Simple UAV dynamics visual servoing Simulink simulation. The blue square is flying UAV at constant altitude and the red square is a target on the ground moving at 5 m/s. The initial UAV and target positions are [-10, 15] and [20, 0] respectively. Tuning parameters are set to $k=1$, $\Gamma=I_3$ (identity matrix), and $\alpha=1000$.}
 	\label{simple_simulation}
 \end{figure}
 
@@ -246,7 +246,7 @@ which implies that $s$ is asymptotically stable. Thus, the original objective of
 		\includegraphics[width=0.5\textwidth]{images/chapter4/another_simple_ex}
 		\caption{The horizontal error between the unit LOS vector and the unit optical axis vector converges to zero.}
 	\end{subfigure}	
-	\caption{Simple UAV dynamics visual servoing Simulink simulation. The blue square is flying UAV at constant altitude and the red square is a target on the ground moving at -5 m/s. The initial UAV and target positions are [10, 15] and [-10, 0] respectively. Tuning parameters are set to $k=1$, $\Gamma=I_3$ (identity matrix), and $\alpha=1000$.}
+	\caption[Simple UAV dynamics visual servoing Simulink simulation.]{Simple UAV dynamics visual servoing Simulink simulation. The blue square is flying UAV at constant altitude and the red square is a target on the ground moving at -5 m/s. The initial UAV and target positions are [10, 15] and [-10, 0] respectively. Tuning parameters are set to $k=1$, $\Gamma=I_3$ (identity matrix), and $\alpha=1000$.}
 	\label{another_simple_simulation}
 \end{figure}
 
@@ -439,14 +439,14 @@ The backstepping control algorithm derived above is simulated in Simulink with m
 \begin{figure}[htbp]
 	\centering
 	\framebox{\includegraphics[width=0.8\textwidth]{images/chapter4/inertial_LOS_backstepping.pdf}}
-	\caption{Control system diagram for the inertial line of sight vector backstepping controller. In this configuration, the backstepping controller needs the positions of multirotor and target.}
+	\caption[Control system diagram for the inertial line of sight vector backstepping controller.]{Control system diagram for the inertial line of sight vector backstepping controller. In this configuration, the backstepping controller needs the positions of multirotor and target.}
 	\label{system_inertial}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
 	\framebox{\includegraphics[width=0.8\textwidth]{images/chapter4/image_based_backstepping.pdf}}
-	\caption{Control system diagram for the image-based backstepping controller. Note that the backstepping controller only requires the image coordinates of the target.}
+	\caption[Control system diagram for the image-based backstepping controller.]{Control system diagram for the image-based backstepping controller. Note that the backstepping controller only requires the image coordinates of the target.}
 	\label{system_image}
 \end{figure}
 
@@ -473,7 +473,7 @@ The backstepping control algorithm derived above is simulated in Simulink with m
 		\includegraphics[width=0.5\textwidth]{images/chapter4/inertial_Ex_0mps}
 		\caption{The horizontal error ($e_x$) between the unit LOS vector and the unit optical axis vector both in the vehicle-1 frame converges to zero. It saturates at 0.05 to prevent the multirotor from commanding too large torque command.}
 	\end{subfigure}	
-	\caption{Simulation result for the backstepping control using the inertial LOS vector. The ground target is static (0 m/s). The initial UAV and target positions are [-140, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix).}
+	\caption[Simulation result for the backstepping control using the inertial LOS vector.]{Simulation result for the backstepping control using the inertial LOS vector. The ground target is static (0 m/s). The initial UAV and target positions are [-140, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix).}
 	\label{inertial_0mps}
 \end{figure}
 
@@ -508,7 +508,7 @@ The backstepping control algorithm derived above is simulated in Simulink with m
 		\includegraphics[width=0.5\textwidth]{images/chapter4/inertial_Ex_5mps}
 		\caption{The horizontal error ($e_x$) between the unit LOS vector and the unit optical axis vector both in the vehicle-1 frame converges to zero. It saturates at 0.05 to prevent the multirotor from commanding too large torque command.}
 	\end{subfigure}	
-	\caption{Simulation result for the backstepping control using the inertial LOS vector. The ground target is moving at the speed of 5 m/s. The initial UAV and target positions are [-110, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix). In this case, the target is not placed at the center of image because the horizontal error is computed in the vehicle-1 frame meaning that the pitch of multirotor is not compensated.}
+	\caption[Simulation result for the backstepping control using the inertial LOS vector.]{Simulation result for the backstepping control using the inertial LOS vector. The ground target is moving at the speed of 5 m/s. The initial UAV and target positions are [-110, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix). In this case, the target is not placed at the center of image because the horizontal error is computed in the vehicle-1 frame meaning that the pitch of multirotor is not compensated.}
 	\label{inertial_5mps}
 \end{figure}
 
@@ -543,7 +543,7 @@ The backstepping control algorithm derived above is simulated in Simulink with m
 		\includegraphics[width=0.5\textwidth]{images/chapter4/inertial_Ex_-5mps}
 		\caption{The horizontal error ($e_x$) between the unit LOS vector and the unit optical axis vector both in the vehicle-1 frame converges to zero. It saturates at 0.05 to prevent the multirotor from commanding too large torque command.}
 	\end{subfigure}	
-	\caption{Simulation result for the backstepping control using the inertial LOS vector. The ground target is moving at the speed of -5 m/s. The initial UAV and target positions are [-110, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix). In this case, the target is not placed at the center of image because the horizontal error is computed in the vehicle-1 frame meaning that the pitch of multirotor is not compensated.}
+	\caption[Simulation result for the backstepping control using the inertial LOS vector.]{Simulation result for the backstepping control using the inertial LOS vector. The ground target is moving at the speed of -5 m/s. The initial UAV and target positions are [-110, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix). In this case, the target is not placed at the center of image because the horizontal error is computed in the vehicle-1 frame meaning that the pitch of multirotor is not compensated.}
 	\label{inertial_-5mps}
 \end{figure}
 
@@ -574,7 +574,7 @@ In conclusion, based on the comparison between the inertial LOS vector (100 Hz u
 		\includegraphics[width=0.5\textwidth]{images/chapter4/image_Ex_0mps}
 		\caption{The horizontal error ($e_x$) between the normalized target pixel coordinates and the unit optical axis vector both in the vehicle-1 frame converges to zero. Note that the value is low-pass filtered.}
 	\end{subfigure}	
-	\caption{Simulation result for the backstepping control using the normalized target pixel coordinates. The ground target is static (0 m/s). The initial UAV and target positions are [-140, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix).}
+	\caption[Simulation result for the backstepping control using the normalized target pixel coordinates.]{Simulation result for the backstepping control using the normalized target pixel coordinates. The ground target is static (0 m/s). The initial UAV and target positions are [-140, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix).}
 	\label{image_0mps}
 \end{figure}
 
@@ -609,7 +609,7 @@ In conclusion, based on the comparison between the inertial LOS vector (100 Hz u
 		\includegraphics[width=0.5\textwidth]{images/chapter4/image_Ex_5mps}
 		\caption{The horizontal error ($e_x$) between the normalized target pixel coordinates and the unit optical axis vector both in the vehicle-1 frame converges to zero. Note that the value is low-pass filtered.}
 	\end{subfigure}	
-	\caption{Simulation result for the backstepping control using the normalized target pixel coordinates. The ground target is moving at the speed of 5 m/s. The initial UAV and target positions are [-110, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix). In this case, the target is not placed at the center of image because the horizontal error is computed in the vehicle-1 frame meaning that the pitch of multirotor is not compensated.}
+	\caption[Simulation result for the backstepping control using the normalized target pixel coordinates.]{Simulation result for the backstepping control using the normalized target pixel coordinates. The ground target is moving at the speed of 5 m/s. The initial UAV and target positions are [-110, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix). In this case, the target is not placed at the center of image because the horizontal error is computed in the vehicle-1 frame meaning that the pitch of multirotor is not compensated.}
 	\label{image_5mps}
 \end{figure}
 
@@ -644,6 +644,6 @@ In conclusion, based on the comparison between the inertial LOS vector (100 Hz u
 		\includegraphics[width=0.5\textwidth]{images/chapter4/image_Ex_-5mps}
 		\caption{The horizontal error ($e_x$) between the normalized target pixel coordinates and the unit optical axis vector both in the vehicle-1 frame converges to zero. Note that the value is low-pass filtered.}
 	\end{subfigure}	
-	\caption{Simulation result for the backstepping control using the normalized target pixel coordinates. The ground target is moving at the speed of -5 m/s. The initial UAV and target positions are [-110, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix). In this case, the target is not placed at the center of image because the horizontal error is computed in the vehicle-1 frame meaning that the pitch of multirotor is not compensated.}
+	\caption[Simulation result for the backstepping control using the normalized target pixel coordinates.]{Simulation result for the backstepping control using the normalized target pixel coordinates. The ground target is moving at the speed of -5 m/s. The initial UAV and target positions are [-110, 0, -90] and [0, 0, 0] respectively. Tuning parameters are set to $k=0.12$, $k_1=1$, $k_2=1$, $k_3=1$, and $\Gamma=0.01I_3$ (identity matrix). In this case, the target is not placed at the center of image because the horizontal error is computed in the vehicle-1 frame meaning that the pitch of multirotor is not compensated.}
 	\label{image_-5mps}
 \end{figure}

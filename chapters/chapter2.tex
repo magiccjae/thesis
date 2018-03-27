@@ -148,13 +148,13 @@ Solving for $\alpha_{az}^d$ and $\alpha_{el}^d$ as
 \hat{\ell}_z^b
 \end{pmatrix},
 \end{equation}
-results in the gimbal commands that place the object of interest at the center of the image.
+results in the gimbal azimuth and elevation commands that place the object of interest at the center of the image.
 
 \subsection{Hardware Result}
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 3in]{images/chapter2/gimbal_webcam.jpg}
-	\caption{Prototype hardware to test the gimbal control algorithm}
+	\caption{Prototype hardware to test the angle commanding gimbal control algorithm}
 	\label{gimbal_webcam}
 \end{figure}
 
@@ -187,7 +187,7 @@ The gimbal control algorithm has been implemented and tested with simple hardwar
 		\includegraphics[height=6cm]{images/chapter2/gimbal_40s.png}
 		\caption{when $t=40s$}
 	\end{subfigure}	
-	\caption{Hardware demonstration. The gimbal control algorithm is keeping the target object at the center of the camera field of view.}
+	\caption[Hardware demonstration for the angle commanding gimbal control.]{Hardware demonstration for angle commanding gimbal control. The gimbal control algorithm is keeping the target object at the center of the camera field of view.}
 	\label{gimbal_result}
 \end{figure*}
 
@@ -369,7 +369,7 @@ we can compute the desired angular rate on the azimuth axis as
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 5in]{images/chapter2/gp_blockdiagram.pdf}
-	\caption{Angular velocity commanding gimbal controller block diagram}
+	\caption{The angular velocity commanding gimbal controller block diagram}
 	\label{avcg_blockdiagram}
 \end{figure}
 The system block diagram of this controller is shown in Figure \ref{avcg_blockdiagram}. The controller presents the ideal control scheme for a two axis inertially stabilized gimbal system, but it also presents some technical challenges such as estimating the depth to the target or estimating the camera translational velocity. The camera translational velocity can be either estimated by using the UAV velocity if available or be treated as a disturbance. Estimating the depth can be handled using a laser range finder if available or geolocation technique. Another option is to use the novel adaptive depth gimbal control algorithm that we introduce in the next section.
@@ -477,7 +477,7 @@ Then, the equation (\ref{vdot2}) becomes
 \begin{equation}
 \dot{V}=\mathbf{e}^\top A\mathbf{e}.
 \end{equation}
-Asymptotic stability of the system follows from the fact that A is Hurwitz.
+Therefore, it is clear that the system becomes asymptotically stable given the fact that A is Hurwitz.
 \subsection{Simulation}
 First, the reference model $\mathbf{s}^{ref}$, in equation (\ref{reference_model}) is selected as $[0, 0]$ over time. The objective of the MRAC controller is to drive the actual image dynamics with unknown quantity $z$ as close as it can to the reference model. In simulation, a square image with 800 pixel width and height is used. The camera field of view is set to 60 degrees and one pixel is set to one millimeter. Thus, we can obtain the focal length and image width in metric units. The initial image coordinates are randomly selected and these coordinates are expected to converge to the origin as the reference model. In reality, the depth $z$ is a varying quantity because of the relative movement between the camera and the target. However, in this simulation $z$ is initialized to an arbitrary value between 30 and 300, and is changed randomly with increment $\pm2$ every second. In order to simulate the translational velocity of the UAV, $v_x^c$ and $v_y^c$ are initialized to zeros and changed with increment $\pm2$ every other second. $v_z^c$ is kept zero assuming that the camera is not directly flying into nor away from the target. Figure \ref{adaptive_result} shows that the controller keeps the target in the center of the image which is the primary objective. Figure \ref{adaptive_command} presents the angular velocity commands computed by the adaptive depth gimbal controller and the depth estimation. Based on Figure \ref{adaptive_command}, the estimation of the uncertain parameter seems to converge to its true value. However, note that this is rather a special case. In normal cases, only uniform boundness of the uncertain parameters is guaranteed \cite{Lavretsky2013}. 
 \begin{figure*}[htbp]
@@ -492,7 +492,7 @@ First, the reference model $\mathbf{s}^{ref}$, in equation (\ref{reference_model
 		\includegraphics[width=0.9\linewidth]{images/chapter2/w_adaptive}
 		\caption{Reference image coordinate $w_{ref}$ and the system output $w$}
 	\end{subfigure}
-	\caption{The simulation result for the adaptive depth gimbal control. The system output $u$ and $w$ are converging to the reference model output $u_{ref}$ and $w_{ref}$.}
+	\caption[The simulation result for the adaptive depth gimbal control.]{The simulation result for the adaptive depth gimbal control. The system output $u$ and $w$ are converging to the reference model output $u_{ref}$ and $w_{ref}$.}
 	\label{adaptive_result}
 \end{figure*}
 
@@ -508,7 +508,7 @@ First, the reference model $\mathbf{s}^{ref}$, in equation (\ref{reference_model
 		\includegraphics[width=0.9\linewidth]{images/chapter2/z_adaptive}
 		\caption{Online depth estimation, $\hat{z}$}
 	\end{subfigure}
-	\caption{Angular velocity commands of the adaptive depth gimbal controller. Note that only two commands are used, since it is a pan-tilt gimbal. The depth $z$ estimate using MRAC.}
+	\caption[Angular velocity commands of the adaptive depth gimbal controller.]{Angular velocity commands of the adaptive depth gimbal controller. Note that only two commands are used, since it is a pan-tilt gimbal. The depth $z$ estimate using MRAC.}
 	\label{adaptive_command}
 \end{figure*}
 
@@ -556,7 +556,7 @@ In addition, this gimbal control is simulated on a multirotor equipped with a pa
 		\includegraphics[height=4.5cm]{images/chapter2/camera_adaptive_180s}
 		\caption{Camera view at $t=180$ s}
 	\end{subfigure}					
-	\caption{Multirotor simulation with camera view. The gimbal pointing objective is well achieved.}
+	\caption[Multirotor simulation with camera view for adaptive depth gimbal control.]{Multirotor simulation with camera view for adaptive depth gimbal control. The gimbal pointing objective is well achieved.}
 	\label{uav_adaptive}
 \end{figure*}
 
@@ -640,15 +640,30 @@ A series of snapshots that shows the gimbal pointing result with the custom hard
 
 \section{Conclusion}
 There are a few controller options to keep a target in the camera field of view using a gimbal. Depending on whether the camera is moving or stationary, either angle commanding gimbal control (ACGC) or angular velocity commanding gimbal control (AVCGC) can be used. The advantage of the ACGC is that it is easy to implement and that it does not require the depth information. The AVCGC is expected to perform better than ACGC for a moving camera since the AVCGC take the moving platform into account. However, the AVCGC requires knowledge of the depth $z$. When there is no way to reliably measure or estimate the depth $z$, the adaptive depth gimbal control (ADGC) can be used. A summary is shown in Table \ref{gimbal_summary}.
+
 \begin{table}[htbp]
-	\begin{tabular}{ |c|c|c| } 
+	\centering
+	\savebox{\tempbox}{
+	%
+	\begin{tabular}{|c|c|c|r|}
 		\hline
+		
 		ACGC & AVCGC & ADGC \\
 		\hline
-		Easy to implement & Designed for moving camera & Designed for moving camera \\ 
-		Designed for static camera & Requires the knowledge of the depth $z$ & Works without knowing $z$ \\  
+		Easy to implement & Designed for moving camera  & Designed for moving camera \\
+		Designed for static camera & Requires the knowledge of the depth $z$ & Works without knowing $z$ \\
 		\hline
-	\end{tabular}
-	\caption{Summary of gimbal control schemes}
-	\label{gimbal_summary}
+		
+	\end{tabular}}
+	% set width
+	\ifdim\wd\tempbox<\TPTminimum\relax 					\tempwidth=\TPTminimum\relax
+	\else\tempwidth=\wd\tempbox
+	\fi
+	% format
+	\begin{minipage}{\tempwidth}\centering
+		\caption{Summary of gimbal control schemes}
+		\label{gimbal_summary}
+		\usebox{\tempbox}
+		%\end{threeparttable}
+	\end{minipage}
 \end{table}
